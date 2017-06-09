@@ -1,64 +1,91 @@
 @import "variables.less";
 
-body > header,
-body > main,
-body > footer,
-.pagination {
-  width: @size-containerWidth;
-  margin: @size-layout-verticalSpacing auto;
-}
+.bubble-wrap {
+  background: @color-gargoyleGas;
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index:0;
+  height: 100%;
+  width: 100%;
 
-body > header {
-  .page-title {
-    font-size: @font-size-xlarge;
-
-    a, a:visited {
-      text-decoration: none;
-      color: @color-blueLight;
-    }
-
-    a:hover {
-      opacity: 0.8;
+  #bubbles {
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   }
 }
 
-> main {
-
+.contents {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
-.post {
-  @size-padding: @size-layout-verticalSpacing / 2;
-  padding-top: @size-padding;
-  padding-bottom: @size-padding;
+// body > header,
+// body > main,
+// body > footer,
+// .pagination {
+//   width: @size-containerWidth;
+//   margin: @size-layout-verticalSpacing auto;
+// }
 
-  .post-title {
-    font-size: @font-size-large;
-    margin: 0;
-  }
+// body > header {
+//   .page-title {
+//     font-size: @font-size-xlarge;
 
-  .post-excerpt {
-    font-size: @font-size-medium;
-  }
+//     a, a:visited {
+//       text-decoration: none;
+//       color: @color-blueberry;
+//     }
 
-  .post-meta {
-    font-size: @font-size-normal;
-  }
-}
+//     a:hover {
+//       opacity: 0.8;
+//     }
+//   }
+// }
 
-.pagination {
-  text-align: center;
-  font-size: @font-size-normal;
-}
+// > main {
 
-.site-footer {
-  border-top: 2px solid @color-grayLight;
+// }
 
-  .footer-description {
-    float: left;
-  }
+// .post {
+//   @size-padding: @size-layout-verticalSpacing / 2;
+//   padding-top: @size-padding;
+//   padding-bottom: @size-padding;
 
-  .footer-published {
-    float: right;
-  }
-}
+//   .post-title {
+//     font-size: @font-size-large;
+//     margin: 0;
+//   }
+
+//   .post-excerpt {
+//     font-size: @font-size-medium;
+//   }
+
+//   .post-meta {
+//     font-size: @font-size-normal;
+//   }
+// }
+
+// .pagination {
+//   text-align: center;
+//   font-size: @font-size-normal;
+// }
+
+// .site-footer {
+//   border-top: 2px solid @color-glitter;
+
+//   .footer-description {
+//     float: left;
+//   }
+
+//   .footer-published {
+//     float: right;
+//   }
+// }

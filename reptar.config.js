@@ -7,7 +7,8 @@ module.exports = {
   // Any values placed here are globally accessible
   // from any template context via the `site` key.
   site: {
-    title: 'BeerJS MK',
+    title: 'Beerjs.mk - пиво + javascript',
+    header: 'Beer.js Скопје',
     email: 'hello@beerjs.mk',
     description: "An event for beer and JavaScript enthusiasts.\n",
     baseurl: '', // the subpath of your site, e.g. /blog

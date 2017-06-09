@@ -16,35 +16,40 @@
   <link rel="stylesheet" type="text/css" href="/css/main.css" />
 </head>
 <body class="{% block body_class %}{% endblock %}">
-
-  <header class="main-header">
-    <div class="vertical">
-      <div class="main-header-content">
-        <h1 class="page-title">
-          <a href="/">{% block header_title %}{{site.title}}{% endblock %}</a>
-        </h1>
-        <div>
-          <a href="/about/">About</a>
-        </div>
-      </div>
+    <div class="bubble-wrap">
+      <div id="bubbles"></div>
     </div>
-  </header>
+    
+    <div class="contents">
+      <header>
+        <div>
+          <h1 class="title">
+            <a href="/">{% block header_title %}{{site.header}}{% endblock %}</a>
+          </h1> 
+          <div class='subtitle'>
+            <a href="/about/">About</a>
+          </div>
+        </div>
+      </header>
 
-  <main id="content" class="content" role="main">
-    {% block content %}{% endblock%}
+      <main id="content" class="content" role="main">
+        {% block content %}{% endblock%}
 
-    {% include "_pagination.html" %}
-  </main>
+        {% include "_pagination.html" %}
+      </main>
 
-  <footer class="site-footer clearfix">
-    <p class="footer-description">
-      &copy; {{site.title}}
-    </p>
-    <p class="footer-published">
-      joyfully published by <a href="https://github.com/reptar/reptar">reptar</a>
-    </p>
-  </footer>
+      <footer class="site-footer clearfix">
+        <p class="footer-description">
+          &copy; {{site.header}}
+        </p>
+        <p class="footer-published">
+          joyfully published by <a href="https://github.com/reptar/reptar">reptar</a>
+        </p>
+      </footer>
+    </div>
 
+
+  <script type="text/javascript" src="/js/particles.min.js"></script>
   <script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>
