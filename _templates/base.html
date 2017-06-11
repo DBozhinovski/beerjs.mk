@@ -21,18 +21,34 @@
     </div>
     
     <div class="contents">
-      <header>
-        <div>
-          <h1 class="title">
-            <a href="/">{% block header_title %}{{site.header}}{% endblock %}</a>
-          </h1> 
-          <div class='subtitle'>
-            <a href="/about/">About</a>
+      <header class="hero is-fullheight is-fullwidth hero-header">
+        <div class="hero-head foam"></div>
+        <div class="hero-body is-fullheight is-fullwidth">
+          <div class="container">
+            <h1 class="title logo-wrap">
+              <div class="columns">
+                <div class="column">
+                  <div class="logo-container"><img src='/_assets/beerjs.svg' /></div>
+                  <div class="logo-text">
+                    {% block header_title %}{{site.header}}{% endblock %} <br/>
+                    <span class="logo-subtitle">{% block header_subtitle %}{{site.description}}{% endblock %}</span> <br/> <br/>
+                    <a href="/vol2">[ vol 2: 21 Јуни @Coffice ]</a>
+                  </div>
+                </div>
+              </div>
+            </h1>
           </div>
         </div>
+        <div class="hero-foot has-text-centered landing-footer">
+          <a href="/info">За настанот</a> | 
+          <a href="mailto:hello@beerjs.mk">hello@beerjs.mk</a> | 
+          <a href="https://github.com/beerjs/skopje"><img src='/_assets/github-logo.svg' /></a> |
+          <a href="https://twitter.com/BeerjsSk"><img src='/_assets/twitter-logo.svg' /></a> |
+          <a href="https://www.facebook.com/beerjsskopje"><img src='/_assets/facebook-logo.svg' /></a>
+        </div>
       </header>
-
-      <main id="content" class="content" role="main">
+      
+      <!--<main id="content" class="content" role="main">
         {% block content %}{% endblock%}
 
         {% include "_pagination.html" %}
@@ -45,7 +61,7 @@
         <p class="footer-published">
           joyfully published by <a href="https://github.com/reptar/reptar">reptar</a>
         </p>
-      </footer>
+      </footer>-->
     </div>
 
 

@@ -10,7 +10,7 @@ module.exports = {
     title: 'Beerjs.mk - пиво + javascript',
     header: 'Beer.js Скопје',
     email: 'hello@beerjs.mk',
-    description: "An event for beer and JavaScript enthusiasts.\n",
+    description: "Собир за ентузијасти за пиво и JavaScript",
     baseurl: '', // the subpath of your site, e.g. /blog
     url: 'http://beerjs.mk',
   },
