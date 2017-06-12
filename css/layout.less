@@ -1,5 +1,9 @@
 @import "variables.less";
 
+html {
+  overflow-y: auto;
+}
+
 body {
   font-family: "Source Sans Pro";
 }
@@ -10,7 +14,7 @@ body {
   top:0;
   left:0;
   z-index:0;
-  height: 100vh;
+  height: 105vh;
   width: 100vw;
 
   #bubbles {
@@ -18,7 +22,7 @@ body {
       position: absolute;
       top: 0;
       left: 0;
-      height: 100vh;
+      height: 130vh;
       width: 100vw;
     }
   }
@@ -28,7 +32,7 @@ body {
   position: absolute;
   background: transparent;
   width: 100%;
-  // height: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -157,7 +161,7 @@ body {
 
     .post-header {
       background: @color-gargoyleGas;
-      // padding: 30px;
+      padding: 30px;
     }
 
     .post-content {

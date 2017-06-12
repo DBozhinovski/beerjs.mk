@@ -18,10 +18,10 @@
 </head>
 <body class="bare {% block body_class %}{% endblock %}">
     <div class="container">
-      <header class="columns section main is-fullwidth">
-        <div class="column is-narrow is-pulled-left">
-          <div class="columns is-gapless is-mobile logo">
-              <a href="/" class="columns is-gapless is-mobile logo">
+      <header class="columns section main is-mobile is-clearfix">
+        <div class="column is-half">
+          <div class="columns is-gapless logo is-pulled-left">
+              <a href="/" class="columns is-gapless logo">
                 <div class="column">
                   <div class="logo-container"><img src='/_assets/beerjs.svg' /></div>
                 </div>
@@ -32,7 +32,7 @@
               </a>
           </div>
         </div>
-        <div class="column is-flexible is-pulled-right navigation">
+        <div class="column is-half is-pulled-right navigation">
           <nav class="is-pulled-right">
             <a href="/vol2">Vol. 2</a> |
             <a href="/previous">Претходни настани</a>
@@ -41,8 +41,8 @@
       </header>
     </div>
 
-  <main id="content" class="columns content" role="main">
-    <div class="column">
+  <main id="content" class="columns content is-clearfix" role="main">
+    <div class="column is-clearfix">
     {% block content %}{% endblock%}
 
     {% include "_pagination.html" %}

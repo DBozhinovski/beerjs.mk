@@ -4,6 +4,7 @@
   "description": "The beerjs.mk web page",
   "main": "bubbles.js",
   "scripts": {
+    "deploy": "reptar build && shipit production deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +22,8 @@
     "normalize.css": "^7.0.0",
     "reptar-excerpt": "^1.0.0",
     "reptar-html-minifier": "^1.0.0"
+  },
+  "devDependencies": {
+    "shipit-deploy": "^2.4.0"
   }
 }
