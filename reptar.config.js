@@ -49,6 +49,13 @@ module.exports = {
         values: { template: 'post', permalink: '/:title/' },
       },
       {
+        // Any file in this path will have the default values applied.
+        // Because this path is more specific it will over-write the previous
+        // defaults.
+        scope: { path: './_previous' },
+        values: { template: 'post', permalink: '/previous/:title/' },
+      },
+      {
         // Any file with this matching metadata will have the default values
         // applied.
         scope: { metadata: { draft: true } },
