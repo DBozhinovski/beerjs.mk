@@ -42210,6 +42210,6 @@ module.exports = (function () {
 
 }).call(this,require('_process'))
 },{"_process":3}],57:[function(require,module,exports){
-"use strict";function root(e){require("shipit-deploy")(e),e.initConfig({default:{workspace:"/tmp/.shipit",deployTo:"/var/www/beerjs.mk",dirToCopy:".",keepReleases:2,ignores:[".git","node_modules"],deleteOnRollback:!1,repositoryUrl:"git@github.com:DBozhinovski/beerjs.mk.git"},production:{servers:"root@beerjs.mk"}}),e.task("restart-api",function(){return e.remote("pm2 stop API && pm2 delete API && cd /var/www/API/current && NODE_ENV=production NODE_DEBUG=debug pm2 start index.js --name=API")}),e.task("npm-reinstall",function(){return e.remote("rm -rf /var/www/API/current/node_modules && cd /var/www/API/current && npm install")})}module.exports=root;
+"use strict";function root(e){require("shipit-deploy")(e),e.initConfig({default:{workspace:"/tmp/.shipit",deployTo:"/var/www/beerjs.mk",dirToCopy:".",keepReleases:2,ignores:[".git","node_modules"],deleteOnRollback:!1,repositoryUrl:"git@github.com:DBozhinovski/beerjs.mk.git"},production:{servers:"root@beerjs.mk"}})}module.exports=root;
 
 },{"shipit-deploy":34}]},{},[57]);
