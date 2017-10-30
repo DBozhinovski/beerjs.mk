@@ -1,0 +1,15 @@
+{{ partial "header" . }}
+<div class="single-bg"></div>
+<article class="single">
+  <div>
+    {{ if .Params.tags }}
+    {{ partial "tags" .Params.tags }}
+    {{ end }}
+  </div>
+  <h1 class="title">{{ .Title }}</h1>
+  <p class="subtitle"><date>{{ .Date.Format "02.01.2006" }}</date></p>
+  <section>
+    {{ .Content }}
+  </section>
+</article>
+{{ partial "footer" . }}
