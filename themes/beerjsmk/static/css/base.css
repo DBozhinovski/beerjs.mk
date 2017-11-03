@@ -173,6 +173,27 @@ a {
   width: 1.8vw;
 }
 
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav li {
+  padding: 0 15px;
+  border-right: 1px solid #000;
+}
+
+nav li:first-child {
+  padding-left: 0;
+}
+
+nav li:last-child {
+  border-right: 0px;
+}
+
 @media (min-width:320px) and (max-width:640px) and (orientation:portrait) { 
   /* smartphones, iPhone, portrait 480x320 phones */ 
   html {

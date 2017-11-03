@@ -12,7 +12,9 @@
       <h1>Beer.js Скопје</h1>
       <h2>Собир за ентузијасти за пиво и JavaScript</h2>
       <div class="announcement">
-        <a href="#">[ vol 3: Ноември - Повеќе детали наскоро! ]</a>
+        {{ range last 1 .Site.Taxonomies.tags.event }}
+         <a href="{{ .Page.Permalink }}">[ {{ .Page.Title }} ]</a>
+        {{ end }}
       </div>
       <div class="previous">
         <a href="/tags/event">[ Претходни изданија ]</a>
@@ -21,7 +23,7 @@
   </div>
 
   <div class="landing-footer">
-    <a href="/posts/info/">За настанот</a> | 
+    <a href="/events/info/">За настанот</a> | 
     <a href="mailto:hello@beerjs.mk">hello@beerjs.mk</a> |
     <a href="https://github.com/beerjs/skopje"><img src='/images/github-logo.svg' /></a> |
     <a href="https://twitter.com/BeerjsSk"><img src='/images/twitter-logo.svg' /></a> |

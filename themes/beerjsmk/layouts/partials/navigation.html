@@ -1,0 +1,10 @@
+<nav>
+  <ul>
+    <li><a href="/">Почетна</a></li>
+    {{ range last 1 .Site.Taxonomies.tags.event }}
+      <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></li>
+    {{ end }}
+    <li><a href="/events/info">За настанот</a></li>
+    <li><a href="/tags/event">Претходни настани</a></li>
+  </ul>
+</nav>

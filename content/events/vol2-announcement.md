@@ -1,5 +1,5 @@
 ---
-title: Vol 2
+title: Најава - Vol 2
 date: 2017-06-11
 tags: [event]
 ---
