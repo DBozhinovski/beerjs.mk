@@ -3,6 +3,7 @@
 <div class="single-bg"></div>
 <article class="single">
   <h1 class="title">{{ .Title }}</h1>
+  <hr />
   <div>
     {{ if .Params.tags }}
     {{ partial "tags" .Params.tags }}
@@ -13,4 +14,6 @@
     {{ .Content }}
   </section>
 </article>
+<hr />
+{{ partial "contact" . }}
 {{ partial "footer" . }}

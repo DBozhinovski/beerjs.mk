@@ -173,12 +173,24 @@ a {
   width: 1.8vw;
 }
 
-/* .title {
-  background: var(--color-gargoyleGas);
-  padding: 10px 0;
-  text-indent: 10px;
-  width: 60%;
-} */
+.contact-social {
+  height: 10%;
+  width: 100vw;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  font-size: 1.6vw;
+}
+
+.contact-social a {
+  background: transparent !important;
+  padding: 0 5px;
+}
+
+.contact-social img {
+  vertical-align: bottom;
+  width: 1.8vw;
+}
 
 nav ul {
   list-style: none;
