@@ -2,7 +2,7 @@
 {{ partial "navigation" . }}
 <div class="single-bg"></div>
 <article class="list">
-{{ range sort .Paginator.Pages }}
+{{ range .Data.Pages.ByDate }}
     <section>
       <h1 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}</h1>
       <p class="subtitle"><date>{{ .Date.Format "02.01.2006" }}</date></p>

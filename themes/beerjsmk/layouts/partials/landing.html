@@ -12,7 +12,7 @@
       <h1>Beer.js Скопје</h1>
       <h2>Собир за ентузијасти за пиво и JavaScript</h2>
       <div class="announcement">
-        {{ range last 1 .Site.Taxonomies.tags.event }}
+        {{ range first 1 .Site.Taxonomies.tags.announcement }}
          <a href="{{ .Page.Permalink }}">[ {{ .Page.Title }} ]</a>
         {{ end }}
       </div>

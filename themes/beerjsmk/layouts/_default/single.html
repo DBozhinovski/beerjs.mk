@@ -2,12 +2,12 @@
 {{ partial "navigation" . }}
 <div class="single-bg"></div>
 <article class="single">
+  <h1 class="title">{{ .Title }}</h1>
   <div>
     {{ if .Params.tags }}
     {{ partial "tags" .Params.tags }}
     {{ end }}
   </div>
-  <h1 class="title">{{ .Title }}</h1>
   <p class="subtitle"><date>{{ .Date.Format "02.01.2006" }}</date></p>
   <section>
     {{ .Content }}
