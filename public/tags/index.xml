@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Announcement</title>
+      <link>http://beerjs.mk/tags/announcement/</link>
+      <pubDate>Fri, 03 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://beerjs.mk/tags/announcement/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Article</title>
       <link>http://beerjs.mk/tags/article/</link>
       <pubDate>Sun, 11 Jun 2017 00:00:00 +0000</pubDate>
@@ -32,7 +41,7 @@
     <item>
       <title>Event</title>
       <link>http://beerjs.mk/tags/event/</link>
-      <pubDate>Fri, 16 Jun 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 03 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://beerjs.mk/tags/event/</guid>
       <description></description>

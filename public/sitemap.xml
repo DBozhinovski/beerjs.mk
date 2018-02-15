@@ -3,23 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://beerjs.mk/posts/vol1/</loc>
+    <loc>http://beerjs.mk/events/vol2/</loc>
+    <lastmod>2017-11-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://beerjs.mk/events/vol3-announcement/</loc>
+    <lastmod>2017-11-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://beerjs.mk/events/vol1/</loc>
     <lastmod>2017-06-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://beerjs.mk/posts/vol2/</loc>
+    <loc>http://beerjs.mk/events/info/</loc>
     <lastmod>2017-06-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://beerjs.mk/posts/info/</loc>
+    <loc>http://beerjs.mk/events/vol2-announcement/</loc>
     <lastmod>2017-06-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://beerjs.mk/tags/about/</loc>
     <lastmod>2017-06-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://beerjs.mk/tags/announcement/</loc>
+    <lastmod>2017-11-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -31,7 +47,7 @@
   
   <url>
     <loc>http://beerjs.mk/</loc>
-    <lastmod>2017-06-16T00:00:00+00:00</lastmod>
+    <lastmod>2017-11-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -42,13 +58,13 @@
   
   <url>
     <loc>http://beerjs.mk/tags/event/</loc>
-    <lastmod>2017-06-16T00:00:00+00:00</lastmod>
+    <lastmod>2017-11-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://beerjs.mk/posts/</loc>
-    <lastmod>2017-06-16T00:00:00+00:00</lastmod>
+    <loc>http://beerjs.mk/events/</loc>
+    <lastmod>2017-11-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
