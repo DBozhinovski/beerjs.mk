@@ -1,0 +1,35 @@
+<div class="overlay"></div>
+<div class="foam"></div>
+<div class="bubble-wrap">
+  <div id="bubbles"></div>
+</div>
+<div class="landing-contents">
+  <div class="landing-center">
+    <div class="logo-container">
+      <div></div>
+    </div>
+    <div class="landing-title">
+      <h1>Beer.js Скопје</h1>
+      <h2>Собир за ентузијасти за пиво и JavaScript</h2>
+      <div class="announcement">
+        {{ range first 1 .Site.Taxonomies.tags.announcement }}
+         <a href="{{ .Page.Permalink }}">[ {{ .Page.Title }} ]</a>
+        {{ end }}
+      </div>
+      <div class="previous">
+        <a href="/events/">[ Претходни изданија ]</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="landing-footer">
+    <a href="/post/info/">За настанот</a> | 
+    <a href="mailto:hello@mail.beerjs.mk">hello@mail.beerjs.mk</a> |
+    <a href="https://github.com/beerjs/skopje"><img src='/images/github-logo.svg' /></a> |
+    <a href="https://twitter.com/BeerjsSk"><img src='/images/twitter-logo.svg' /></a> |
+    <a href="https://www.youtube.com/channel/UCScyJr3W0-BFCrPW1kLcGmQ"><img src='/images/youtube.svg' /></a> |
+    <a href="https://www.facebook.com/beerjsskopje"><img src='/images/facebook-logo.svg' /></a>
+  </div>
+</div>
+<script type="text/javascript" src="/js/particles.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ with .Site.Params.description }}{{ . }}{{ end }}">
+    <meta name="author" content="{{ with .Site.Params.name }}{{ . }}{{ end }}">
+    {{ .Hugo.Generator }}
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <link rel="icon" xmlns="http://www.w3.org/2000/svg" href="/images/js.svg"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600|Vollkorn:400,400i,600,600i,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css"/>
+  </head>
+  <body>

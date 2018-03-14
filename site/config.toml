@@ -1,0 +1,10 @@
+baseURL = "/"
+languageCode = "mk"
+title = "BeerJS MK"
+
+[params]
+  description = "A meetup for beer and javascript enthsiasts"
+  name = "BeerJS"
+[taxonomies]
+  tag = "tags"
+  category = "categories"
