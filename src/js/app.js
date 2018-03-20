@@ -6,4 +6,4 @@ if (window.netlifyIdentity) {
       });
     }
   });
-};
+}
