@@ -1,6 +1,6 @@
 ---
 title: Vol 3 - 25ти Април
-date: 2017-11-03
+date: 2018-03-23
 tags: [announcement]
 ---
 
