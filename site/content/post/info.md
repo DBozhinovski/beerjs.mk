@@ -26,4 +26,3 @@ Beer.js e собир наменет за ентузијасти за пиво и
 
 * [beerjs meta](https://github.com/beerjs/meta) - од каде почнува настанот, како до свој beer.js
 * [beerjs.mk](https://github.com/DBozhinovski/beerjs.mk) - source на страницава (PRs и пријави за багови се добредојдени!)
-* [Локaција на coffice](https://www.google.mk/maps/place/Coffice+-+coworking+space/@41.993962,21.4244203,17z/data=!3m1!4b1!4m5!3m4!1s0x1354144ac5d393eb:0x49de46da27753e35!8m2!3d41.993958!4d21.426609?hl=en)
