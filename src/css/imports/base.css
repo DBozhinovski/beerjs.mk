@@ -272,6 +272,23 @@ nav li:last-child {
   /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
 /* } */
 
+.friends {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.friends a {
+  text-decoration: none;
+  border-bottom: none;
+  background: transparent;
+}
+
+.friends img {
+  height: 9em;
+  padding: .5em;
+}
+
 @media (min-width:641px) and (max-width:1281px) { 
   /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
   .landing-title h1 {

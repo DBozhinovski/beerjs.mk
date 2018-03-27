@@ -10,10 +10,17 @@ Beer.js e собир наменет за ентузијасти за пиво и
 
 Предлози околу настанот, генерални дискусии, интерес за спонзорства, донации во пиво - на горенаведениот мејл или со креирање на нов issue на [github](https://github.com/beerjs/skopje).
 
-Моментално, настанот е поддржан од [Coffice](http://coffice.com.mk/) и [Abix](http://abix.mk/#/). Огромна благодарност, затоа што целото ова ќе одеше многу потешко без нив! :)
-Отворени сме за нови поддржувачи во секое време, особено ако се заинтересирани за донации во форма на пиво! :)
-
 И покрај неофицијалниот карактер на настанот, beer.js има едно официјално правило: придржување до [Citizen Code of Conduct](http://citizencodeofconduct.org/). Поплаки во врска со истото на [hello@mail.beerjs.mk](mailto:hello@mail.beerjs.mk).
+
+## Пријатели на настанот
+
+<div class='friends'>
+  <a href="http://coffice.com.mk/"><img src="/images/coffice.svg" /></a>
+  <a href="http://abix.mk/#/"><img src="/images/abix.svg" /></a>
+  <a href="https://melontech.com/"><img src="/images/melon.svg" /></a>
+</div>
+
+Отворени сме за нови поддржувачи во секое време, особено ако се заинтересирани за донации во форма на пиво! :)
 
 ### Extra credit:
 
