@@ -30,3 +30,7 @@ tags: [event]
 </div>
 
 #### [🔗 Slides.com](http://slides.com/darkobozhinovski/deck)
+
+### Feedback
+
+За сите што сакаат да се пожалат од настанот или да го пофалат: https://docs.google.com/forms/d/e/1FAIpQLSdzKzdWHJ1SLZ9MkssPrNCd-NhaYlI53L8se_rsblqco1dBvQ/viewform?usp=sf_link (нема да ви одземе повеќе од 2 минути и многу го цениме фидбекот!)
