@@ -4,7 +4,7 @@ date: 2018-11-06
 tags: [announcement]
 ---
 
-_Beer.js, vol 4, fancier topics + better location!_ На 8ми Април, во „Јавна Соба“, со почеток од 18 часот.
+_Beer.js, vol 4, fancier topics + better location!_ На 8ми Ноември, во „Јавна Соба“, со почеток од 18 часот.
 
 <img src="/images/vol4-cover.png" />
 
