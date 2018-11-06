@@ -3,7 +3,7 @@ languageCode = "mk"
 title = "BeerJS MK"
 
 [params]
-  description = "A meetup for beer and javascript enthsiasts"
+  description = "A meetup for beer and javascript enthusiasts"
   name = "BeerJS"
 [taxonomies]
   tag = "tags"
