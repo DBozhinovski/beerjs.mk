@@ -16,7 +16,6 @@ tags: [event]
 
 #### Слајдови:
 
-
 <div class="iframe-wrapper">
   <iframe src="//slides.com/tshoposki/introduction-to-elm/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
@@ -33,10 +32,8 @@ tags: [event]
 
 
 <div class="iframe-wrapper">
-  <embed src="https://drive.google.com/viewerng/viewer?embedded=true&url=/misc/Machine%20Learning%20in%20JS%20-%20SG1118.pdf" width="500" height="375">
+  <embed src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://beerjs.mk/misc/Machine%20Learning%20in%20JS%20-%20SG1118.pdf" width="500" height="375">
 </div>
-
-#### [🔗 Slides.com](http://slides.com/darkobozhinovski/deck)
 
 ### Feedback
 
