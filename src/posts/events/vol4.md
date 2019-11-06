@@ -11,7 +11,7 @@ category: "events"
 
 #### Видео:
 
-<div class="iframe-wrapper"><iframe src="https://www.youtube.com/embed/7jbAzQc6O7Q" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+<div class="iframe-wrapper"><iframe src="https://www.youtube.com/embed/7jbAzQc6O7Q" width="640" height="360" frameborder="0" allowfullscreen></iframe></div>
 
 #### [🔗 YouTube](https://www.youtube.com/embed/7jbAzQc6O7Q)
 
@@ -25,7 +25,7 @@ category: "events"
 
 #### Видео:
 
-<div class="iframe-wrapper"><iframe src="https://www.youtube.com/embed/uC0O-60nGYU" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+<div class="iframe-wrapper"><iframe src="https://www.youtube.com/embed/uC0O-60nGYU" width="640" height="360" frameborder="0" allowfullscreen></iframe></div>
 
 #### [🔗 YouTube](https://www.youtube.com/embed/uC0O-60nGYU)
 
@@ -33,7 +33,7 @@ category: "events"
 
 
 <div class="iframe-wrapper">
-  <embed src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://beerjs.mk/misc/Machine%20Learning%20in%20JS%20-%20SG1118.pdf" width="500" height="375">
+  <iframe src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://beerjs.mk/misc/Machine%20Learning%20in%20JS%20-%20SG1118.pdf" width="500" height="375" frameborder="0" allowfullscreen>
 </div>
 
 ### Feedback

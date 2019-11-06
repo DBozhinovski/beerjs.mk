@@ -24,6 +24,10 @@ const Content = styled.article`
   @media ${media.phone} {
     padding: 2rem 1.5rem;
   }
+
+  .gatsby-resp-iframe-wrapper {
+    margin-bottom: 2rem;
+  }
 `;
 
 const Title = styled.h1`
