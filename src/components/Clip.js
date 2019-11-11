@@ -1,9 +1,14 @@
 import React from 'react';
 
+// Black magic, obviously
+const { height } = window.screen;
+const factorY = 0.000002778;
+const Y = height * factorY;
+
 const Clip = () => (
   <>
     <svg styles={{ height: 0, width: 0 }}>
-      <clipPath id="clip" clipPathUnits="objectBoundingBox" transform="scale(0.00055 0.003)">
+      <clipPath id="clip" clipPathUnits="objectBoundingBox" transform={`scale(${0.00055} ${Y})`}>
         <path
           fill="#FFFFFF"
           stroke="#000000"
