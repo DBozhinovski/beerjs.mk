@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Clip = () => (
-  <React.Fragment>
-    <svg height="0" width="0">
-      <clipPath id="clip">
+  <>
+    <svg styles={{ height: 0, width: 0 }}>
+      <clipPath id="clip" clipPathUnits="objectBoundingBox" transform="scale(0.00055 0.003)">
         <path
           fill="#FFFFFF"
           stroke="#000000"
@@ -96,7 +96,7 @@ const Clip = () => (
         />
       </clipPath>
     </svg>
-  </React.Fragment>
+  </>
 );
 
 export default Clip;
