@@ -1,7 +1,12 @@
 import React from 'react';
 
 // Black magic, obviously
-const { height } = window.screen;
+let height = 1000;
+
+if (typeof window !== 'undefined') {
+  height = window.screen.height;
+}
+// const { height } = window ? window.screen : 1000;
 const factorY = 0.000002778;
 const Y = height * factorY;
 
