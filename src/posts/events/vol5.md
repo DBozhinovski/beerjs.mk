@@ -19,10 +19,9 @@ category: "events"
 #### [🔗 YouTube](https://www.youtube.com/embed/8B3bAdVyvCg)
 
 #### Слајдови:
-SOON.
-<!-- <div class="iframe-wrapper">
-  <iframe src="//slides.com/tshoposki/introduction-to-elm/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-</div> -->
+<div class="iframe-wrapper">
+  <iframe src="//slides.com/acika00mk/tiny-touch-preact/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
 
 ### 2. Real time web - __Александар Костадиновски__
 
@@ -33,11 +32,9 @@ SOON.
 #### [🔗 YouTube](https://www.youtube.com/embed/RBtaZJi5OkU)
 
 #### Слајдови:
-SOON.
-
-<!-- <div class="iframe-wrapper">
-  <iframe src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://beerjs.mk/misc/Machine%20Learning%20in%20JS%20-%20SG1118.pdf" width="500" height="375" frameborder="0" allowfullscreen>
-</div> -->
+<div class="iframe-wrapper">
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ4QJq6MSJwKv011BP1R987W1cUjbBThyKwGvoywPaxMfErmbmBL6i_6Z0MGj6I5rRwbSVBenqRf-cb/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
 
 ### Feedback
 
