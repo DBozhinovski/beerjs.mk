@@ -29,7 +29,7 @@ Beer.js Скопје го имаше можеби и најдосадниот т
 
 Како за крај:
 
-1. Отворени сме за предлози за презентации - слободно пишете ни на <a href="mailto:hello@mail.beerjs.mk">hello@mail.beerjs.mk</a>
+1. Отворени сме за предлози за презентации - слободно пишете ни на <a href="mailto:hello@beerjs.mk">hello@beerjs.mk</a>
 2. На блогов му требаат написи - слободно пуштете PR на https://github.com/DBozhinovski/blog.beerjs.
 
 
