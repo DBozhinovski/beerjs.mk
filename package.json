@@ -32,7 +32,7 @@
     "mdx-utils": "0.2.0",
     "polished": "^3.4.1",
     "prism-react-renderer": "^0.2.0",
-    "prismjs": "^1.17.1",
+    "prismjs": "^1.27.0",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
