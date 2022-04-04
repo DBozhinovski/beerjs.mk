@@ -18,9 +18,10 @@ Beer.js e собир наменет за ентузијасти за пиво и
 <div class="friends">
   <div class="current">
     <a href="https://melontech.com/"><img src="/img/melon.svg" /></a>
-    <a href="https://foundry.mk/"><img src="/img/foundry_full.svg" /></a>
+    <a href="https://slicelife.com/"><img src="/img/slice.svg" /></a>
   </div>
   <div class="past">
+    <a href="https://foundry.mk/"><img src="/img/foundry_full.svg" /></a>
     <a href="http://coffice.com.mk/"><img src="/img/coffice.svg" /></a>
     <a href="http://abix.mk/#/"><img src="/img/abix.svg" /></a>
   </div>
