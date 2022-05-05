@@ -43,3 +43,5 @@ category: "events"
 ### Feedback
 
 За сите што сакаат да се пожалат од настанот или да го пофалат: https://forms.gle/BE4pA3Kw38Vd8VG16 (нема да ви одземе повеќе од 2 минути и многу го цениме фидбекот!)
+
+#### [Слики од настанот](https://photos.app.goo.gl/7RVC49GrMyHpLWf2A)
