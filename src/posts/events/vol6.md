@@ -24,6 +24,10 @@ category: "events"
 
 #### [🔗 YouTube](https://www.youtube.com/watch?v=iiGPAjJlbRs)
 
+#### Слајдови
+
+#### [🔗 PDF](/dapps.pdf)
+
 ### 2. Intro to building UI Machines with Zag.js - __Лазар Николов__
 
 #### Видео:
