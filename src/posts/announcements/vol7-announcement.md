@@ -16,6 +16,6 @@ _Beer.js, vol 7!_ 6ти Октомври, во [„Јавна Соба“](https
 * 18:30 - "React Native - New Architecture"- [Блаже Петров](https://www.linkedin.com/in/blaze-petrov-93007174/)
 * 19:20 - "The favorite beers of the people at Beer.js" - [Андреј Ацевски](https://twitter.com/aacevski) 
 * 20:10 - "Don't reinvent the wheel - use semantic elements" - [Kristian Djaković](https://twitter.com/kdjakovic240)
-* 21:00 - Додека не не избркаат - дружење и пиво
+* 20:50 - Додека не не избркаат - дружење и пиво
 
 Ова издание на BeerJS е спонзорирано од [Melon](https://melontech.com). Огромна блaгодарност од целиот тим на BeerJS Скопје 🍻.
