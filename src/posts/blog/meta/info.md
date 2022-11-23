@@ -7,7 +7,7 @@ category: "meta"
 
 Beer.js e собир наменет за ентузијасти за пиво и JavaScript. Сите се добредојдени! Пиење пиво, и покрај тоа што е во насловот, не е задолжително за учество :)
 
-Настанот нема официјален формат. Скопската варијанта на beer.js се обидува (за сега) да има два презентери, со теми што се барем некако поврзани со JavaScript, во траење од 30-40 минути. Остатокот од настанот е дружење и дискусии околу JavaScript. Пријавувањето за презентирање на настанот е едноставно - слободно исконтактирајте не на [hello@beerjs.mk](mailto:hello@beerjs.mk) или на некоја од [социјалните](https://twitter.com/BeerjsSk) [мрежи](https://www.facebook.com/beerjsskopje).
+Настанот нема официјален формат. Скопската варијанта на beer.js се обидува (за сега) да има три презентери, со теми што се барем некако поврзани со JavaScript, во траење од 25-30 минути. Остатокот од настанот е дружење и дискусии околу JavaScript. Пријавувањето за презентирање на настанот е едноставно - слободно исконтактирајте не на [hello@beerjs.mk](mailto:hello@beerjs.mk) или на некоја од [социјалните](https://twitter.com/BeerjsSk) [мрежи](https://www.facebook.com/beerjsskopje).
 
 Предлози околу настанот, генерални дискусии, интерес за спонзорства, донации во пиво - на горенаведениот мејл или со креирање на нов issue на [github](https://github.com/beerjs/skopje).
 
@@ -16,6 +16,10 @@ Beer.js e собир наменет за ентузијасти за пиво и
 ## Пријатели на настанот
 
 <div class="friends">
+  <div class="current">
+    <a href="https://loka.com/"><img src="/img/Loka logo black (4).svg" /></a>
+    <a href="https://women-in-tech.org/mk/"><img src="/img/logo-womenintech-global.png" /></a>
+  </div>
   <div class="current">
     <a href="https://melontech.com/"><img src="/img/melon.svg" /></a>
     <a href="https://slicelife.com/"><img src="/img/slice.svg" /></a>
