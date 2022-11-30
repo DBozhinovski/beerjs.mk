@@ -16,6 +16,9 @@ Beer.js e собир наменет за ентузијасти за пиво и
 ## Пријатели на настанот
 
 <div class="friends">
+<div class="current">
+    <a href="https://www.wearedevelopers.com"><img src="/img/WeAreDevelopers_Black.svg" /></a>
+  </div>
   <div class="current">
     <a href="https://loka.com/"><img src="/img/Loka logo black (4).svg" /></a>
     <a href="https://women-in-tech.org/mk/"><img src="/img/logo-womenintech-global.png" /></a>
