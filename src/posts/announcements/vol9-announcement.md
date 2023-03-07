@@ -1,7 +1,7 @@
 ---
 path: "/announcements/vol-8"
-title: Vol 8 - 1ви декември
-date: "2022-11-23"
+title: Vol 9 - 30ти март
+date: "2023-03-07"
 category: "announcements"
 ---
 
