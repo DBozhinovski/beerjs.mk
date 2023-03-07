@@ -1,5 +1,5 @@
 ---
-path: "/announcements/vol-8"
+path: "/announcements/vol-9"
 title: Vol 9 - 30ти март
 date: "2023-03-07"
 category: "announcements"
