@@ -1,0 +1,29 @@
+---
+import { getEntryBySlug } from 'astro:content';
+import { Carousel } from '../components/Carousel';
+import { ContentSwitch } from '../components/ContentSwitch';
+import Layout from '../layouts/Layout.astro';
+
+const contactMk = await getEntryBySlug('mk', 'blog/meta/contact');
+const contactEn = await getEntryBySlug('en', 'blog/meta/contact');
+
+const { Content: ContactMk } = await contactMk.render();
+const { Content: ContactEn } = await contactEn.render();
+---
+
+<Layout title="Contact">
+  <div class="flex items-center justify-center w-full pt-10 px-4 mb-10 mt-20">
+    <div class="max-w-prose w-full bg-primary-50 mb-20 prose-a:text-secondary-400">
+      <ContentSwitch client:only="solid">
+        <article class="prose lg:prose-xl font-transitional" lang="en" slot="contentsEn">
+          <h1>✉️ {contactEn.data.title}</h1>
+          <ContactEn />
+        </article>
+        <article class="prose lg:prose-xl font-transitional" lang="mk" slot="contentsMk">
+          <h1>✉️ {contactMk.data.title}</h1>
+          <ContactMk />
+        </article>
+      </ContentSwitch>
+    </div>
+  </div>
+</Layout>

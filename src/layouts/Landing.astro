@@ -1,0 +1,66 @@
+---
+import { Footer } from '../components/Footer';
+import { Header } from '../components/Header';
+import { LogoGlobal } from '../components/LogoGlobal';
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header client:only="solid" />
+    <main class="flex flex-col max-w-screen overflow-x-hidden">
+      <slot />
+      <div
+        class="flex flex-col w-full overflow-x-hidden h-screen min-h-screen absolute top-[0] max-w-screen z-40 overflow-y-hidden pb-10"
+      >
+        <LogoGlobal
+          class="h-[986px] w-[730px] absolute right-0 md:right-[-140px] md:-rotate-[7deg] top-[-110px] opacity-10 md:opacity-30 xl:opacity-70 og-logo shrink-0 object-cover z-40"
+        />
+        <div
+          id="particles"
+          class="h-[986px] w-[730px] absolute right-0 md:right-[-140px] md:-rotate-[7deg] top-[-110px] opacity-10 md:opacity-30 xl:opacity-70 og-logo shrink-0 object-cover z-40"
+        >
+        </div>
+      </div>
+    </main>
+    <Footer client:only="solid" />
+    <style>
+      html {
+        background: linear-gradient(to bottom, #262022f5, #262022), url(/community_bg.jpg) center -250px no-repeat,
+          #262022;
+        background-size: cover;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+    <style>
+      #particles {
+        mask: url('/beerjs.mask.svg');
+      }
+      /* #particles canvas {
+    @apply h-[1000px] w-[747px] absolute right-0 md:right-[-150px] top-[-120px] opacity-10 md:opacity-30 xl:opacity-70 og-logo shrink-0 object-cover z-20;
+  } */
+    </style>
+
+    <script>
+      import { load } from '../components/Particles';
+
+      document.addEventListener('DOMContentLoaded', async () => {
+        await load();
+      });
+    </script>
+  </body>
+</html>
