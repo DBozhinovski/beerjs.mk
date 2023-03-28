@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { format } from 'date-fns';
 import { groupBy } from 'lodash';
 import { ContentSwitch } from '../components/ContentSwitch';
 import Layout from '../layouts/Layout.astro';
@@ -59,14 +60,16 @@ if (mkEntry) {
 // const { Content } = await entry.render();
 ---
 
-<Layout title="Blog">
+<Layout title="Blog" image={mkEntry.data.image}>
   <div class="pt-10 mb-20">
     <ContentSwitch client:only="solid">
-      <div slot="contentsMk" lang="mk" class="flex w-full items-center justify-center">
+      <div slot="contentsMk" lang="mk" class="flex w-full items-center justify-center prose-a:text-secondary-500">
         {
           mkEntry ? (
             <article class="prose lg:prose-xl font-transitional">
+              <meta name="post-meta-mk" data-title={mkEntry?.data.title} data-description={mkEntry?.data.description} />
               <h1>{mkEntry?.data.title}</h1>
+              <date>🗓️ {format(mkEntry?.data.date, 'yyyy-MM-dd')}</date>
               <MkContents />
             </article>
           ) : (
@@ -74,11 +77,13 @@ if (mkEntry) {
           )
         }
       </div>
-      <div slot="contentsEn" lang="en" class="flex w-full items-center justify-center">
+      <div slot="contentsEn" lang="en" class="flex w-full items-center justify-center prose-a:text-secondary-500">
         {
           enEntry ? (
             <article class="prose lg:prose-xl font-transitional">
+              <meta name="post-meta-en" data-title={enEntry?.data.title} data-description={enEntry?.data.description} />
               <h1>{enEntry?.data.title}</h1>
+              <date>🗓️ {format(enEntry?.data.date, 'yyyy-MM-dd')}</date>
               <EnContents />
             </article>
           ) : (
@@ -89,3 +94,21 @@ if (mkEntry) {
     </ContentSwitch>
   </div>
 </Layout>
+
+<script>
+  import { languageState } from '../data/store';
+
+  languageState.listen((val) => {
+    if (val === 'mk') {
+    }
+
+    if (val === 'en') {
+    }
+  });
+</script>
+
+<style>
+  date {
+    @apply text-base-400 mb-6;
+  }
+</style>

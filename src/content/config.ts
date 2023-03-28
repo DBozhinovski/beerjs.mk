@@ -11,7 +11,6 @@ const en = defineCollection({
         name: z.string(),
         link: z.string(),
         email: z.string(),
-        about: z.string(),
       })
       .optional(),
     image: z.string().optional(),
@@ -29,7 +28,6 @@ const mk = defineCollection({
         name: z.string(),
         link: z.string(),
         email: z.string(),
-        about: z.string(),
       })
       .optional(),
     image: z.string().optional(),
