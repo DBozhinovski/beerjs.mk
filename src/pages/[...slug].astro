@@ -1,0 +1,91 @@
+---
+import { getCollection } from 'astro:content';
+import { groupBy } from 'lodash';
+import { ContentSwitch } from '../components/ContentSwitch';
+import Layout from '../layouts/Layout.astro';
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const blogEntriesEn = await getCollection('en');
+  const blogEntriesMk = await getCollection('mk');
+
+  const allEntries = [...blogEntriesMk, ...blogEntriesEn];
+
+  const grouped = groupBy(allEntries, 'slug');
+
+  return Object.keys(grouped).map((key) => {
+    console.log(key);
+    console.log(grouped[key]);
+
+    return {
+      params: { slug: key },
+      props: { entries: grouped[key] },
+    };
+  });
+  // return {
+  //   {params: grouped}
+  // };
+  // const entries = blogEntriesMk.map((entry) => ({
+  //   params: { slug: entry.slug },
+  //   props: { entry },
+  // }));
+
+  // console.log(entries);
+
+  // return entries;
+}
+// 2. When it's time to render, you can get the entry directly from the prop
+// const { entry } = Astro.props;
+// console.log(entry);
+// const { Content } = await entry.render();
+
+const { entries } = Astro.props;
+console.log(entries);
+const enEntry = entries.find((p: any) => p.collection === 'en');
+const mkEntry = entries.find((p: any) => p.collection === 'mk');
+
+let MkContents,
+  EnContents = null;
+
+if (enEntry) {
+  const rendered = await enEntry.render();
+  EnContents = rendered.Content;
+}
+
+if (mkEntry) {
+  const rendered = await mkEntry.render();
+  MkContents = rendered.Content;
+}
+
+// const { Content } = await entry.render();
+---
+
+<Layout title="Blog">
+  <div class="pt-10 mb-20">
+    <ContentSwitch client:only="solid">
+      <div slot="contentsMk" lang="mk" class="flex w-full items-center justify-center">
+        {
+          mkEntry ? (
+            <article class="prose lg:prose-xl font-transitional">
+              <h1>{mkEntry?.data.title}</h1>
+              <MkContents />
+            </article>
+          ) : (
+            <h1>Овој напис сеуште не е достапен на македонски!</h1>
+          )
+        }
+      </div>
+      <div slot="contentsEn" lang="en" class="flex w-full items-center justify-center">
+        {
+          enEntry ? (
+            <article class="prose lg:prose-xl font-transitional">
+              <h1>{enEntry?.data.title}</h1>
+              <EnContents />
+            </article>
+          ) : (
+            <h1>This article hasn't been translated yet!</h1>
+          )
+        }
+      </div>
+    </ContentSwitch>
+  </div>
+</Layout>
