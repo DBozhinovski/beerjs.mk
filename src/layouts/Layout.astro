@@ -1,5 +1,6 @@
 ---
 import { Footer } from '../components/Footer';
+import Head from '../components/Head.astro';
 import { Header } from '../components/Header';
 export interface Props {
   title: string;
@@ -7,20 +8,13 @@ export interface Props {
   image?: string;
 }
 
-const { title } = Astro.props;
+const { title, description, image } = Astro.props;
 // const currentPath = Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <script defer data-domain="beerjs.mk" data-api="/api/event" src="/js/script.js"></script>
-    <title>{title}</title>
-  </head>
+  <Head title={title} description={description || 'BeerJS Skopje'} image={image} />
   <body>
     <Header client:only="solid" />
     <main class="flex flex-col max-w-screen min-h-screen overflow-x-hidden bg-primary-50">

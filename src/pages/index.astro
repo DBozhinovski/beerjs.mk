@@ -1,11 +1,12 @@
 ---
 import Landing from '../layouts/Landing.astro';
-import Icon from 'astro-icon';
+// import Icon from 'astro-icon';
 import { getEntryBySlug, getCollection } from 'astro:content';
 import { ContentSwitch } from '../components/ContentSwitch';
 import { BigCard } from '../components/BigCard';
 import { late } from 'astro/zod';
 import { Box } from '../components/Box';
+import { Icon } from '@iconify-icon/solid';
 
 const heroContentsMk = await getEntryBySlug('mk', 'meta/hero-about');
 const heroContentsEn = await getEntryBySlug('en', 'meta/hero-about');
@@ -67,25 +68,25 @@ const { Content: ShortAboutEn } = await shortAboutEn.render();
       id="social"
     >
       <a href="https://discord.gg/sxNCQmA7aP">
-        <Icon name="ion:logo-discord" width="40px" />
+        <Icon icon="ion:logo-discord" width="40px" client:only="solid" />
       </a>
       <a href="https://www.youtube.com/channel/UCScyJr3W0-BFCrPW1kLcGmQ">
-        <Icon name="ion:logo-youtube" width="40px" />
+        <Icon icon="ion:logo-youtube" width="40px" client:only="solid" />
       </a>
       <a href="https://twitter.com/BeerjsSk">
-        <Icon name="ion:logo-twitter" width="40px" />
+        <Icon icon="ion:logo-twitter" width="40px" client:only="solid" />
       </a>
       <a href="https://www.facebook.com/beerjsskopje/">
-        <Icon name="ion:logo-facebook" width="40px" />
+        <Icon icon="ion:logo-facebook" width="40px" client:only="solid" />
       </a>
       <a href="https://www.instagram.com/beer.js.skopje/">
-        <Icon name="ion:logo-instagram" width="40px" />
+        <Icon icon="ion:logo-instagram" width="40px" client:only="solid" />
       </a>
       <a href="https://www.linkedin.com/company/beerjs-%D1%81%D0%BA%D0%BE%D0%BF%D1%98%D0%B5/">
-        <Icon name="ion:logo-linkedin" width="40px" />
+        <Icon icon="ion:logo-linkedin" width="40px" client:only="solid" />
       </a>
       <a href="mailto:hello@beerjs.mk">
-        <Icon name="ion:mail-outline" width="40px" />
+        <Icon icon="ion:mail-outline" width="40px" client:only="solid" />
       </a>
     </div>
   </div>
@@ -248,7 +249,9 @@ const { Content: ShortAboutEn } = await shortAboutEn.render();
 
 <style>
   #social a {
-    @apply p-3 bg-base-600 hover:bg-primary-100 rounded-full mr-4 mb-4 md:mb-0 last:mr-0 text-primary-100 hover:text-base-600 transition-colors;
+    @apply p-3 bg-base-600 hover:bg-primary-100 rounded-full mr-4 mb-4 md:mb-0 last:mr-0 text-primary-100 hover:text-base-600 transition-colors flex items-center justify-center;
+    width: 60px;
+    height: 60px;
   }
 
   .supporters {

@@ -16,14 +16,6 @@ const { title, description, image } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
   <Head title={title} description={description || 'BeerJS Skopje'} image={image} />
-  <!-- <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <script defer data-domain="beerjs.mk" data-api="/api/event" src="/js/script.js"></script>
-    <title>{title}</title>
-  </head> -->
   <body>
     <Header client:only="solid" />
     <main class="flex flex-col max-w-screen overflow-x-hidden">

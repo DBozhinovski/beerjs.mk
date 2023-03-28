@@ -16,8 +16,6 @@ interface Carousel {
 }
 
 export const Carousel = (props: Carousel) => {
-  console.log(props);
-
   return (
     <div>
       <sl-carousel
