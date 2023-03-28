@@ -1,0 +1,7 @@
+.carousel sl-carousel-item a {
+  @apply flex items-center justify-center w-full h-full;
+}
+
+.carousel sl-carousel-item img {
+  @apply w-[80%] max-h-[90px];
+}

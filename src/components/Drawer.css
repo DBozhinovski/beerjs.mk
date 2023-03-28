@@ -1,0 +1,7 @@
+#drawer::part(overlay) {
+  background: #262022ee;
+}
+
+#drawer::part(panel) {
+  @apply bg-primary-100 p-4 font-slab-serif elevation-10;
+}

@@ -1,0 +1,87 @@
+---
+import { getCollection } from 'astro:content';
+import { format } from 'date-fns';
+import groupBy from 'lodash/groupBy';
+import { ContentSwitch } from '../components/ContentSwitch';
+import Layout from '../layouts/Layout.astro';
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const blogEntriesEn = await getCollection('en', ({ data }) => {
+  return data.category === 'announcements' || data.category === 'events' || data.category === 'blog';
+});
+  const blogEntriesMk = await getCollection('mk', ({ data }) => {
+  return data.category === 'announcements' || data.category === 'events' || data.category === 'blog';
+});
+
+  const allEntries = [...blogEntriesMk, ...blogEntriesEn];
+
+  const grouped = groupBy(allEntries, 'slug');
+
+  return Object.keys(grouped).map((key) => {
+    return {
+      params: { slug: key },
+      props: { entries: grouped[key] },
+    };
+  });
+}
+
+const { entries } = Astro.props;
+const enEntry = entries.find((p: any) => p.collection === 'en');
+const mkEntry = entries.find((p: any) => p.collection === 'mk');
+
+const title = enEntry?.data?.title || mkEntry?.data?.title;
+const description = enEntry?.data?.description || mkEntry?.data?.description;
+const image = enEntry?.data?.image || mkEntry?.data?.image;
+
+let MkContents,
+  EnContents = null;
+
+if (enEntry) {
+  const rendered = await enEntry.render();
+  EnContents = rendered.Content;
+}
+
+if (mkEntry) {
+  const rendered = await mkEntry.render();
+  MkContents = rendered.Content;
+}
+---
+
+<Layout title={title} image={image} description={description}>
+  <div class="pt-10 mb-20 px-4">
+    <ContentSwitch client:only="solid">
+      <div slot="contentsMk" lang="mk" class="flex w-full items-center justify-center prose-a:text-secondary-500">
+        {
+          mkEntry ? (
+            <article class="prose lg:prose-xl font-transitional">
+              <h1>{mkEntry?.data.title}</h1>
+              <date>🗓️ {format(mkEntry?.data.date, 'yyyy-MM-dd')}</date>
+              <MkContents />
+            </article>
+          ) : (
+            <h1>Овој напис сеуште не е достапен на македонски!</h1>
+          )
+        }
+      </div>
+      <div slot="contentsEn" lang="en" class="flex w-full items-center justify-center prose-a:text-secondary-500">
+        {
+          enEntry ? (
+            <article class="prose lg:prose-xl font-transitional">
+              <h1>{enEntry?.data.title}</h1>
+              <date>🗓️ {format(enEntry?.data.date, 'yyyy-MM-dd')}</date>
+              <EnContents />
+            </article>
+          ) : (
+            <h1>This article hasn't been translated yet!</h1>
+          )
+        }
+      </div>
+    </ContentSwitch>
+  </div>
+</Layout>
+
+<style>
+  date {
+    @apply text-base-400 mb-6;
+  }
+</style>

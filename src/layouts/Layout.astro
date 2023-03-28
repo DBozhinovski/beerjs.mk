@@ -1,0 +1,32 @@
+---
+import { Footer } from '../components/Footer';
+import Head from '../components/Head.astro';
+import { Header } from '../components/Header';
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const { title, description, image } = Astro.props;
+// const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <Head title={title} description={description || 'BeerJS Skopje'} image={image} />
+  <body>
+    <Header client:only="solid" />
+    <main class="flex flex-col max-w-screen min-h-screen overflow-x-hidden bg-primary-50">
+      <slot />
+    </main>
+    <Footer client:only="solid" />
+    <style>
+      html {
+        background: #262022;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+  </body>
+</html>
