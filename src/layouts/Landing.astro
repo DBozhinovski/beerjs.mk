@@ -36,9 +36,10 @@ const { title, description, image } = Astro.props;
     <Footer client:only="solid" />
     <style>
       html {
-        background: linear-gradient(to bottom, #262022f5, #262022), url(/community_bg.jpg) center -250px no-repeat,
+        /* background: linear-gradient(to bottom, #262022f5, #262022), url(/community_bg.jpg) center -250px no-repeat,
           #262022;
-        background-size: cover;
+        background-size: cover; */
+        background: #262022;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
@@ -52,7 +53,7 @@ const { title, description, image } = Astro.props;
   } */
     </style>
 
-    <script>
+    <script defer>
       import { load } from '../components/Particles';
 
       document.addEventListener('DOMContentLoaded', async () => {

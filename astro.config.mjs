@@ -21,6 +21,8 @@ import mdx from '@astrojs/mdx';
 // https://astro.build/config
 import solidJs from '@astrojs/solid-js';
 
+import critters from 'astro-critters';
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -34,7 +36,10 @@ export default defineConfig({
     image(),
     mdx(),
     solidJs(),
-    compress(),
+    compress({
+      svg: false,
+    }),
+    critters(),
   ],
   site: 'https://beerjs.mk',
 });
