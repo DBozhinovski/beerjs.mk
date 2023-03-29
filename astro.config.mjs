@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
-import partytown from '@astrojs/partytown';
+// import partytown from '@astrojs/partytown';
 
 // https://astro.build/config
 import compress from 'astro-compress';
@@ -25,11 +25,11 @@ import solidJs from '@astrojs/solid-js';
 export default defineConfig({
   integrations: [
     tailwind(),
-    partytown({
-      config: {
-        debug: true,
-      },
-    }),
+    // partytown({
+    //   config: {
+    //     debug: true,
+    //   },
+    // }),
     sitemap(),
     image(),
     mdx(),

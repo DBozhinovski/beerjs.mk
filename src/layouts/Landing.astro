@@ -59,5 +59,12 @@ const { title, description, image } = Astro.props;
         await load();
       });
     </script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.ready.then((registration) => {
+          registration.unregister();
+        });
+      }
+    </script>
   </body>
 </html>
