@@ -94,7 +94,7 @@ const { Content: ShortAboutEn } = await shortAboutEn.render();
     <div
       class="absolute top-[-390px] sm:top-[-480px] lg:top-[-450px] xl:top-[-410px] px-4 md:px-16 w-full max-w-[1360px] transform-gpu lg:-rotate-[2deg] lg:scale-105 rotate-0 flex items-center justify-center"
     >
-      <ContentSwitch client:only="solid" client:idle>
+      <ContentSwitch client:only="solid">
         <div slot="contentsMk" lang="mk">
           <BigCard
             client:only="solid"
@@ -172,7 +172,7 @@ const { Content: ShortAboutEn } = await shortAboutEn.render();
       </ContentSwitch>
     </div>
     <div class="h-xl w-full flex items-center justify-center opacity-25 -rotate-[24deg] color-thingie">
-      <Icon name="icon-park-outline:beer" class="text-base-900" width="310px" />
+      <Icon icon="icon-park-outline:beer" class="text-base-900" width="310px" client:only="solid" />
     </div>
     <div class="mt-20 mb-20 flex w-full max-w-[1160px] flex-col xl:flex-row">
       <ContentSwitch client:only="solid">
