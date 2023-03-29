@@ -105,10 +105,9 @@ export const Header = () => {
                 {(item, i) => (
                   <a
                     href={item.href}
-                    class="hover:bg-[#262022] hover:text-primary-500 transition-colors py-4 px-4 flex items-center mr-4 mb-2 text-3xl last:mr-0"
+                    class="hover:bg-[#262022] hover:text-primary-500 h-[44px] transition-colors px-4 flex items-center mr-4 mb-2 text-3xl last:mr-0"
                   >
-                    <Icon icon={item.icon} class="mr-1" />{' '}
-                    <p class="h-full flex items-center justify-center">{locales[lang()][item.id]}</p>
+                    <Icon icon={item.icon} class="mr-1" /> <p>{locales[lang()][item.id]}</p>
                   </a>
                 )}
               </For>
@@ -120,10 +119,9 @@ export const Header = () => {
             {(item, i) => (
               <a
                 href={item.href}
-                class="hover:bg-primary-50 hover:text-secondary-900 transition-colors py-2 px-2 flex items-center justify-center mr-4 text-xl last:mr-0"
+                class="hover:bg-primary-50 hover:text-secondary-900 h-[44px] transition-colors px-2 flex items-center justify-center mr-4 text-xl last:mr-0"
               >
-                <Icon icon={item.icon} class="mr-1" />{' '}
-                <p class="h-full flex items-center justify-center">{locales[lang()][item.id]}</p>
+                <Icon icon={item.icon} class="mr-1" /> <p class="">{locales[lang()][item.id]}</p>
               </a>
             )}
           </For>
