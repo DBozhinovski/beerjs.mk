@@ -9,10 +9,12 @@ import Promo from '../layouts/Promo.astro';
       <img src="/social/beerjs.svg" />
       <img src="/img/codechem.svg" />
     </div>
-    <div class="flex speakers justify-around bg-transparent mt-12">
-      <img src="/img/vol9-Mario.png" />
-      <img src="/img/vol9-Nikica.png" />
-      <img src="/img/vol9-Dejan.png" />
+    <div class="flex speakers items-center justify-center bg-transparent mt-12">
+      <div class="speakers-wrap flex justify-around">
+        <img src="/img/vol9-Mario.png" />
+        <img src="/img/vol9-Nikica.png" />
+        <img src="/img/vol9-Dejan.png" />
+      </div>
     </div>
     <div class="logo">
       <div class="logo-bg mt-10">
@@ -54,9 +56,14 @@ import Promo from '../layouts/Promo.astro';
     height: 160px;
   }
 
+  .speakers-wrap {
+    width: 100%;
+    max-width: 1200px;
+  }
+
   .speakers img {
-    @apply shadow-xl;
-    width: 20%;
+    @apply shadow-xl h-full;
+    max-height: 480px;
   }
 
   .logo > img {
