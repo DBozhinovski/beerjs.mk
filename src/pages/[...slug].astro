@@ -7,11 +7,11 @@ import Layout from '../layouts/Layout.astro';
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
   const blogEntriesEn = await getCollection('en', ({ data }) => {
-  return data.category === 'announcements' || data.category === 'events' || data.category === 'blog';
-});
+    return data.category === 'announcements' || data.category === 'events' || data.category === 'blog';
+  });
   const blogEntriesMk = await getCollection('mk', ({ data }) => {
-  return data.category === 'announcements' || data.category === 'events' || data.category === 'blog';
-});
+    return data.category === 'announcements' || data.category === 'events' || data.category === 'blog';
+  });
 
   const allEntries = [...blogEntriesMk, ...blogEntriesEn];
 
@@ -48,12 +48,12 @@ if (mkEntry) {
 ---
 
 <Layout title={title} image={image} description={description}>
-  <div class="pt-10 mb-20 px-4">
+  <div class="pt-10 mb-20 px-4 article-wrap">
     <ContentSwitch client:only="solid">
       <div slot="contentsMk" lang="mk" class="flex w-full items-center justify-center prose-a:text-secondary-500">
         {
           mkEntry ? (
-            <article class="prose lg:prose-xl font-transitional">
+            <article class="prose lg:prose-xl font-transitional max-w-prose">
               <h1>{mkEntry?.data.title}</h1>
               <date>🗓️ {format(mkEntry?.data.date, 'yyyy-MM-dd')}</date>
               <MkContents />
@@ -66,7 +66,7 @@ if (mkEntry) {
       <div slot="contentsEn" lang="en" class="flex w-full items-center justify-center prose-a:text-secondary-500">
         {
           enEntry ? (
-            <article class="prose lg:prose-xl font-transitional">
+            <article class="prose lg:prose-xl font-transitional max-w-prose">
               <h1>{enEntry?.data.title}</h1>
               <date>🗓️ {format(enEntry?.data.date, 'yyyy-MM-dd')}</date>
               <EnContents />
@@ -83,5 +83,13 @@ if (mkEntry) {
 <style>
   date {
     @apply text-base-400 mb-6;
+  }
+
+  .article-wrap .iframe-wrapper {
+    @apply overflow-hidden bg-black;
+  }
+
+  .article-wrap iframe {
+    @apply w-full aspect-video;
   }
 </style>

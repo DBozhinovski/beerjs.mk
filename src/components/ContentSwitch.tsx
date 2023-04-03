@@ -2,6 +2,8 @@ import { useStore } from '@nanostores/solid';
 import { Show } from 'solid-js';
 import { languageState } from '../data/store';
 
+import './ContentSwitch.css';
+
 export const ContentSwitch = (props: any) => {
   const lang = useStore(languageState);
 

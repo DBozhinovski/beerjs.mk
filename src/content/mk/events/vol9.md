@@ -22,7 +22,7 @@ description: За BeerJS vol. 9 и одличен почеток на сезон
 
 #### Видео:
 
-<div class="iframe-wrapper"><iframe src="https://www.youtube.com/embed/cSBojg9bpcU" width="640" height="360" frameborder="0" allowfullscreen></iframe></div>
+<div class="iframe-wrapper"><iframe src="https://www.youtube.com/embed/cSBojg9bpcU" frameborder="0" allowfullscreen></iframe></div>
 
 [🔗 YouTube](https://www.youtube.com/watch?v=cSBojg9bpcU)
 
@@ -30,7 +30,7 @@ description: За BeerJS vol. 9 и одличен почеток на сезон
 
 #### Видео:
 
-<div class="iframe-wrapper"><iframe src="https://www.youtube.com/embed/z5EeukVX4Es" width="640" height="360" frameborder="0" allowfullscreen></iframe></div>
+<div class="iframe-wrapper"><iframe src="https://www.youtube.com/embed/z5EeukVX4Es" frameborder="0" allowfullscreen></iframe></div>
 
 [🔗 YouTube](https://www.youtube.com/watch?v=z5EeukVX4Es)
 
@@ -42,7 +42,7 @@ description: За BeerJS vol. 9 и одличен почеток на сезон
 
 #### Видео:
 
-<div class="iframe-wrapper"><iframe src="https://www.youtube.com/embed/UdJk2Z12t_A" width="640" height="360" frameborder="0" allowfullscreen></iframe></div>
+<div class="iframe-wrapper"><iframe src="https://www.youtube.com/embed/UdJk2Z12t_A" frameborder="0" allowfullscreen></iframe></div>
 
 [🔗 YouTube](https://www.youtube.com/watch?v=UdJk2Z12t_A)
 
