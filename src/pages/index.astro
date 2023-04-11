@@ -120,7 +120,7 @@ const { Content: ShortAboutEn } = await shortAboutEn.render();
   </div>
   <div class="h-full bg-base-50 flex flex-col items-center pt-[120px] md:pt-[180px] lg:pt-[60px]">
     <article
-      class="max-w-prose prose-lg lg:prose-2xl font-transitional px-16 lg:px-0 prose-a:text-secondary-600 prose-a:underline border-t-8 border-b-8 border-dotted border-base-100"
+      class="max-w-prose prose-lg lg:prose-2xl font-transitional px-16 lg:px-0 prose-a:text-secondary-600 prose-a:underline border-t-8 border-b-8 border-dotted border-base-100 relative z-[1000]"
     >
       <ContentSwitch client:only="solid">
         <ShortAboutEn slot="contentsEn" lang="en" />
