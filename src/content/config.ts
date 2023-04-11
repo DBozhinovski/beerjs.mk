@@ -5,7 +5,7 @@ const en = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.date().optional(),
-    category: z.enum(['events', 'announcements', 'blog', 'meta']).optional(),
+    category: z.enum(['events', 'announcements', 'blog', 'meta', 'press-kit']).optional(),
     author: z
       .object({
         name: z.string(),
@@ -22,7 +22,7 @@ const mk = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.date().optional(),
-    category: z.enum(['events', 'announcements', 'blog', 'meta']).optional(),
+    category: z.enum(['events', 'announcements', 'blog', 'meta', 'press-kit']).optional(),
     author: z
       .object({
         name: z.string(),
