@@ -3,3 +3,4 @@
 
 declare module 'astro-spa';
 declare module 'regionist';
+declare module 'ua-parser-js';

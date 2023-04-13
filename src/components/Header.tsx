@@ -6,6 +6,7 @@ import '@shoelace-style/shoelace/dist/components/drawer/drawer';
 import { languageState } from '../data/store';
 import { locales } from '../data/translations';
 import { LanguageSwitch } from './LanguageSwitch';
+import { isOSX } from '../util/isOSX';
 
 import './Drawer.css';
 
@@ -74,6 +75,10 @@ export const Header = () => {
     // give the observer some dom nodes to keep an eye on
     if (sentinelEl) {
       observer.observe(sentinelEl);
+    }
+
+    if (isOSX()) {
+      document.body.classList.add('osx');
     }
   });
 
