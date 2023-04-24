@@ -1,0 +1,47 @@
+---
+import { getEntryBySlug } from 'astro:content';
+import { Carousel } from '../components/Carousel';
+import { ContentSwitch } from '../components/ContentSwitch';
+import Layout from '../layouts/Layout.astro';
+
+const donateMk = await getEntryBySlug('mk', 'meta/donate');
+const donateEn = await getEntryBySlug('en', 'meta/donate');
+
+const { Content: DonateMk } = await donateMk.render();
+const { Content: DonateEn } = await donateEn.render();
+---
+
+<Layout title="Donate">
+  <div class="flex items-center justify-center w-full pt-10 px-4 mb-10">
+    <div class="max-w-prose w-full bg-primary-50 mb-20">
+      <ContentSwitch client:only="solid">
+        <article class="prose lg:prose-xl font-transitional" lang="en" slot="contentsEn">
+          <h1>{donateEn.data.title}</h1>
+          <img src="/img/sponsor_community.JPG" />
+          <DonateEn />
+          <hr />
+        </article>
+        <article class="prose lg:prose-xl font-transitional" lang="mk" slot="contentsMk">
+          <h1>{donateMk.data.title}</h1>
+          <img src="/img/sponsor_community.JPG" />
+          <DonateMk />
+          <hr />
+        </article>
+      </ContentSwitch>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .supporters {
+    @apply flex flex-wrap items-center justify-center sm:justify-between mb-28;
+  }
+
+  .supporters a {
+    @apply flex items-center justify-center mb-10 sm:mb-0;
+  }
+
+  .supporters a img {
+    @apply w-[280px];
+  }
+</style>
