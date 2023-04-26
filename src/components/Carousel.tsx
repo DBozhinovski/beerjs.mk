@@ -18,20 +18,12 @@ interface Carousel {
 export const Carousel = (props: Carousel) => {
   return (
     <div>
-      <sl-carousel
-        navigation={props.navigation}
-        pagination={props.pagination}
-        slides-per-page={props.slidesPerPage}
-        slides-per-move={props.slidesPerMove}
-        loop={props.loop}
-        autoplay={props.autoplay}
-        class="carousel"
-      >
-        <For each={props.slides}>
-          {(slide) => {
-            return <sl-carousel-item innerHTML={slide}></sl-carousel-item>;
-          }}
-        </For>
+      <sl-carousel pagination navigation mouse-dragging loop class="carousel">
+        {props.slides.map((slide) => (
+          <sl-carousel-item>
+            <div innerHTML={slide}></div>
+          </sl-carousel-item>
+        ))}
       </sl-carousel>
     </div>
   );

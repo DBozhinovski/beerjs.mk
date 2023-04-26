@@ -41,6 +41,7 @@ const { Content: AboutEn } = await aboutEn.render();
       <div class="supporters">
         <a href="https://www.wearedevelopers.com"><img src="/img/WeAreDevelopers_Black.svg" /></a>
         <a href="https://women-in-tech.org/mk/"><img src="/img/logo-womenintech-global.png" /></a>
+        <a href="https://jsnation.com"><img src="/img/JSNation_logo_blck.png" /></a>
       </div>
 
       <ContentSwitch client:only="solid">
@@ -52,16 +53,39 @@ const { Content: AboutEn } = await aboutEn.render();
         </div>
       </ContentSwitch>
 
+      <div class="sponsors">
+        <a href="https://www.deptagency.com">
+          <img src="/img/DEPT.png" />
+        </a>,
+        <a href="https://codechem.com">
+          <img src="/img/codechem.svg" />
+        </a>,
+        <a href="https://loka.com/">
+          <img src="/img/Loka logo black (4).svg" />
+        </a>,
+        <a href="https://melontech.com/">
+          <img src="/img/melon.svg" />
+        </a>,
+        <a href="https://slicelife.com/">
+          <img src="/img/slice.svg" />
+        </a>,
+        <a href="http://coffice.com.mk/">
+          <img src="/img/coffice.svg" />
+        </a>,
+        <a href="http://abix.mk/#/">
+          <img src="/img/abix.svg" />
+        </a>
+      </div>
       <!-- <div class="supporters"> -->
-      <Carousel
+      <!-- <Carousel
         client:only="solid"
         navigation
-        pagination
-        slidesPerPage={3}
-        slidesPerMove={3}
         loop
         autoplay
         slides={[
+          `<a href="https://www.deptagency.com">
+            <img src="/img/DEPT.png" />
+          </a>`,
           `<a href="https://codechem.com">
             <img src="/img/codechem.svg" />
           </a>`,
@@ -74,9 +98,6 @@ const { Content: AboutEn } = await aboutEn.render();
           `<a href="https://slicelife.com/">
             <img src="/img/slice.svg" />
           </a>`,
-          `<a href="https://foundry.mk/">
-            <img src="/img/foundry_full.svg" />
-          </a>`,
           `<a href="http://coffice.com.mk/">
             <img src="/img/coffice.svg" />
           </a>`,
@@ -84,7 +105,7 @@ const { Content: AboutEn } = await aboutEn.render();
             <img src="/img/abix.svg" />
           </a>`,
         ]}
-      />
+      /> -->
       <!-- </div> -->
     </div>
   </div>
@@ -96,10 +117,22 @@ const { Content: AboutEn } = await aboutEn.render();
   }
 
   .supporters a {
-    @apply flex items-center justify-center mb-10 sm:mb-0;
+    @apply flex items-center justify-center mb-10;
   }
 
   .supporters a img {
     @apply w-[280px];
+  }
+
+  .sponsors {
+    @apply flex flex-wrap items-center justify-center sm:justify-between mb-28;
+  }
+
+  .sponsors a {
+    @apply flex items-center justify-center mb-10;
+  }
+
+  .sponsors a img {
+    @apply w-[200px];
   }
 </style>
