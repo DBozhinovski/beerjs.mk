@@ -1,0 +1,46 @@
+---
+import { itemFromSingleOrMultiple } from 'tsparticles-engine';
+import Layout from '../layouts/Layout.astro';
+
+const res = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${
+  import.meta.env.CHANNEL_ID
+}&maxResults=300&key=${
+  import.meta.env.YOUTUBE_API_KEY
+}&contentDetails&fields=items(id,etag,snippet(publishedAt,title,description))&order=date
+`);
+
+const data = await res.json();
+---
+
+<Layout title="videos">
+  <div class="flex items-center justify-center">
+    <div class="prose lg:prose-xl mb-20" id="wrap">
+      {
+        data.items.map((item) => {
+          return (
+            <div>
+              <h3>{item.snippet.title}</h3>
+              <div class="iframe-wrapper">
+                <iframe src={`https://www.youtube.com/embed/${item.id.videoId}`} frameborder="0" allowfullscreen />
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</Layout>
+
+<style>
+  date {
+    @apply text-base-400 mb-6;
+  }
+
+  #wrap .iframe-wrapper {
+    @apply overflow-hidden bg-black mx-4;
+  }
+
+  #wrap iframe {
+    @apply w-full aspect-video;
+  }
+</style>
