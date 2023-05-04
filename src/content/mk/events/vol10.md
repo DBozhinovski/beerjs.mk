@@ -27,6 +27,10 @@ description: За BeerJS vol. 10 и уште подобар настан во с
 
 [🔗 YouTube](https://www.youtube.com/watch?v=sGd1xylebm8)
 
+#### Слајдови:
+
+[🔗 Google Slides](https://docs.google.com/presentation/d/1apd1sVI-LCa_lbinij9QKq-BepYsrMhfT9h6m0GyzoE/edit?usp=sharing)
+
 ### 2. "Functional Programming for Mere Mortals" - **Векослав Стефановски**
 
 #### Видео:

@@ -27,6 +27,10 @@ This time we enjoyed three interesting presentations:
 
 [🔗 YouTube](https://www.youtube.com/watch?v=sGd1xylebm8)
 
+#### Slides:
+
+[🔗 Google Slides](https://docs.google.com/presentation/d/1apd1sVI-LCa_lbinij9QKq-BepYsrMhfT9h6m0GyzoE/edit?usp=sharing)
+
 ### 2. "Functional Programming for Mere Mortals" - **Wekoslav Stefanovski**
 
 #### Video:
