@@ -11,8 +11,8 @@ image: '/img/future.png'
 draft: true
 ---
 
-As I mentioned in a previous [blog post](/vol10-survey), it's time to talk about the size of BeerJS Skopje and what it
-means for the future.
+As I mentioned in a previous [blog post](/blog/vol10-survey/), it's time to talk about the size of BeerJS Skopje and
+what it means for the future.
 
 BeerJS Skopje has grown into one of the largest on the planet. We regularly have an audience of 200 and more. A number
 that some conferences cannot boast of. We have reached a point where we must "seriously" discuss the matter.
@@ -39,8 +39,8 @@ committed to not doing this primarily for profit. In fact, this is one of the re
 ensure that it will remain so legally.
 
 As much as we want, we can't pay bills with enthusiasm. In the next period, we will actively work on developing the
-[donation profile](<(https://ecrowd.mk/organization/4046d293-ce95-433a-9f24-b382c3207c09)>) (which has existed for
-several months), with the aim of securing funds for the smooth operation and development of the event. The truth is that
+[donation profile](https://ecrowd.mk/organization/4046d293-ce95-433a-9f24-b382c3207c09) (which has existed for several
+months), with the aim of securing funds for the smooth operation and development of the event. The truth is that
 activity in this area needs and must improve. Although we are grateful to each individual sponsor, event sponsorship
 funding is definitely not a stable source that enables overall sustainability. That's a long topic in itself, which I
 promise I will cover on another occasion.
