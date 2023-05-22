@@ -29,4 +29,6 @@ _Beer.js, vol 11 - Birthday Edition!_ 27ми мај, во [„House of Legends�
 - 21:50 - Затворање на официјалниот дел, уште изненадувања 😉, пиво и дружење 🍻
 
 Ова издание на BeerJS е спонзорирано од [Sourcico](https://sourcico.com), [Software Sauna](https://softwaresauna.com) и
-[Prospective](https://www.prospective.ch). Огромна блaгодарност од целиот тим на BeerJS Скопје 🍻.
+[Prospective](https://www.prospective.ch). Нашето роденденско издание е поддржано и од
+[House of Legends](https://www.facebook.com/HOL.Club.Skopje/) и [PivoLabs](https://www.instagram.com/pivolabsmk/).
+Огромна блaгодарност од целиот тим на BeerJS Скопје 🍻.

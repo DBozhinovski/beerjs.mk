@@ -29,4 +29,6 @@ Gathering at 5:30 PM. Start at ~6:00 PM.
 - 21:50 - Closing remarks, more surprises 😉, beer and hangout 🍻
 
 This edition of BeerJS is sponsored by [Sourcico](https://sourcico.com), [Software Sauna](https://softwaresauna.com) and
-[Prospective](https://www.prospective.ch). A huge thank you from the entire BeerJS Skopje team 🍻.
+[Prospective](https://www.prospective.ch). Our birthday edition is also supported by
+[House of Legends](https://www.facebook.com/HOL.Club.Skopje/) and [PivoLabs](https://www.instagram.com/pivolabsmk/) A
+huge thank you from the entire BeerJS Skopje team 🍻.
