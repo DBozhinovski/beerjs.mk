@@ -8,7 +8,6 @@ author:
 date: 2023-05-18
 category: 'blog'
 image: '/img/future.png'
-draft: true
 ---
 
 Како што споменав во минатиот [блог напис](/blog/vol10-survey/), време е да поразговараме за големината на BeerJS Скопје

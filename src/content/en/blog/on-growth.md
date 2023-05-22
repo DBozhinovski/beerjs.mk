@@ -8,7 +8,6 @@ author:
 date: 2023-05-18
 category: 'blog'
 image: '/img/future.png'
-draft: true
 ---
 
 As I mentioned in a previous [blog post](/blog/vol10-survey/), it's time to talk about the size of BeerJS Skopje and
