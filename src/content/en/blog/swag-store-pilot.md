@@ -30,7 +30,8 @@ All funds go for the development and operation of BeerJS!! The pilot for the swa
   to get.
 - Fill out the form at:
   https://docs.google.com/forms/d/e/1FAIpQLSelptlUZCIY4kznL8pZyuTJ3Gp950zOnUJ0LZiorZp9TJ7IOQ/viewform?usp=sf_link
-- Pick up your order at [vol. 11](/announcements/vol11-announcement/) or from DeveD HQ.
+- Pick up your order at [vol. 11](/announcements/vol11-announcement/) or from
+  [DeveD HQ](https://www.google.com/maps/place/Kosta+Shahov+7,+Skopje+1000/@41.995904,21.4202821,17z/data=!3m1!4b1!4m5!3m4!1s0x1354144bc98cbe3f:0x6d9be1ff81f45ab5!8m2!3d41.9959!4d21.4228624).
 
 Thank you for your support 🫶 🍻
 
