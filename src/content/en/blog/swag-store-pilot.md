@@ -21,8 +21,7 @@ image: '/img/sbs.png'
 - Birthday Beer Mug - Pay what you want (minimum 800 MKD)
 
 All funds go for the development and operation of BeerJS!! The pilot for the swag store will last until 23.05
-(Wednesday) at midnight. Quantities are limited, so hurry up! For each order above the number we have in stock, please
-allow us a few days to deliver your order.
+(Wednesday) at midnight. Quantities are limited, so hurry up!
 
 ## Order Instructions
 
@@ -31,8 +30,7 @@ allow us a few days to deliver your order.
   to get.
 - Fill out the form at:
   https://docs.google.com/forms/d/e/1FAIpQLSelptlUZCIY4kznL8pZyuTJ3Gp950zOnUJ0LZiorZp9TJ7IOQ/viewform?usp=sf_link
-- Pick up your order at [vol. 11](/announcements/vol11-announcement/) or wait for us to deliver it. Delivery may incur
-  additional costs.
+- Pick up your order at [vol. 11](/announcements/vol11-announcement/) or from DeveD HQ.
 
 Thank you for your support 🫶 🍻
 
