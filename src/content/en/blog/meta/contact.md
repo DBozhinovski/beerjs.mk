@@ -10,5 +10,5 @@ You can find/contact/follow us at:
 - Facebook ➜ https://www.facebook.com/beerjsskopje/
 - YouTube ➜ https://www.youtube.com/channel/UCScyJr3W0-BFCrPW1kLcGmQ
 - Instagram ➜ https://www.instagram.com/beer.js.skopje/
-- Discord ➜ https://discord.gg/KFwsH7jc
+- Discord ➜ https://discord.gg/sxNCQmA7aP
 - E-mail ➜ <a href="mailto:hello@beerjs.mk">hello@beerjs.mk</a>
