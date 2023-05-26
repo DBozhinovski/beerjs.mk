@@ -15,7 +15,6 @@ image: '/img/sbs.png'
 <figure>
   <img src="/img/sbs.png" /> 
   <figcaption class="text-center">сликите се за илустративни цели</figcaption>
-
 </figure>
 
 - Роденденски Везени Маички од S до XL - Pay what you want (минимум 1000 ден.)
@@ -26,11 +25,11 @@ image: '/img/sbs.png'
 
 ## Инструкции за нарачка
 
-- Донирајте на https://ecrowd.mk/organization/4046d293-ce95-433a-9f24-b382c3207c09 (профилот на
+- Донирајте на (ecrowd)[https://ecrowd.mk/organization/4046d293-ce95-433a-9f24-b382c3207c09] (профилот на
   [DeveD](https://deved.mk), организацијата зад BeerJS Скопје) во вредност на минимумот или повеќе од тоа што сакате да
   го добиете.
-- Пополнете ја формата на:
-  https://docs.google.com/forms/d/e/1FAIpQLSelptlUZCIY4kznL8pZyuTJ3Gp950zOnUJ0LZiorZp9TJ7IOQ/viewform?usp=sf_link
+- Пополнете ја
+  [формата](https://docs.google.com/forms/d/e/1FAIpQLSelptlUZCIY4kznL8pZyuTJ3Gp950zOnUJ0LZiorZp9TJ7IOQ/viewform?usp=sf_link)
 - Подигнете си ја нарачката на [vol. 11](/announcements/vol11-announcement/) или од
   [DeveD HQ](https://www.google.com/maps/place/Kosta+Shahov+7,+Skopje+1000/@41.995904,21.4202821,17z/data=!3m1!4b1!4m5!3m4!1s0x1354144bc98cbe3f:0x6d9be1ff81f45ab5!8m2!3d41.9959!4d21.4228624).
 
