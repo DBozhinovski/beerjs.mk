@@ -1,0 +1,89 @@
+---
+import Promo from '../layouts/Promo.astro';
+---
+
+<Promo title="BeerJS vol 11" description="Vol 11 Live">
+  <div id="particles"></div>
+  <div class="w-screen h-screen foam overflow-hidden flex flex-col relative z-20">
+    <div class="logo-top">
+      <img src="/img/beerjs-label.png" class="max-w-[380px]" />
+    </div>
+    <div class="logo-top">
+      <img src="/img/sourcico.svg" />
+      <img src="/img/sauna.svg" class="mr-12" />
+      <img src="/img/prospective.png" />
+    </div>
+    <div class="flex speakers items-center justify-center bg-transparent mt-12">
+      <div class="speakers-wrap flex justify-around">
+        <img src="/img/vol-11-IG-Teo.png" />
+        <img src="/img/vol-11-IG-Marko.png" />
+        <img src="/img/vol-11-IG-Stojan.png" />
+        <img src="/img/vol-11-IG-Mitko.png" />
+        <img src="/img/vol-11-IG-Nebojsha.png" />
+      </div>
+    </div>
+    <div class="logo">
+      <div class="logo-bg mt-10">
+        <img src="/img/pivolabs.png" class="mr-10" />
+        <img src="/img/HoL.jpg" />
+      </div>
+    </div>
+  </div>
+</Promo>
+
+<style>
+  .foam {
+    background: url(/img/foam.png) top left repeat-x;
+  }
+
+  #particles {
+    @apply absolute top-0 left-0 w-screen h-screen z-10;
+  }
+
+  .logo {
+    @apply w-full flex items-center justify-center py-4;
+  }
+
+  .logo-top {
+    @apply w-full flex items-center justify-center py-4 w-full;
+  }
+
+  .logo-top img {
+    @apply first:mr-10;
+    max-height: 140px;
+    max-width: 320px;
+    object-fit: cover;
+  }
+
+  .logo-bg img {
+    width: 90px;
+  }
+
+  .logo-bg {
+    @apply flex items-center justify-around;
+    width: 160px;
+    height: 160px;
+  }
+
+  .speakers-wrap {
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .speakers img {
+    @apply shadow-xl h-full;
+    max-height: 380px;
+  }
+
+  .logo > img {
+    width: 140px;
+  }
+</style>
+
+<script>
+  import { load } from '../components/Particles';
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    await load();
+  });
+</script>
