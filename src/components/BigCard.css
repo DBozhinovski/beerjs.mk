@@ -1,5 +1,5 @@
 .big-card::part(base) {
-  @apply bg-primary-200 elevation-20 rounded-xl overflow-hidden flex flex-col lg:flex-row;
+  @apply bg-primary-200 elevation-20 rounded-xl overflow-hidden flex flex-col lg:flex-row max-h-[500px] md:max-h-[600px] lg:max-h-[420px];
 }
 
 .big-card::part(image) {
