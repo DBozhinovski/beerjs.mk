@@ -245,9 +245,10 @@ const { Content: ShortAboutEn } = await shortAboutEn.render();
       </ContentSwitch>
       <div class="supporters">
         <a href="https://www.wearedevelopers.com"><img src="/img/WeAreDevelopers_Black.svg" /></a>
-        <a href="https://women-in-tech.org/mk/"><img src="/img/wit_macedonia.png" /></a>
+        <a href="https://women-in-tech.org/mk/"><img src="/img/wit_macedonia.png" class="w-[280px] h-[280px]" /></a>
         <a href="https://jsnation.com"><img src="/img/JSNation_logo_blck.png" /></a>
         <a href="https://digital-labin.com"><img src="/img/digital_labin.svg" /></a>
+        <a href="https://cityjsconf.org"><img src="/img/city-js.svg" /></a>
       </div>
     </div>
   </div>
@@ -261,7 +262,7 @@ const { Content: ShortAboutEn } = await shortAboutEn.render();
   }
 
   .supporters {
-    @apply flex flex-wrap items-center justify-center md:justify-between mb-28 mt-10;
+    @apply flex flex-wrap items-center justify-center md:justify-between mb-28 mt-10 max-w-[1160px];
   }
 
   .supporters a {
