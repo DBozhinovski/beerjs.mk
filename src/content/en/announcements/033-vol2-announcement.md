@@ -11,4 +11,10 @@ to hold an open event at Base42, the new space for the IT community in Skopje.
 
 <img src="/img/BeerJS 0.33 - vol. 2 Announcement.png" />
 
-We don't have a strict agenda, but there will be presentations 😉 Details coming soon!
+## Presentations
+
+1. "File System Access API + Streams" - Marko Spasenoski and Gjorgi Dimeski
+2. "Return of the Web: Use the Platform, Developer" - Darko Bozhinovski
+3. "Modern Web Debugging" - Andrej Acevski
+
+Expect an informal event, there will be some beer, and no strict agenda. See you on Thursday 🍻!
