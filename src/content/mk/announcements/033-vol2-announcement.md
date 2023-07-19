@@ -13,7 +13,7 @@ _Beer.js 0.33, vol 2!_ 20ти јули, во [„Base42“](https://42.mk). По
 
 ## Презентации
 
-1. „File System Access API + Streams“- Марко Спасеноски и Ѓорги Димески
+1. „File System Access API + Streams“- Марко Спасеновски и Ѓорѓи Димески
 2. „Return of the Web: Use the Platform, Developer“ - Дарко Божиновски
 3. „Modern Web Debugging“ - Андреј Ацевски
 

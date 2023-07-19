@@ -13,7 +13,7 @@ to hold an open event at Base42, the new space for the IT community in Skopje.
 
 ## Presentations
 
-1. "File System Access API + Streams" - Marko Spasenoski and Gjorgi Dimeski
+1. "File System Access API + Streams" - Marko Spasenovski and Gjorgji Dimeski
 2. "Return of the Web: Use the Platform, Developer" - Darko Bozhinovski
 3. "Modern Web Debugging" - Andrej Acevski
 
