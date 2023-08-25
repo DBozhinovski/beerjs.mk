@@ -58,7 +58,7 @@ export const Footer = () => {
     <footer class="bg-[#262022] p-4 flex flex-col items-center w-full" id="footer">
       <div class="flex items-center w-full">
         <div class="flex shrink-0">
-          <img src={LogoSkopje} class="w-[120px] mt-4" />
+          <img src="/img/beerjs.skopje-simple.svg" class="w-[120px] mt-4" />
         </div>
         <nav class="flex px-4 rounded-lg font-slab-serif text-primary-500 flex-grow">
           <div class="flex items-center justify-center flex-wrap w-full">
@@ -72,7 +72,7 @@ export const Footer = () => {
           </div>
         </nav>
         <div class="flex shrink-0 items-end justify-end">
-          <img src={LogoGlobal} class="w-[80px]" />
+          <img src="/img/beerjs.svg" class="w-[80px]" />
         </div>
       </div>
       <div class="flex items-center justify-center w-full border-t border-base-700 pt-10">
