@@ -17,3 +17,9 @@ that right. BeerJS in Ohrid.
 2. "A peek under the WASM hood" - Andrej Trajchevski
 
 Expect an informal event, with some beer on us, and no strict agenda. See you in Ohrid 🍻!
+
+## NSND
+
+Additionally, the folks at [HackLab Kika](https://kika.spodeli.org) are running a NSND event on the 27th, at the same
+place at 12:00. Details
+[here](https://kika.spodeli.org/2023/08/19/nsnd-2023%D1%82%D0%B0-27%D0%BC%D0%B8-%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82-%D0%BE%D1%85%D1%80%D0%B8%D0%B4/).
