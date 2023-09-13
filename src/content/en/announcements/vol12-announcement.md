@@ -21,5 +21,5 @@ Event kicks off around 18:00.
 - 19:30 - "Angular Signals: The good and the bad" by [Kiril Zafirov](https://www.linkedin.com/in/kiril-z/)
 - Until 21:00 - Networking and more beer 🍻
 
-This edition of BeerJS is sponsored by [Kin+Carta, formerly Melon](https://melontech.com). Huge thanks from the entire
-BeerJS Skopje team 🍻.
+This edition of BeerJS is sponsored by [Kin+Carta](https://www.kinandcarta.com/en/), formerly
+[Melon](https://melontech.com). Huge thanks from the entire BeerJS Skopje team 🍻.
