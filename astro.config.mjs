@@ -13,9 +13,6 @@ import compress from 'astro-compress';
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
-import image from '@astrojs/image';
-
-// https://astro.build/config
 import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
@@ -27,13 +24,7 @@ import critters from 'astro-critters';
 export default defineConfig({
   integrations: [
     tailwind(),
-    // partytown({
-    //   config: {
-    //     debug: true,
-    //   },
-    // }),
     sitemap(),
-    image(),
     mdx(),
     solidJs(),
     compress({
