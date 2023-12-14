@@ -29,8 +29,11 @@ export default defineConfig({
     solidJs(),
     compress({
       svg: false,
+      html: false,
+      css: false,
+      js: false,
     }),
-    critters(),
+    // critters(),
   ],
   site: 'https://beerjs.mk',
 });
