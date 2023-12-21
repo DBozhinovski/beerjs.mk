@@ -33,7 +33,7 @@ export default defineConfig({
       css: false,
       js: false,
     }),
-    // critters(),
+    critters(),
   ],
   site: 'https://beerjs.mk',
 });

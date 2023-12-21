@@ -13,7 +13,7 @@ _Beer.js 0.33, vol 4!_ 21ви декември, во [„Base42“](https://base
 ## Презентации
 
 1. „Start with the technical design document“ - Стојан Димитровски
-2. „Level Up Your Code Quality: Effective Test Automation on Frontend Developmenr“ - Борче Давчев
+2. „Level Up Your Code Quality: Effective Test Automation in Frontend Developmenr“ - Борче Давчев
 3. „HTMX: Html on steroids“ - Александар Костадиновски
 
 Очекувајте неформален настан, со презентации од ~30 минути. Правиме напори да обезбедиме и по некое пиво 🍻
