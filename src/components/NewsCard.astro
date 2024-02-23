@@ -1,0 +1,30 @@
+---
+import CardTag from './CardTag.astro';
+interface Props {
+  title: string;
+  date: string;
+  tags: string[];
+  description: string;
+  link: string;
+}
+
+const { title, date, tags, description, link } = Astro.props;
+---
+
+<a href={link} class="flex p-[24px] flex-col bg-bwhite w-[363px] justify-center border-bbg border rounded-[2px] font-jetbrains transition card-root">
+  <div class="flex gap-[8px]">{tags.map((t, i) => <CardTag variant={((i % 4) + 1) as (1 | 2 | 3 | 4 | undefined)}>{t}</CardTag>)}</div>
+  <h2 class="text-[24px] font-bold mt-2">{title}</h2>
+  <h3 class="text-[14px] uppercase font-light text-bblack mb-[24px]">{date}</h3>
+  <p class="text-[16px] font-normal mb-[24px]">{description}</p>
+  <span class="w-[120px] border-bwhite border-b-2 hover:border-byellow transition">Read more -></span>
+</a>
+
+<style>
+  .card-root:hover {
+    box-shadow: 9px 9px 0px 0px #0F0D0E;
+  }
+
+  .card-root:hover > span {
+    @apply border-byellow;
+  }
+</style>

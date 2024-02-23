@@ -1,36 +1,67 @@
 ---
-export interface Props {
-  title: string;
-  description: string;
+import { SEO } from 'astro-seo';
+import { GoogleFontsOptimizer } from 'astro-google-fonts-optimizer';
+import { ViewTransitions } from 'astro:transitions';
+
+interface Props {
+  title?: string;
+  description?: string;
+  type?: string;
   image?: string;
 }
 
-const { title, description, image = '/social/beerjs.svg' } = Astro.props;
+const { title, description, type, image } = Astro.props;
 ---
 
-<!-- Global Metadata -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<meta name="generator" content={Astro.generator} />
+<head>
+  <title>{title} | BeerJS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <SEO
+    title={title}
+    titleDefault="BeerJS"
+    titleTemplate="%s | BeerJS"
+    description={description}
+    openGraph={{
+      basic: {
+        title: `${title} | BeerJS` || 'The meetup for beer and JavaScript lovers. | BeerJS',
+        type: type || 'website',
+        image: image || 'fallback_image_here',
+      },
+    }}
+    twitter={{
+      creator: '@d_bozhinovski',
+    }}
+    extend={{
+      link: [{ rel: 'icon', href: '/favicon.svg' }],
+      meta: [
+        {
+          name: 'twitter:image',
+          content: image,
+        },
+        {
+          name: 'twitter:title',
+          content: `${title} | BeerJS` || 'The meetup for beer and JavaScript lovers. | BeerJS',
+        },
+        { name: 'twitter:description', content: description },
+      ],
+    }}
+  />
+  <GoogleFontsOptimizer
+    url="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800;900&display=swap"
+  />
+  <GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800;900&display=swap" />
 
-<!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/dark.css" />
+  <link rel="sitemap" href="/sitemap-index.xml" />
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace-autoloader.js"></script>
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+  <script
+      defer
+      data-domain="beerjs.tech"
+      data-api="https://worker-restless-haze-4722.hello-83f.workers.dev/api/event"
+      src="https://worker-restless-haze-4722.hello-83f.workers.dev/js/script.js"></script>
 
-<script defer data-domain="beerjs.mk" data-api="/api/event" src="/js/script.js"></script>
+  <ViewTransitions />
+</head>

@@ -1,0 +1,104 @@
+---
+import BeerJS from '../icons/beerjs.astro';
+import Twitter from '../icons/twitter.astro';
+import Github from '../icons/github.astro';
+import Menu from '../icons/menu.astro';
+
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<nav class="grid grid-cols-12 py-8">
+  <div class="col-span-2 hidden lg:flex">
+  </div>
+  <div
+    class="flex w-full items-center justify-between lg:justify-center gap-4 lg:gap-6 xl:gap-12 text-white font-jetbrains font-normal text-[18px] grow col-span-12 px-8 lg:px-0 lg:col-span-8"
+  >
+    <a href="/about" class="hidden lg:inline">{t('nav.about')}</a>
+    <a href="/events" class="hidden lg:inline">{t('nav.events')}</a>
+    <a href="/talks" class="hidden lg:inline">{t('nav.talks')}</a>
+    <a href="/" id="logo" class="w-[50px] lg:w-[66px] lg:min-w-[66px] hover:brightness-110" aria-label="Home">
+      <BeerJS />
+    </a>
+    <a href="/blog" class="hidden lg:inline">{t('nav.blog')}</a>
+    <a href="/get-involved" class="hidden lg:inline">{t('nav.getinvolved')}</a>
+    <a href="/contact" class="hidden lg:inline">{t('nav.contact')}</a>
+    <button class="w-[50px] text-byellow cursor-pointer inline-block lg:hidden hover:brightness-125" id="menu-button" aria-label="Open menu">
+      <Menu />
+    </button>
+  </div>
+  <div class="gap-4 items-center justify-center col-span-2 hidden lg:flex">
+    <a href="https://github.com/beerjs" class="justify-self-end text-white fill-current" aria-label="GitHub">
+      <Github />
+    </a>
+    <!-- <a href="/" class="text-white fill-current">
+      <Twitter />
+    </a> -->
+  </div>
+</nav>
+
+<div id="mask" class="hidden">
+  <sl-drawer label="Drawer" id="drawer" class="drawer">
+    <div class="flex flex-col gap-6 text-white font-jetbrains font-normal text-[22px] px-10 py-12">
+      <a href="/about">About</a>
+      <a href="/locations">Locations</a>
+      <a href="/news">News</a>
+      <a href="/starter-kit">Start your own</a>
+      <div class="flex gap-2 pt-10">
+        <a href="/" class="block justify-self-end text-white fill-current width-[24px]">
+          <Github />
+        </a>
+        <a href="/" class="block text-white fill-current width-[29px]">
+          <Twitter />
+        </a>
+      </div>
+    </div>
+  </sl-drawer>
+</div>
+
+<script>
+  import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/components/drawer/drawer.js';
+
+  const initDrawer = () => {
+    const drawer = document.querySelector('#drawer') as HTMLElement;
+    const openButton = document.querySelector('#menu-button') as HTMLElement;
+    const closeButton = drawer.querySelector('button') as HTMLElement;
+  
+    document.querySelector('#mask')?.classList.remove('hidden');
+  
+    openButton?.addEventListener('click', () => (drawer as any).show());
+    closeButton?.addEventListener('click', () => (drawer as any).hide());
+  }
+
+  initDrawer();
+
+  document.addEventListener("astro:after-swap", () => initDrawer());
+</script>
+
+
+<style>
+  .drawer::part(base) {
+    z-index: 9;
+  }
+  .drawer::part(panel) {
+    @apply bg-bblack h-screen p-4;
+  }
+
+  .drawer::part(overlay) {
+    background: rgba(0,0,0, .3);
+  }
+
+  .drawer::part(close-button) {
+    @apply text-bwhite text-2xl text-byellow font-black hover:brightness-125;
+  }
+
+  a {
+    @apply hover:brightness-110 hover:text-byellow;
+  }
+
+  #logo:hover {
+    filter: drop-shadow(1px 1px 0px #F1BD4C) drop-shadow(-1px -1px 0px #F1BD4C) drop-shadow(1px -1px 0px #F1BD4C) drop-shadow(-1px 1px 0px #F1BD4C);
+  }
+</style>

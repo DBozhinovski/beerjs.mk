@@ -1,0 +1,28 @@
+---
+import Footer from '../components/Footer.astro';
+import Head from '../components/Head.astro';
+import Cta from '../components/Landing/Cta.astro';
+import Navigation from '../components/Navigation.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+  hideCta?: boolean;
+}
+
+const { title, description, image, type, hideCta } = Astro.props;
+---
+
+<html lang="en">
+  <Head title={title} description={description} image={image} type={type} />
+  <body>
+    <div class="flex flex-col bg-bbg min-h-screen">
+      <Navigation transition:persist />
+      <slot />
+      { !hideCta &&  <Cta />}
+      <Footer transition:persist />
+    </div>
+  </body>
+</html>

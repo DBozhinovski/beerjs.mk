@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
+Allow: /
 
-sitemap: https://minimal-blog.netlify.com/sitemap.xml
+Sitemap: https://www.beerjs.tech/sitemap-index.xml

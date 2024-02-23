@@ -1,0 +1,25 @@
+---
+interface Props {
+  variant?: 1|2|3|4;
+}
+
+const { variant = 1 } = Astro.props;
+
+const baseClass = 'border-bblack border-[1px] py-[3px] px-[7px] uppercase font-semibold';
+---
+
+{
+  variant === 1 && <label class={`${baseClass} bg-bred text-bwhite`}><slot /></label>
+}
+
+{
+  variant === 2 && <label class={`${baseClass} bg-bblue text-bblack`}><slot /></label>
+}
+
+{
+  variant === 3 && <label class={`${baseClass} bg-bpurple text-bwhite`}><slot /></label>
+}
+
+{
+  variant === 4 && <label class={`${baseClass} bg-bblack text-bwhite`}><slot /></label>
+}

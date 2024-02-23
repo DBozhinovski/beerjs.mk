@@ -1,0 +1,51 @@
+---
+import NewsCard from "./NewsCard.astro";
+import { getCollection } from 'astro:content';
+import { format } from 'date-fns';
+
+const posts = await getCollection('posts');
+
+interface Props {
+  limit?: 3;
+  link?: string;
+}
+
+const { limit, link } =  Astro.props;
+
+const newsPosts = posts.filter(post => post.data?.tags?.includes('news')).slice(0, limit);
+---
+
+<div class="w-full flex flex-col overflow-x-hidden font-jetbrains" id="beercard">
+  <section class="content">
+    <div class="w-full flex flex-col items-center justify-center px-4 pb-12 lg:pb-0 bg-bwhite lg:bg-transparent">
+      <h3>News</h3>
+      <p>Stay up-to-date on what's up with Beer.js around the globe!</p>
+    </div>
+    <div class="pt-[120px] gap-[24px] items-center justify-center px-4 flex flex-col md:grid md:grid-cols-2 xl:grid-cols-3">
+      { newsPosts.map((p) => {
+        return <NewsCard title={p.data.title} date={format(p.data.date, 'yyyy-MM-dd')} tags={p.data.tags} link={`/news/${p.slug}`} description={p.data.description} />
+      }) }
+    </div>
+    {link && <a href={link} class="mt-12 border-byellow border-b-2 hover:border-bwhite transition font-jetbrains text-center">All news</a>}
+  </section>
+</div>
+
+<style>
+  #beercard {
+    background: url('/beercard-bg.svg') no-repeat center top;
+    background-size: cover;
+  }
+
+  .content {
+    @apply w-full flex flex-col items-center justify-center py-[60px];
+  }
+
+  .content h3 {
+    @apply font-jetbrains uppercase text-[48px] font-black text-byellow;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,-5px -5px 0px #0F0D0E;
+  }
+
+  .content p {
+    @apply font-jetbrains font-bold text-[22px] text-center;
+  }
+</style>

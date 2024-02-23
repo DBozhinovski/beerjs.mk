@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import { getFileContent, getReposInOrg } from '../data/github';
+import { Search } from '../components/Search';
+import BigText from '../components/BigText.astro';
+
+const blacklist = [
+  'slack-invite-automation',
+  'beerjs.github.io',
+  'beerjs-wesbite',
+  'meta',
+];
+
+const repos = await getReposInOrg('beerjs');
+const geoJSON = JSON.parse(await getFileContent('beerjs', 'meta', 'locations.geojson', 'master'));
+
+const data = repos.filter((repo) => {
+  return !blacklist.includes(repo.name);
+}).map((repo) => ({
+  name: repo.name,
+  description: repo.description,
+  url: repo.html_url,
+  homepage: repo.homepage,
+  geoJSON: geoJSON.features.find((feature: any) => feature.properties.url === repo.html_url),
+}));
+
+---
+
+<Base title="Meetup locations" hideCta>
+  <Search options={data} client:load />
+</Base>

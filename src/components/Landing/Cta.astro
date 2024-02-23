@@ -1,0 +1,28 @@
+---
+import ArrowLinkDiagonal from "../../icons/arrow-link-diagonal.astro";
+import Link from "../Link.astro";
+
+---
+
+<section class="flex flex-col w-full px-4 items-center justify-center py-[96px] font-jetbrains">
+  <h1 class="text-bwhite text-xl font-bold mb-12 font-jetbrains text-center">
+    <span id="beerjs-text" class="font-extrabold tracking-tighter text-[80px] text-byellow uppercase block mb-4">
+      Get Involved
+    </span>{' '}
+    <br /> Let's create a <span class="text-byellow">meaningful</span> community together in the <span class="text-byellow">JavaScript</span> world.
+  </h1>
+  <p class="text-bwhite text-[14px] lg:text-[18px] text-center font-normal mb-[48px]">
+    It's beer and JavaScript, what's not to like?
+  </p>
+  <Link href="/locations">Find a meetup <ArrowLinkDiagonal /></Link>
+</section>
+
+<style>
+  #beerjs-text {
+    text-shadow: -6.601px -6.601px 0px #0f0d0e;
+  }
+
+  section {
+    background: url('/js-bg-bright.svg') repeat center center;
+  }
+</style>

@@ -1,0 +1,37 @@
+---
+import BeerJS from "../icons/beerjs.astro";
+import Github from "../icons/github.astro";
+import Twitter from "../icons/twitter.astro";
+
+---
+
+<footer class="w-full grid grid-cols-2 lg:grid-cols-3 justify-between items-center bg-byellow py-[48px] px-[24px] sm:px-[48px] lg:px-[96px] font-jetbrains">
+  <div class="flex flex-col gap-3 flex-grow">
+    <a href="/about" class="border-byellow border-b-2 hover:border-bwhite transition w-[150px]">What's Beer.JS?</a>
+    <a href="/starter-kit" class="border-byellow border-b-2 hover:border-bwhite transition w-[220px]">Start your own Beer.JS</a>
+    <a href="/locations" class="border-byellow border-b-2 hover:border-bwhite transition w-[200px]">Find a meetup nearby</a>
+  </div>
+  <div class="flex-grow items-center justify-center hidden lg:flex">
+    <a class="w-[50px] block" href="/" id="logo-footer" aria-label="Home">
+      <BeerJS />
+    </a>
+  </div>
+  <div class="flex gap-4 flex-grow justify-end" id="socials">
+    <a href="https://github.com/beerjs" aria-label="GitHub">
+      <Github />
+    </a>
+    <!-- <a href="">
+      <Twitter />
+    </a> -->
+  </div>
+</footer>
+
+<style>
+  #logo-footer:hover {
+    filter: drop-shadow(1px 1px 0px #fff) drop-shadow(-1px -1px 0px #fff) drop-shadow(1px -1px 0px #fff) drop-shadow(-1px 1px 0px #fff);
+  }
+
+  #socials a:hover {
+    @apply fill-current text-white;
+  }
+</style>

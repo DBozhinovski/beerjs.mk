@@ -1,0 +1,36 @@
+---
+import MarkdownPost from '../../components/MarkdownPost.astro';
+import Base from '../../layouts/Base.astro';
+import { getEntry, getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+
+  const newsPosts = posts.filter(post => post.data?.tags?.includes('news'));
+  newsPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+
+  return newsPosts.map((post) => {
+    return {
+      params: { slug: post.slug },
+      props: { post },
+    };
+  });
+}
+
+const { slug } = Astro.params;
+const { post } = Astro.props;
+
+// const newsContents = await getEntry('posts', slug);
+const body = await post.render();
+---
+
+<Base title={post.data.title}>
+  <MarkdownPost 
+    title={post.data.title}
+    body={body}
+    date={post.data.date}
+    cover={post.data.cover}
+    tags={post.data.tags}
+  />
+</Base>

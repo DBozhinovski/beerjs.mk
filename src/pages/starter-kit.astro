@@ -1,0 +1,18 @@
+---
+import MarkdownPost from '../components/MarkdownPost.astro';
+import Base from '../layouts/Base.astro';
+import { getEntry } from 'astro:content';
+
+const starterKitContents = await getEntry('posts', 'starter-kit');
+const body = await starterKitContents?.render();
+---
+
+<Base title="Starter Kit">
+  <MarkdownPost 
+    title={starterKitContents?.data.title}
+    body={body}
+    date={starterKitContents?.data.date}
+    cover={starterKitContents?.data.cover}
+    tags={starterKitContents?.data.tags}
+  />
+</Base>

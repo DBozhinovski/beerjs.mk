@@ -1,0 +1,51 @@
+export const languages = {
+  en: 'English',
+  mk: 'Македонски',
+};
+
+export const defaultLang = 'mk';
+
+export const ui = {
+  mk: {
+    'nav.about': 'За нас',
+    'nav.events': 'Настани',
+    'nav.talks': 'Предавања',
+    'nav.getinvolved': 'Приклучи се',
+    'nav.contact': 'Контакт',
+    'nav.blog': 'Блог',
+    'footer.about': 'За BeerJS',
+    'footer.nav.whatsbeerjs': 'Што е BeerJS?',
+    'footer.nav.codeofconduct': 'Кодекс на однесување',
+    'footer.nav.blog': 'Блог',
+    'footer.nav.team': 'Тим',
+    'footer.foryou': 'За тебе',
+    'footer.nav.getinvolved': 'Приклучи се',
+    'footer.nav.global': 'BeerJS Global',
+    'footer.nav.gallery': 'Галерија',
+    'footer.nav.partners': 'Партнери',
+    'footer.subscribe': 'Известувања',
+    'footer.subscribe.text': 'Најновите вести од BeerJS Скопје на вашиот email!',
+    'footer.subscribe.email': 'Внесете го вашиот email',
+  },
+  en: {
+    'nav.about': 'About',
+    'nav.events': 'Events',
+    'nav.talks': 'Talks',
+    'nav.getinvolved': 'Get Involved',
+    'nav.contact': 'Contact',
+    'nav.blog': 'Blog',
+    'footer.about': 'About BeerJS',
+    'footer.nav.whatsbeerjs': "What's BeerJS?",
+    'footer.nav.codeofconduct': 'Code of Conduct',
+    'footer.nav.blog': 'Blog',
+    'footer.nav.team': 'Team',
+    'footer.foryou': 'For You',
+    'footer.nav.getinvolved': 'Get Involved',
+    'footer.nav.global': 'BeerJS Global',
+    'footer.nav.gallery': 'Gallery',
+    'footer.nav.partners': 'Partners',
+    'footer.subscribe': 'Subscribe',
+    'footer.subscribe.text': 'The latest news from BeerJS Skopje straight to your email!',
+    'footer.subscribe.email': 'Enter your email',
+  },
+};
