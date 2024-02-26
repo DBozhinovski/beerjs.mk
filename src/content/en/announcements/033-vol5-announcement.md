@@ -3,7 +3,7 @@ title: BeerJS 0.33, Vol 5 - February 29th
 date: 2024-02-13
 category: 'announcements'
 image: '/img/BeerJS 0.33 Vol 5.png'
-description: 'Beer.js 0.33, vol 5! February 29th, at "Base42". This time around, we'd like to thank Xessable for the beer and support 🍻.'
+description: "Beer.js 0.33, vol 5! February 29th, at 'Base42'. Xessable, thanks for the beer 🍻."
 ---
 
 Beer.js 0.33, vol 5! February 29th, at ["Base42"](https://base42.mk). Starting around 6:00 PM. This time around, we'd
