@@ -6,7 +6,7 @@ image: '/img/BeerJS 0.33 Vol 7.png'
 description: 'Beer.js 0.33, vol 7! 30ти мај, во „Base42“.'
 ---
 
-Beer.js 0.33, vol 7! 30ти април, во [„Base42“](https://base42.mk). Почеток во ~18:00.
+Beer.js 0.33, vol 7! 30ти мај, во [„Base42“](https://base42.mk). Почеток во ~18:00.
 
 <img src="/img/BeerJS 0.33 Vol 7.png" />
 

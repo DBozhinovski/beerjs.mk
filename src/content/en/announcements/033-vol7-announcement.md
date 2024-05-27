@@ -6,7 +6,7 @@ image: '/img/BeerJS 0.33 Vol 7.png'
 description: 'Beer.js 0.33, vol 7! May 30th, at "Base42".'
 ---
 
-Beer.js 0.33, vol 7! April 30th, at [„Base42“](https://base42.mk). Starting at ~18:00.
+Beer.js 0.33, vol 7! May 30th, at [„Base42“](https://base42.mk). Starting at ~18:00.
 
 <img src="/img/BeerJS 0.33 Vol 7.png" />
 
