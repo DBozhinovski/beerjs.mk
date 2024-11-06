@@ -18,4 +18,4 @@ Beer.js 0.33, vol 8! November 7th, at [„Base42“](https://base42.mk). Start a
 
 Expect an informal event, with ~30 min talks.
 
-See you on the 30th 🍻
+See you on the 07th 🍻
