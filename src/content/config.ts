@@ -1,7 +1,8 @@
-// 1. Import utilities from `astro:content`
 import { z, defineCollection } from 'astro:content';
-// 2. Define your collection(s)
-const en = defineCollection({
+import { glob } from 'astro/loaders';
+
+const enPosts = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/en' }),
   schema: z.object({
     title: z.string(),
     date: z.date().optional(),
@@ -18,7 +19,8 @@ const en = defineCollection({
   }),
 });
 
-const mk = defineCollection({
+const mkPosts = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/mk' }),
   schema: z.object({
     title: z.string(),
     date: z.date().optional(),
@@ -34,9 +36,8 @@ const mk = defineCollection({
     description: z.string().optional(),
   }),
 });
-// 3. Export a single `collections` object to register your collection(s)
-//    This key should match your collection directory name in "src/content"
+
 export const collections = {
-  en,
-  mk,
+  en: enPosts,
+  mk: mkPosts,
 };

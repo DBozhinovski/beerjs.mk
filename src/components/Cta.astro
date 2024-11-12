@@ -1,0 +1,29 @@
+---
+import { Icon } from "astro-icon/components";
+import Link from "./Link.astro";
+
+interface Props {
+  title: string;
+  subtitle: string;
+  link: string;
+  cta: string;
+}
+
+const { title, subtitle, link, cta } = Astro.props;
+---
+
+<section class="flex flex-col w-full px-4 items-center justify-center py-[96px] font-jetbrains">
+  <h2 class="text-bwhite font-semibold text-[30px] lg:text-[48px] text-center">
+    {title}
+  </h2>
+  <p class="text-bwhite text-[14px] lg:text-[18px] text-center font-normal mb-[48px]">
+    {subtitle}
+  </p>
+  <Link href={link}>{cta} <Icon name="mdi:arrow-top-right" class="w-[24px] h-[24px]" /></Link>
+</section>
+
+<style>
+  section {
+    background: url('/js-bg.svg') repeat center center;
+  }
+</style>

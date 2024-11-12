@@ -1,0 +1,28 @@
+---
+import Footer from '../components/Footer.astro';
+import Head from '../components/Head.astro';
+import Navigation from '../components/Navigation.astro';
+import { getLangFromUrl } from '../i18n/utils';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+  hideCta?: boolean;
+}
+
+const { title, description, image, type, hideCta } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+---
+
+<html lang={lang}>
+  <Head title={title} description={description} image={image} type={type} />
+  <body>
+    <div class="flex flex-col bg-bbg min-h-screen">
+      <Navigation transition:persist />
+      <slot />
+      <Footer transition:persist />
+    </div>
+  </body>
+</html>

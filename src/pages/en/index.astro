@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import NewsReel from '../../components/NewsReel.astro';
+import Cta from '../../components/Cta.astro';
+
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('en');
+
+---
+
+<Base title="Home">
+  <Hero />
+  <div class="mt-[240px]">
+    <NewsReel limit={6} link="/blog" />
+  </div>
+    <Cta title={t('landing.cta.title')} subtitle={t('landing.cta.subtitle')} link="/take-part" cta={t('landing.cta.link.cta')} />
+</Base>

@@ -1,0 +1,42 @@
+---
+import { languages } from '../i18n/ui';
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+---
+<sl-dropdown class="dropdown">
+  <sl-button slot="trigger" caret class="dropdown-trigger">{lang}</sl-button>
+  {Object.entries(languages).map(([lang, label]) => (
+    <sl-menu-item value={lang}>
+      <a href={`/${lang === 'mk' ? '' : lang}`} class="block font-jetbrains">{label}</a>
+    </sl-menu-item>
+  ))}
+</sl-dropdown>
+
+<script>
+  import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/components/dropdown/dropdown.js';
+</script>
+
+<style>
+  .dropdown-trigger::part(base) {
+    @apply p-1 rounded-lg uppercase font-jetbrains;
+    border: 0;
+  }
+
+  .dropdown {
+    @apply bg-bwhite text-bblack rounded;
+  }
+
+  .dropdown::part(base) {
+    @apply bg-bwhite text-bblack;
+  }
+
+  .dropdown::part(panel) {
+    @apply bg-bwhite text-bblack py-2;
+  }
+
+  .dropdown sl-menu-item::part(base) {
+    @apply hover:bg-bblack hover:text-bwhite py-1;
+  }
+
+</style>
