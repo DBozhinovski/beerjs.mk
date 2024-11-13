@@ -37,7 +37,20 @@ const mkPosts = defineCollection({
   }),
 });
 
+const socialsData = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.json', base: './src/content/socials' }),
+  schema: z.array(
+    z.object({
+      id: z.string(),
+      name: z.string(),
+      url: z.string(),
+      icon: z.string(),
+    }),
+  ),
+});
+
 export const collections = {
   en: enPosts,
   mk: mkPosts,
+  socials: socialsData,
 };

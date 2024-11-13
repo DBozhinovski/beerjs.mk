@@ -4,9 +4,16 @@ import { Icon } from 'astro-icon/components';
 import LanguagePicker from './LanguagePicker.astro';
 
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getCollection } from "astro:content";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const socials = await getCollection('socials');
+
+const discord = socials[0].data.find(s => s.id === 'discord');
+const youtube = socials[0].data.find(s => s.id === 'youtube');
+
 ---
 
 <nav class="grid grid-cols-12 py-8">
@@ -30,11 +37,11 @@ const t = useTranslations(lang);
     </button>
   </div>
   <div class="gap-4 items-center justify-end lg:col-span-4 xl:col-span-2 hidden lg:flex">
-    <a href="/" class="text-white fill-current">
-      <Icon name="mdi:discord" class="w-[24px] h-[24px]" />
+    <a href={discord?.url} class="text-white fill-current">
+      <Icon name={discord?.icon} class="w-[32px] h-[32px]" />
     </a>
-    <a href="/" class="text-white fill-current">
-      <Icon name="mdi:youtube" class="w-[24px] h-[24px]" />
+    <a href={youtube?.url} class="text-white fill-current">
+      <Icon name={youtube?.icon} class="w-[32px] h-[32px]" />
     </a>
     <div class="flex items-center pr-4">
       <LanguagePicker />
@@ -51,10 +58,10 @@ const t = useTranslations(lang);
       <a href="/take-part">{t('nav.take-part')}</a>
       <div class="flex gap-2 pt-10">
         <a href="/" class="text-white fill-current">
-          <Icon name="mdi:discord" class="w-[24px] h-[24px]" />
+          <Icon name="mdi:discord" class="w-[32px] h-[32px]" />
         </a>
         <a href="/" class="text-white fill-current">
-          <Icon name="mdi:youtube" class="w-[24px] h-[24px]" />
+          <Icon name="mdi:youtube" class="w-[32px] h-[32px]" />
         </a>
       </div>
       <div>

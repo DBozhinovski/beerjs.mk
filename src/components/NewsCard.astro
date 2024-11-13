@@ -11,13 +11,15 @@ interface Props {
   tags: string[];
   description: string;
   link: string;
+  cover?: string;
 }
 
-const { title, date, tags, description, link } = Astro.props;
+const { title, date, tags, description, link, cover } = Astro.props;
 ---
 
-<a href={link} class="h-full flex p-[24px] flex-col bg-bwhite w-[363px] border-bbg border rounded-[2px] font-jetbrains transition card-root">
+<a href={link} class="h-full flex p-[24px] flex-col bg-bwhite w-[363px] border-bbg border rounded-[2px] font-jetbrains transition card-root relative">
   <div class="flex gap-[8px]">{tags.map((t, i) => <CardTag variant={((i % 4) + 1) as (1 | 2 | 3 | 4 | undefined)}>{t}</CardTag>)}</div>
+  { cover && <img src={cover} alt={title} class="w-full h-[120px] pt-2 object-cover" /> }
   <h2 class="text-[24px] font-bold mt-2">{title}</h2>
   <h3 class="text-[14px] uppercase font-light text-bblack mb-[24px]">{date}</h3>
   <p class="text-[16px] font-normal mb-[24px]">{description}</p>
@@ -32,4 +34,5 @@ const { title, date, tags, description, link } = Astro.props;
   .card-root:hover > span {
     @apply border-byellow;
   }
+
 </style>

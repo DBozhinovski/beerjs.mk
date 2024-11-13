@@ -21,6 +21,10 @@ export const ui = {
     'landing.cta.subtitle': 'Do a presentation!',
     'landing.cta.link.cta': 'Speak at BeerJS',
     'news.more': 'More ->',
+    'footer.about': 'About',
+    'footer.media': 'Press kit',
+    'footer.contact': 'Contact',
+    'markdown.on-this-page': 'On this page',
   },
   mk: {
     'nav.blog': 'Блог',
@@ -37,5 +41,9 @@ export const ui = {
     'landing.cta.subtitle': 'Одржи презентација!',
     'landing.cta.link.cta': 'Зборувај на BeerJS',
     'news.more': 'Повеќе ->',
+    'footer.about': 'За нас',
+    'footer.media': 'Прес кит',
+    'footer.contact': 'Контакт',
+    'markdown.on-this-page': 'Содржина',
   },
 };

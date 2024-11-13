@@ -1,0 +1,32 @@
+---
+import MarkdownPost from '../../components/MarkdownPost.astro';
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('mk');
+
+  return posts.map((post) => {
+    return {
+      params: { slug: post.id },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+
+const body = await render(post);
+---
+
+<Base title={post.data.title}>
+  <div class="flex flex-col mb-4">
+    <MarkdownPost 
+      title={post.data.title}
+      body={body}
+      date={post.data.date}
+      cover={post.data.image}
+      tags={[`${post.data.category}`]}
+    />
+  </div>
+</Base>

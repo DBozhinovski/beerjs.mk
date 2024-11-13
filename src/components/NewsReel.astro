@@ -15,7 +15,7 @@ interface Props {
 
 const { limit, link } =  Astro.props;
 
-const newsPosts = posts.filter(post => post.data?.category?.includes('blog') || post.data?.category?.includes('announcements') || post.data?.category?.includes('events')).slice(0, limit);
+const newsPosts = posts.filter(post => post.data?.category?.includes('blog') || post.data?.category?.includes('announcements') || post.data?.category?.includes('events'));
 ---
 
 <div class="w-full flex flex-col overflow-x-hidden font-jetbrains" id="beercard">
@@ -25,8 +25,8 @@ const newsPosts = posts.filter(post => post.data?.category?.includes('blog') || 
       <p>{t('news.subtitle')}</p>
     </div>
     <div id="reel" class="pt-[120px] gap-[24px] items-center justify-center px-4 flex flex-col md:grid md:grid-cols-2 xl:grid-cols-3">
-      { newsPosts.map((p) => {
-        return <NewsCard title={p.data.title} date={format(p.data?.date || new Date(), 'yyyy-MM-dd')} tags={[`${p.data.category}`]} link={`${lang === 'mk' ? '' : '/' + lang}${p.id}`} description={p.data?.description || ''} />
+      { newsPosts.sort((a, b) => new Date(b.data?.date).getTime() - new Date(a.data?.date).getTime()).slice(0, limit).map((p) => {
+        return <NewsCard title={p.data.title} date={format(p.data?.date || new Date(), 'yyyy-MM-dd')} tags={[`${p.data.category}`]} link={`${lang === 'mk' ? '' : '/' + lang + '/'}${p.id}`} description={p.data?.description || ''} cover={p.data?.image || ''} />
       }) }
     </div>
     {link && <a href={link} class="mt-12 border-byellow border-b-2 hover:border-bwhite transition font-jetbrains text-center">{t('news.all-posts')}</a>}
@@ -35,8 +35,8 @@ const newsPosts = posts.filter(post => post.data?.category?.includes('blog') || 
 
 <style>
   #beercard {
-    background: url('/beercard-bg.svg') no-repeat center top;
-    background-size: cover;
+    background: url('/beercard-bg.svg') no-repeat top center, linear-gradient(to bottom, #F2BD4C00 60px, #F2BD4CFF 31px);
+    background-size: 100% auto;
   }
 
   .content {

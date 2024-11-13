@@ -10,7 +10,7 @@ Beer.js 0.33, vol 8! November 7th, at [„Base42“](https://base42.mk). Start a
 
 <img src="/img/BeerJS 0.33 Vol 8.png" />
 
-## Презентации
+## Talks
 
 1. „Managing page state with angular signals “ - Kiril Zafirov
 2. „ThreeJS 101: Journey through the Web in 3D “ - Ivan Lazarevski
@@ -18,4 +18,4 @@ Beer.js 0.33, vol 8! November 7th, at [„Base42“](https://base42.mk). Start a
 
 Expect an informal event, with ~30 min talks.
 
-See you on the 07th 🍻
+See you on the 7th 🍻
