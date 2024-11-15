@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import { getCollection } from 'astro:content';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -13,9 +14,9 @@ const socials = await getCollection('socials');
 
 <footer class="w-full grid grid-cols-2 lg:grid-cols-3 justify-between items-center bg-byellow py-[48px] px-[24px] sm:px-[48px] lg:px-[96px] font-jetbrains gap-4">
   <div class="flex flex-col gap-3 flex-grow">
-    <a href="/about" class="hover:underline">{t('footer.about')}</a>
-    <a href="/press-kit" class="hover:underline">{t('footer.media')}</a>
-    <a href="/contact" class="hover:underline">{t('footer.contact')}</a>
+    <a href={`${getRelativeLocaleUrl(lang, "/about")}`} class="hover:underline">{t('footer.about')}</a>
+    <a href={`${getRelativeLocaleUrl(lang, "/press-kit")}`} class="hover:underline">{t('footer.media')}</a>
+    <a href={`${getRelativeLocaleUrl(lang, "/contact")}`} class="hover:underline">{t('footer.contact')}</a>
   </div>
   <div class="flex-grow items-center justify-center hidden lg:flex">
     <a class="w-[120px] block" href="/" id="logo-footer" aria-label="Home">
