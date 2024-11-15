@@ -1,7 +1,7 @@
 ---
-import CardTag from './CardTag.astro';
-import { format } from 'date-fns';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import CardTag from "./CardTag.astro";
+import { format } from "date-fns";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -15,34 +15,61 @@ interface Props {
 }
 
 const { title, body, date, cover, tags } = Astro.props;
-
 ---
 
 <main class="w-full flex items-center justify-center pl-1 pr-4 lg:p-8 mb-20">
   <article>
-    <aside>
-      <h3 class="font-jebrains text-bgrey uppercase mb-[28px]">
-        {t('markdown.on-this-page')}
-      </h3>
-      <ul class="flex flex-col gap-4">
-      {
-        body.headings.map((h: any) => {
-          return <li><a class="font-inter font-extrabold text-bgrey text-[14px] hover:underline" href={`#${h.slug}`}>{h.text}</a></li>
-        })
-      }
-      </ul>
-    </aside>
+    {
+      body.headings.length > 0 && (
+        <aside>
+          <h3 class="font-jebrains text-bgrey uppercase mb-[28px]">
+            {t("markdown.on-this-page")}
+          </h3>
+          <ul class="flex flex-col gap-4">
+            {body.headings.map((h: any) => {
+              return (
+                <li>
+                  <a
+                    class="font-inter font-extrabold text-bgrey text-[14px] hover:underline"
+                    href={`#${h.slug}`}
+                  >
+                    {h.text}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </aside>
+      )
+    }
     <div class="max-w-[1000px]">
-      {tags && <div class="flex gap-[8px] mb-2">{tags.map((t, i) => <CardTag variant={((i % 4) + 1) as (1 | 2 | 3 | 4 | undefined)}>{t}</CardTag>)}</div>}
-      {date && <date class="font-inter font-semibold mb-6 block">🗓️ {format(date, 'yyyy-MM-dd')}</date>}
+      {
+        tags && (
+          <div class="flex gap-[8px] mb-2">
+            {tags.map((t, i) => (
+              <CardTag variant={((i % 4) + 1) as 1 | 2 | 3 | 4 | undefined}>
+                {t}
+              </CardTag>
+            ))}
+          </div>
+        )
+      }
+      {
+        date && (
+          <date class="font-inter font-semibold mb-6 block">
+            🗓️ {format(date, "yyyy-MM-dd")}
+          </date>
+        )
+      }
       <h1>{title}</h1>
-      <section class="max-w-[85ch] w-full prose lg:prose-xl font-inter prose-h2:font-jetbrains prose-h3:font-jetbrains prose-h4:font-jetbrains text-bgrey prose-a:break-all">
+      <section
+        class="max-w-[85ch] w-full prose lg:prose-xl font-inter prose-h2:font-jetbrains prose-h3:font-jetbrains prose-h4:font-jetbrains text-bgrey prose-a:break-all"
+      >
         <body.Content />
       </section>
     </div>
   </article>
 </main>
-
 
 <style>
   article {
