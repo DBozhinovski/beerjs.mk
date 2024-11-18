@@ -1,23 +1,18 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
 // https://astro.build/config
-import tailwind from '@astrojs/tailwind';
+import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
-import compress from 'astro-compress';
+import compress from "astro-compress";
 
 // https://astro.build/config
-import sitemap from '@astrojs/sitemap';
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
-import mdx from '@astrojs/mdx';
+import mdx from "@astrojs/mdx";
 
-// https://astro.build/config
-import solidJs from '@astrojs/solid-js';
-
-import icon from 'astro-icon';
-
-// import critters from 'astro-critters';
+import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,7 +20,6 @@ export default defineConfig({
     tailwind(),
     sitemap(),
     mdx(),
-    solidJs(),
     compress({
       svg: false,
       html: false,
@@ -35,8 +29,8 @@ export default defineConfig({
     icon(),
   ],
   i18n: {
-    defaultLocale: 'mk',
-    locales: ['mk', 'en'],
+    defaultLocale: "mk",
+    locales: ["mk", "en"],
   },
-  site: 'https://beerjs.mk',
+  site: "https://beerjs.mk",
 });

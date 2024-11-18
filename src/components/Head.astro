@@ -1,7 +1,7 @@
 ---
-import { SEO } from 'astro-seo';
-import { GoogleFontsOptimizer } from 'astro-google-fonts-optimizer';
-import { ViewTransitions } from 'astro:transitions';
+import { SEO } from "astro-seo";
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title?: string;
@@ -15,7 +15,7 @@ const { title, description, type, image } = Astro.props;
 
 <head>
   <title>{title} | BeerJS Skopje</title>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <SEO
     title={title}
@@ -24,38 +24,50 @@ const { title, description, type, image } = Astro.props;
     description={description}
     openGraph={{
       basic: {
-        title: `${title} | BeerJS Skopje` || 'The meetup for beer and JavaScript lovers. | BeerJS Skopje',
-        type: type || 'website',
-        image: image || 'fallback_image_here',
+        title:
+          `${title} | BeerJS Skopje` ||
+          "The meetup for beer and JavaScript lovers. | BeerJS Skopje",
+        type: type || "website",
+        image: image || "fallback_image_here",
       },
     }}
     twitter={{
-      creator: '@d_bozhinovski',
+      creator: "@d_bozhinovski",
     }}
     extend={{
-      link: [{ rel: 'icon', href: '/favicon.svg' }],
+      link: [{ rel: "icon", href: "/favicon.svg" }],
       meta: [
         {
-          name: 'twitter:image',
+          name: "twitter:image",
           content: image,
         },
         {
-          name: 'twitter:title',
-          content: `${title} | BeerJS Skopje` || 'The meetup for beer and JavaScript lovers. | BeerJS Skopje',
+          name: "twitter:title",
+          content:
+            `${title} | BeerJS Skopje` ||
+            "The meetup for beer and JavaScript lovers. | BeerJS Skopje",
         },
-        { name: 'twitter:description', content: description },
+        { name: "twitter:description", content: description },
       ],
     }}
   />
   <GoogleFontsOptimizer
     url="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800;900&display=swap"
   />
-  <GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800;900&display=swap" />
+  <GoogleFontsOptimizer
+    url="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800;900&display=swap"
+  />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@latest/cdn/themes/dark.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@latest/cdn/themes/dark.css"
+  />
   <link rel="sitemap" href="/sitemap-index.xml" />
 
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@latest/cdn/shoelace-autoloader.js"></script>
+  <script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@latest/cdn/shoelace-autoloader.js"
+  ></script>
 
-  <ViewTransitions />
+  <ClientRouter />
 </head>
