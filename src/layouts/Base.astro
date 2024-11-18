@@ -1,0 +1,73 @@
+---
+import Footer from '../components/Footer.astro';
+import Head from '../components/Head.astro';
+import Navigation from '../components/Navigation.astro';
+import { getLangFromUrl } from '../i18n/utils';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+  hideCta?: boolean;
+}
+
+const { title, description, image, type } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+---
+
+<html lang={lang}>
+  <Head title={title} description={description} image={image} type={type} />
+  <body>
+    <div class="flex flex-col bg-bbg min-h-screen">
+      <Navigation transition:persist />
+      <slot />
+      <Footer transition:persist />
+    </div>
+  </body>
+</html>
+
+<script>
+  import { getUserLocale } from 'get-user-locale';
+
+  // Get stored locale or detect user's locale
+  const storedLocale = localStorage.getItem('locale');
+  const detectedLocale = (() => {
+    const locale = getUserLocale()?.split('-')[0] || 'mk';
+    // If detected locale is not 'mk', default to 'en'
+    return locale === 'mk' ? 'mk' : 'en';
+  })();
+  const locale = storedLocale || detectedLocale;
+
+  // Store the locale if not already stored
+  if (!storedLocale) {
+    localStorage.setItem('locale', locale);
+  }
+
+  const currentDocumentLang = document.documentElement.lang;
+  const currentPath = window.location.pathname;
+
+  // Check if we need to redirect
+  const needsRedirect = (() => {
+    if (currentDocumentLang === locale) return false;
+    
+    // If current locale is 'mk' and path doesn't start with /en, we're good
+    if (locale === 'mk' && !currentPath.startsWith('/en')) return false;
+    
+    // If current locale is 'en' and path starts with /en, we're good
+    if (locale === 'en' && currentPath.startsWith('/en')) return false;
+    
+    return true;
+  })();
+
+  // Only redirect if necessary
+  if (needsRedirect) {
+    const newPath = locale === 'mk' 
+      ? currentPath.replace(/^\/en/, '') // Remove 'en' prefix if switching to 'mk'
+      : currentPath.startsWith('/en') 
+        ? currentPath 
+        : `/en${currentPath}`; // Add 'en' prefix if needed
+
+    window.location.href = newPath || '/';
+  }
+</script>

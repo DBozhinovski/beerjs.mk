@@ -4,9 +4,6 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
-// import partytown from '@astrojs/partytown';
-
-// https://astro.build/config
 import compress from 'astro-compress';
 
 // https://astro.build/config
@@ -17,6 +14,8 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 import solidJs from '@astrojs/solid-js';
+
+import icon from 'astro-icon';
 
 // import critters from 'astro-critters';
 
@@ -33,7 +32,11 @@ export default defineConfig({
       css: false,
       js: false,
     }),
-    // critters(),
+    icon(),
   ],
+  i18n: {
+    defaultLocale: 'mk',
+    locales: ['mk', 'en'],
+  },
   site: 'https://beerjs.mk',
 });

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "discord",
+    "name": "Discord",
+    "url": "https://discord.gg/sxNCQmA7aP",
+    "icon": "mdi:discord"
+  },
+  {
+    "id": "youtube",
+    "name": "YouTube",
+    "url": "https://www.youtube.com/channel/UCScyJr3W0-BFCrPW1kLcGmQ",
+    "icon": "mdi:youtube"
+  },
+  {
+    "id": "twitter",
+    "name": "Twitter",
+    "url": "https://twitter.com/BeerjsSk",
+    "icon": "mdi:twitter"
+  },
+  {
+    "id": "instagram",
+    "name": "Instagram",
+    "url": "https://www.instagram.com/beer.js.skopje/",
+    "icon": "mdi:instagram"
+  },
+  {
+    "id": "linkedin",
+    "name": "LinkedIn",
+    "url": "https://www.linkedin.com/company/beerjs-%D1%81%D0%BA%D0%BE%D0%BF%D1%98%D0%B5/",
+    "icon": "mdi:linkedin"
+  },
+  {
+    "id": "bluesky",
+    "name": "Bluesky",
+    "url": "https://bsky.app/@beerjs.bsky.social",
+    "icon": "simple-icons:bluesky"
+  }
+]

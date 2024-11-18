@@ -1,0 +1,76 @@
+---
+interface Props {
+  href: string;
+  variant?: 1|2|3|4|5;
+  shadow?: boolean;
+}
+
+const { href, variant = 1, shadow = false } = Astro.props;
+
+const baseClasses = 'flex gap-[12px] items-center justify-center font-jetbrains py-[14px] px-[60px] text-[18px] font-bold hover:brightness-125 border-[3px] transition';
+
+const shadowMap = {
+  1: 'shadow-[8px_8px_0px_0px_rgba(0,0,0,0)] shadow-bwhite',
+  2: 'shadow-[8px_8px_0px_0px_rgba(0,0,0,0)] shadow-byellow',
+  3: 'shadow-[8px_8px_0px_0px_rgba(0,0,0,0)] shadow-byellow',
+  4: 'shadow-[8px_8px_0px_0px_rgba(0,0,0,0)] shadow-byellow',
+  5: 'shadow-[8px_8px_0px_0px_rgba(0,0,0,0)] shadow-bblack',
+}
+---
+
+{
+  variant === 1 &&
+    <a href={href} class={`${baseClasses} border-bblack bg-byellow text-bblack ${shadow ? shadowMap[1] : ''} variant-1`}>
+      <slot />
+    </a>
+}
+
+{
+  variant === 2 &&
+    <a href={href} class={`${baseClasses} border-byellow bg-bbg text-white ${shadow ? shadowMap[2] : ''} variant-2`}>
+      <slot />
+    </a>
+}
+
+{
+  variant === 3 &&
+    <a href={href} class={`${baseClasses} border-bblack bg-white text-bblack ${shadow ? shadowMap[3] : ''} variant-3`}>
+      <slot />
+    </a>
+}
+
+{
+  variant === 4 &&
+    <a href={href} class={`${baseClasses} border-byellow bg-bblack text-white ${shadow ? shadowMap[4] : ''} variant-4`}>
+      <slot />
+    </a>
+}
+
+{
+  variant === 5 &&
+    <a href={href} class={`${baseClasses} border-bblack bg-byellow text-bblack ${shadow ? shadowMap[5] : ''} variant-5`}>
+      <slot />
+    </a>
+}
+
+<style>
+  .variant-1:hover {
+    @apply shadow-[8px_8px_0px_0px_rgba(0,0,0,0)] shadow-bwhite;
+  }
+
+  .variant-2:hover {
+    @apply shadow-[8px_8px_0px_0px_rgba(0,0,0,0)] shadow-byellow;
+  }
+
+  .variant-3:hover {
+    @apply shadow-[8px_8px_0px_0px_rgba(0,0,0,0)] shadow-byellow;
+  }
+
+  .variant-4:hover {
+    @apply shadow-[8px_8px_0px_0px_rgba(0,0,0,0)] shadow-byellow;
+  }
+
+  .variant-5:hover {
+    @apply shadow-[8px_8px_0px_0px_rgba(0,0,0,0)] shadow-bblack;
+  }
+</style>

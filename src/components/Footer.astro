@@ -1,0 +1,47 @@
+---
+import { Icon } from 'astro-icon/components';
+import { getCollection } from 'astro:content';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const socials = await getCollection('socials');
+
+
+
+---
+
+<footer class="w-full grid grid-cols-2 lg:grid-cols-3 justify-between items-center bg-byellow py-[48px] px-[24px] sm:px-[48px] lg:px-[96px] font-jetbrains gap-4">
+  <div class="flex flex-col gap-3 flex-grow">
+    <a href={`${getRelativeLocaleUrl(lang, "/about")}`} class="hover:underline">{t('footer.about')}</a>
+    <a href={`${getRelativeLocaleUrl(lang, "/press-kit")}`} class="hover:underline">{t('footer.media')}</a>
+    <a href={`${getRelativeLocaleUrl(lang, "/contact")}`} class="hover:underline">{t('footer.contact')}</a>
+  </div>
+  <div class="flex-grow items-center justify-center hidden lg:flex">
+    <a class="w-[120px] block" href="/" id="logo-footer" aria-label="Home">
+      <img src="/img/beerjs-label.png" alt="Beer.JS" />
+    </a>
+  </div>
+  <div class="flex gap-4 flex-grow justify-end flex-wrap" id="socials">
+    {socials[0].data.map(s => <a href={s.url} aria-label={s.name}>
+        <Icon name={s.icon} class="w-[32px] h-[32px]" />
+      </a>
+    )}
+  </div>
+</footer>
+
+<style>
+
+  #logo-footer {
+    filter: drop-shadow(1px 1px 0px #fff) drop-shadow(-1px -1px 0px #fff) drop-shadow(1px -1px 0px #fff) drop-shadow(-1px 1px 0px #fff);
+  
+  }
+  #logo-footer:hover {
+    filter: drop-shadow(2px 2px 0px #fff) drop-shadow(-2px -2px 0px #fff) drop-shadow(2px -2px 0px #fff) drop-shadow(-2px 2px 0px #fff);
+  }
+
+  #socials a:hover {
+    @apply fill-current text-white;
+  }
+</style>
