@@ -1,16 +1,21 @@
 ---
-import Base from '../layouts/Base.astro';
-import NewsReel from '../components/NewsReel.astro';
-import Cta from '../components/Cta.astro';
+import Base from "../layouts/Base.astro";
+import NewsReel from "../components/NewsReel.astro";
+import Cta from "../components/Cta.astro";
 
-import { useTranslations } from '../i18n/utils';
+import { useTranslations } from "../i18n/utils";
 
-const t = useTranslations('mk');
+const t = useTranslations("mk");
 ---
 
 <Base title="News">
   <NewsReel />
-  <Cta title={t('landing.cta.title')} subtitle={t('landing.cta.subtitle')} link="/take-part" cta={t('landing.cta.link.cta')} />
+  <Cta
+    title={t("landing.cta.title")}
+    subtitle={t("landing.cta.subtitle")}
+    link="/take-part"
+    cta={t("landing.cta.link.cta")}
+  />
 </Base>
 
 <style>
