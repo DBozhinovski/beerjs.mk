@@ -1,54 +1,57 @@
 ---
-import { languages } from '../i18n/ui';
-import { getLangFromUrl } from '../i18n/utils';
+import { languages } from "../i18n/ui";
+import { getLangFromUrl } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 ---
+
 <sl-dropdown class="dropdown opacity-0">
   <sl-button slot="trigger" caret class="dropdown-trigger">{lang}</sl-button>
-  {Object.entries(languages).map(([lang, label]) => (
-    <sl-menu-item value={lang}>
-      <button 
-        data-lang={lang} 
-        class="block font-jetbrains w-full text-left"
-      >
-        {label}
-      </button>
-    </sl-menu-item>
-  ))}
+  {
+    Object.entries(languages).map(([lang, label]) => (
+      <sl-menu-item value={lang}>
+        <button data-lang={lang} class="block font-jetbrains w-full text-left">
+          {label}
+        </button>
+      </sl-menu-item>
+    ))
+  }
 </sl-dropdown>
 
 <script>
-  import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/components/dropdown/dropdown.js';
+  import "https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/components/dropdown/dropdown.js";
 
   const showDropdown = () => {
-    const dropdown = document.querySelector('.dropdown');
-    if (dropdown) {
-      dropdown.classList.remove('opacity-0');
+    const dropdowns = document.querySelectorAll(".dropdown");
+    if (dropdowns) {
+      dropdowns.forEach((dropdown) => {
+        dropdown.classList.remove("opacity-0");
+      });
     }
   };
 
   const addEventListeners = () => {
-    document.querySelectorAll('sl-menu-item button').forEach(button => {
-    button.addEventListener('click', (e) => {
-      e.preventDefault();
-      const newLang = (button as HTMLElement).dataset.lang as string;
-      localStorage.setItem('locale', newLang);
-      
-      // Handle navigation after storage is set
-      const currentPath = window.location.pathname;
-      const newPath = newLang === 'mk' 
-        ? currentPath.replace(/^\/en/, '') // Remove 'en' prefix if switching to 'mk'
-        : currentPath.startsWith('/en') 
-          ? currentPath 
-          : `/en${currentPath}`; // Add 'en' prefix if needed
+    document.querySelectorAll("sl-menu-item button").forEach((button) => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        const newLang = (button as HTMLElement).dataset.lang as string;
+        localStorage.setItem("locale", newLang);
 
-      window.location.href = newPath || '/';
+        // Handle navigation after storage is set
+        const currentPath = window.location.pathname;
+        const newPath =
+          newLang === "mk"
+            ? currentPath.replace(/^\/en/, "") // Remove 'en' prefix if switching to 'mk'
+            : currentPath.startsWith("/en")
+              ? currentPath
+              : `/en${currentPath}`; // Add 'en' prefix if needed
+
+        window.location.href = newPath || "/";
       });
     });
-  }
+  };
 
-  document.addEventListener('astro:after-swap', () => {
+  document.addEventListener("astro:after-swap", () => {
     addEventListeners();
     showDropdown();
   });
@@ -78,5 +81,4 @@ const lang = getLangFromUrl(Astro.url);
   .dropdown sl-menu-item::part(base) {
     @apply hover:bg-bblack hover:text-bwhite py-1;
   }
-
 </style>
