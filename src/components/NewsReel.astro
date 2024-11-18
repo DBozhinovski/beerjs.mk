@@ -1,8 +1,8 @@
 ---
 import NewsCard from "./NewsCard.astro";
-import { getCollection } from 'astro:content';
-import { format } from 'date-fns';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getCollection } from "astro:content";
+import { format } from "date-fns";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const posts = await getCollection(lang);
@@ -13,39 +13,86 @@ interface Props {
   link?: string;
 }
 
-const { limit, link } =  Astro.props;
+const { limit, link } = Astro.props;
 
-const newsPosts = posts.filter(post => post.data?.category?.includes('blog') || post.data?.category?.includes('announcements') || post.data?.category?.includes('events'));
+const newsPosts = posts.filter(
+  (post) =>
+    post.data?.category?.includes("blog") ||
+    post.data?.category?.includes("announcements") ||
+    post.data?.category?.includes("events"),
+);
 ---
 
-<div class="w-full flex flex-col overflow-x-hidden font-jetbrains" id="beercard">
+<div
+  class="w-full flex flex-col overflow-x-hidden font-jetbrains"
+  id="beercard"
+>
   <section class="content">
-    <div class="w-full flex flex-col items-center justify-center px-4 pb-12 lg:pb-0 bg-bwhite lg:bg-transparent">
-      <h3>{t('news.title')}</h3>
-      <p>{t('news.subtitle')}</p>
+    <div
+      class="w-full flex flex-col items-center justify-center px-4 pb-12 lg:pb-0 bg-bwhite lg:bg-transparent"
+    >
+      <h3>{t("news.title")}</h3>
+      <p>{t("news.subtitle")}</p>
     </div>
-    <div id="reel" class="pt-[120px] gap-[24px] items-center justify-center px-4 flex flex-col md:grid md:grid-cols-2 xl:grid-cols-3">
-      { newsPosts.sort((a, b) => new Date(b.data?.date).getTime() - new Date(a.data?.date).getTime()).slice(0, limit).map((p) => {
-        return <NewsCard title={p.data.title} date={format(p.data?.date || new Date(), 'yyyy-MM-dd')} tags={[`${p.data.category}`]} link={`/${lang === 'mk' ? '' : lang + '/'}${p.id}`} description={p.data?.description || ''} cover={p.data?.image || ''} />
-      }) }
+    <div
+      id="reel"
+      class="pt-[120px] gap-[24px] items-center justify-center px-4 flex flex-col md:grid md:grid-cols-2 xl:grid-cols-3"
+    >
+      {
+        newsPosts
+          .sort(
+            (a, b) =>
+              new Date(b.data?.date).getTime() -
+              new Date(a.data?.date).getTime(),
+          )
+          .slice(0, limit)
+          .map((p) => {
+            return (
+              <NewsCard
+                title={p.data.title}
+                date={format(p.data?.date || new Date(), "yyyy-MM-dd")}
+                tags={[`${p.data.category}`]}
+                link={`/${lang === "mk" ? "" : lang + "/"}${p.id}`}
+                description={p.data?.description || ""}
+                cover={p.data?.image || ""}
+              />
+            );
+          })
+      }
     </div>
-    {link && <a href={link} class="mt-12 border-byellow border-b-2 hover:border-bwhite transition font-jetbrains text-center">{t('news.all-posts')}</a>}
+    {
+      link && (
+        <a
+          href={link}
+          class="mt-12 border-byellow border-b-2 hover:border-bwhite transition font-jetbrains text-center"
+        >
+          {t("news.all-posts")}
+        </a>
+      )
+    }
   </section>
 </div>
 
 <style>
   #beercard {
-    background: url('/beercard-bg.svg') no-repeat top center, linear-gradient(to bottom, #F2BD4C00 60px, #F2BD4CFF 31px);
+    background:
+      url("/beercard-bg.svg") no-repeat top center,
+      linear-gradient(to bottom, #f2bd4c00 60px, #f2bd4cff 31px);
     background-size: 100% auto;
   }
 
   .content {
-    @apply w-full flex flex-col items-center justify-center py-[60px];
+    @apply w-full flex flex-col items-center justify-center py-[30px] md:py-[60px];
   }
 
   .content h3 {
     @apply font-jetbrains uppercase text-[48px] font-black text-byellow;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,-5px -5px 0px #0F0D0E;
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000,
+      -5px -5px 0px #0f0d0e;
   }
 
   .content p {
