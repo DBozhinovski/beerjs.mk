@@ -2,6 +2,7 @@
 import CardTag from "./CardTag.astro";
 import { format } from "date-fns";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { Icon } from "astro-icon/components";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -87,8 +88,8 @@ const calendarUrls = date ? getCalendarUrls(title, date, location) : null;
             </date>
             {hasAnnouncement && (
               <div class="relative group">
-                <button class="text-sm font-inter bg-bgrey text-bwhite px-3 py-1 hover:bg-opacity-80">
-                  +
+                <button class="text-sm font-inter bg-bgrey text-bwhite px-3 py-1 mt-1 hover:bg-opacity-80">
+                  <Icon name="mdi:calendar-add" class="w-4 h-4" />
                 </button>
                 <div class="absolute hidden group-hover:block bg-bwhite border border-bblack shadow-md p-2 z-10 font-jetbrains">
                   <a
