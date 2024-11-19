@@ -1,9 +1,9 @@
 ---
 title: Vol 10 - 27ми април
 date: 2023-04-10
-category: 'announcements'
-image: '/img/BeerJS Vol. 10 - Banner.png'
-description: 'Beer.js, vol 10! 27ми април, во „Јавна Соба“. Голема благодарност до DEPT за поддршката!'
+category: "announcements"
+image: "/img/BeerJS Vol. 10 - Banner.png"
+description: "Beer.js, vol 10! 27ми април, во „Јавна Соба“. Голема благодарност до DEPT за поддршката!"
 ---
 
 _Beer.js, vol 10!_ 27ми април, во [„Јавна Соба“](https://www.facebook.com/publicroomskopje/). Собирање од 17:40. Почеток

@@ -1,7 +1,7 @@
 ---
 title: За настанот
 date: 2024-11-15
-category: 'meta'
+category: "meta"
 ---
 
 ## Што е BeerJS?

@@ -1,9 +1,9 @@
 ---
 title: BeerJS 0.33, Vol 7 - 30ти мај
 date: 2024-05-27
-category: 'announcements'
-image: '/img/BeerJS 0.33 Vol 7.png'
-description: 'Beer.js 0.33, vol 7! 30ти мај, во „Base42“.'
+category: "announcements"
+image: "/img/BeerJS 0.33 Vol 7.png"
+description: "Beer.js 0.33, vol 7! 30ти мај, во „Base42“."
 ---
 
 Beer.js 0.33, vol 7! 30ти мај, во [„Base42“](https://base42.mk). Почеток во ~18:00.

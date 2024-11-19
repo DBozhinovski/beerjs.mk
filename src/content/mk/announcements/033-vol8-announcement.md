@@ -1,9 +1,9 @@
 ---
 title: BeerJS 0.33, Vol 8 - 7ми ноември
 date: 2024-11-06
-category: 'announcements'
-image: '/img/BeerJS 0.33 Vol 8.png'
-description: 'Beer.js 0.33, vol 8! 7ми ноември, во „Base42“.'
+category: "announcements"
+image: "/img/BeerJS 0.33 Vol 8.png"
+description: "Beer.js 0.33, vol 8! 7ми ноември, во „Base42“."
 ---
 
 Beer.js 0.33, vol 8! 7ми ноември, во [„Base42“](https://base42.mk). Почеток во ~18:00.

@@ -1,12 +1,14 @@
-import { z, defineCollection } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { z, defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
 
 const enPosts = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/en' }),
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/en" }),
   schema: z.object({
     title: z.string(),
     date: z.date().optional(),
-    category: z.enum(['events', 'announcements', 'blog', 'meta', 'press-kit']).optional(),
+    category: z
+      .enum(["events", "announcements", "blog", "meta", "press-kit"])
+      .optional(),
     author: z
       .object({
         name: z.string(),
@@ -20,11 +22,13 @@ const enPosts = defineCollection({
 });
 
 const mkPosts = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/mk' }),
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/mk" }),
   schema: z.object({
     title: z.string(),
     date: z.date().optional(),
-    category: z.enum(['events', 'announcements', 'blog', 'meta', 'press-kit']).optional(),
+    category: z
+      .enum(["events", "announcements", "blog", "meta", "press-kit"])
+      .optional(),
     author: z
       .object({
         name: z.string(),
@@ -38,7 +42,7 @@ const mkPosts = defineCollection({
 });
 
 const socialsData = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.json', base: './src/content/socials' }),
+  loader: glob({ pattern: "**/[^_]*.json", base: "./src/content/socials" }),
   schema: z.array(
     z.object({
       id: z.string(),

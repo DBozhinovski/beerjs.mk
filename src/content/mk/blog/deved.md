@@ -5,8 +5,8 @@ author:
   link: https://darko.io
   email: hello@darko.io
 date: 2023-03-28
-image: '/img/deved_pub.png'
-category: 'blog'
+image: "/img/deved_pub.png"
+category: "blog"
 description: За подобар BeerJS Скопје и квалитетна македонска ИТ сцена 🍻
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: Vol 10 - April 27th
 date: 2023-04-10
-category: 'announcements'
-image: '/img/BeerJS Vol. 10 - Banner.png'
+category: "announcements"
+image: "/img/BeerJS Vol. 10 - Banner.png"
 description: 'Beer.js, vol 10! April 27th, at "Public Room". Huge thanks to DEPT for the support!'
 ---
 

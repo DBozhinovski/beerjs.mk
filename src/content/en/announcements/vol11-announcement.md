@@ -1,8 +1,8 @@
 ---
 title: Vol 11 - May 27th 🎂
 date: 2023-05-08
-category: 'announcements'
-image: '/img/BeerJS Vol. 11 - Banner.png'
+category: "announcements"
+image: "/img/BeerJS Vol. 11 - Banner.png"
 description:
   'Beer.js, vol 11! April 27th, at "House of Legends". Huge thanks to Sourcico, Software Sauna and Prospective for their
   support!'

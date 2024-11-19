@@ -1,9 +1,9 @@
 ---
-import { Icon } from 'astro-icon/components';
-import BigText from './BigText.astro';
-import Link from './Link.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import { getRelativeLocaleUrl } from 'astro:i18n';
+import { Icon } from "astro-icon/components";
+import BigText from "./BigText.astro";
+import Link from "./Link.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -11,10 +11,22 @@ const t = useTranslations(lang);
 
 <div class="flex flex-col items-center justify center pb-20">
   <div class="pt-[80px] md:pt-[160px] w-full">
-    <BigText title="beer.js" subtitle={t('hero.subtitle')}>
-  </div>
-  <div class="mt-[120px] md:mt-[220px] flex flex-col md:flex-row gap-[18px] md:gap-[48px] w-full items-center justify-center">
-    <Link href={getRelativeLocaleUrl(lang, '/take-part')}>{t('hero.cta1')}<Icon name="mdi:arrow-top-right" class="w-[24px] h-[24px]" /></Link>
-    <Link href={getRelativeLocaleUrl(lang, '/about')} variant={2}>{t('hero.cta2')}<Icon name="mdi:arrow-top-right" class="w-[24px] h-[24px]" /></Link>
+    <BigText title="beer.js" subtitle={t("hero.subtitle")} />
+    <div
+      class="mt-[120px] md:mt-[220px] flex flex-col md:flex-row gap-[18px] md:gap-[48px] w-full items-center justify-center"
+    >
+      <Link href={getRelativeLocaleUrl(lang, "/take-part")}
+        >{t("hero.cta1")}<Icon
+          name="mdi:arrow-top-right"
+          class="w-[24px] h-[24px]"
+        /></Link
+      >
+      <Link href={getRelativeLocaleUrl(lang, "/about")} variant={2}
+        >{t("hero.cta2")}<Icon
+          name="mdi:arrow-top-right"
+          class="w-[24px] h-[24px]"
+        /></Link
+      >
+    </div>
   </div>
 </div>

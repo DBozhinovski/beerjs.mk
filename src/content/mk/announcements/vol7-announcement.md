@@ -1,7 +1,7 @@
 ---
 title: Vol 7 - 06ти Октомври
 date: 2022-09-20
-category: 'announcements'
+category: "announcements"
 ---
 
 _Beer.js, vol 7!_ 6ти Октомври, во [„Јавна Соба“](https://www.facebook.com/publicroomskopje/). Собирање од 18:00.

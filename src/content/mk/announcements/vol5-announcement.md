@@ -1,7 +1,7 @@
 ---
 title: Vol 5 - 21ви Ноември
 date: 2019-11-07
-category: 'announcements'
+category: "announcements"
 ---
 
 _Beer.js, vol 5!_ 21ви Ноември, во „Јавна Соба“. Собирање од 18:30. Почеток во 19:00.

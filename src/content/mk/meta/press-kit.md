@@ -1,6 +1,6 @@
 ---
-title: 'Press Kit'
-category: 'press-kit'
+title: "Press Kit"
+category: "press-kit"
 date: 2023-04-11
 ---
 

@@ -1,10 +1,10 @@
 ---
-import MarkdownPost from '../../../components/MarkdownPost.astro';
-import Base from '../../../layouts/Base.astro';
-import { getCollection, render } from 'astro:content';
+import MarkdownPost from "../../../components/MarkdownPost.astro";
+import Base from "../../../layouts/Base.astro";
+import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-  const posts = await getCollection('en');
+  const posts = await getCollection("en");
 
   return posts.map((post) => {
     return {
@@ -21,7 +21,7 @@ const body = await render(post);
 
 <Base title={post.data.title}>
   <div class="flex flex-col mb-4">
-    <MarkdownPost 
+    <MarkdownPost
       title={post.data.title}
       body={body}
       date={post.data.date}

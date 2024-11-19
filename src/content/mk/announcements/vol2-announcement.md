@@ -1,7 +1,7 @@
 ---
 title: Најава - Vol 2
 date: 2017-06-11
-category: 'announcements'
+category: "announcements"
 ---
 
 Второто издание на Beer.js е официјално закажано! На 21ви јуни, повторно во coffice и повторно во истиот формат - две

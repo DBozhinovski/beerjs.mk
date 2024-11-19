@@ -1,7 +1,7 @@
 ---
 title: Vol 8 - 1ви декември
 date: 2022-11-23
-category: 'announcements'
+category: "announcements"
 ---
 
 _Beer.js, vol 8!_ 1ви декември, во [„Јавна Соба“](https://www.facebook.com/publicroomskopje/). Собирање од 18:00.

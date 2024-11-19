@@ -1,8 +1,8 @@
 ---
 title: BeerJS 0.33, Vol 6 - April 26
 date: 2024-04-26
-category: 'announcements'
-image: '/img/BeerJS 0.33 Vol 6.png'
+category: "announcements"
+image: "/img/BeerJS 0.33 Vol 6.png"
 description: 'Beer.js 0.33, vol 6! April 26, at "Base42".'
 ---
 

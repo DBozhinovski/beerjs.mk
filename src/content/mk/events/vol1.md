@@ -1,7 +1,7 @@
 ---
 title: Vol 1
 date: 2017-06-16
-category: 'events'
+category: "events"
 ---
 
 ### 1. Introduction to React and Redux - **Димитар Делев**

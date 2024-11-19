@@ -1,9 +1,9 @@
 ---
 title: Vol 9 - 30ти март
 date: 2023-03-07
-category: 'announcements'
-image: '/img/BeerJS Vol. 9 - Banner.png'
-description: 'Beer.js, vol 9! 30ти март, во „Јавна Соба“. Голема благодарност до CodeChem за поддршката!'
+category: "announcements"
+image: "/img/BeerJS Vol. 9 - Banner.png"
+description: "Beer.js, vol 9! 30ти март, во „Јавна Соба“. Голема благодарност до CodeChem за поддршката!"
 ---
 
 _Beer.js, vol 9!_ 30ти март, во [„Јавна Соба“](https://www.facebook.com/publicroomskopje/). Собирање од 17:40. Почеток

@@ -1,7 +1,7 @@
 ---
 title: Vol 3 - 25ти Април
 date: 2018-03-23
-category: 'announcements'
+category: "announcements"
 ---
 
 _Beer.js се враќа!_ На 25ти Април, во „Паб Комедија“, со почеток од 19 часот.

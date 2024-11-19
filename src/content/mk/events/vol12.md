@@ -1,8 +1,8 @@
 ---
 title: Vol 12 - видеа и слајдови
 date: 2023-09-26
-category: 'events'
-image: '/img/BeerJS Vol. 12 - Banner.png'
+category: "events"
+image: "/img/BeerJS Vol. 12 - Banner.png"
 description: За BeerJS vol. 12
 ---
 

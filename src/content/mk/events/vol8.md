@@ -1,7 +1,7 @@
 ---
 title: Vol 8 - видеа и слајдови
 date: 2022-12-27
-category: 'events'
+category: "events"
 ---
 
 „BeerJS – настанот на пиво, Javascript, технички проблеми и ‘sonic booms’!

@@ -1,8 +1,8 @@
 ---
 title: Vol 12 - 21st September
 date: 2023-09-13
-category: 'announcements'
-image: '/img/BeerJS Vol. 12 - Banner.png'
+category: "announcements"
+image: "/img/BeerJS Vol. 12 - Banner.png"
 description: 'Beer.js, vol 12! 21st September, at "Public Room". Huge thanks to Kin+Carta for the support!'
 ---
 

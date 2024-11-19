@@ -1,8 +1,8 @@
 ---
 title: BeerJS 0.33, Vol 4 - December 21
 date: 2023-12-14
-category: 'announcements'
-image: '/img/BeerJS 0.33 - vol. 4 Announcement.png'
+category: "announcements"
+image: "/img/BeerJS 0.33 - vol. 4 Announcement.png"
 description: 'Beer.js 0.33, vol 4! December 21st, at "Base42".'
 ---
 

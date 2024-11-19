@@ -1,8 +1,8 @@
 ---
 title: Vol 10 - видеа и слајдови
 date: 2023-05-02
-category: 'events'
-image: '/img/BeerJS Vol. 10 - Banner.png'
+category: "events"
+image: "/img/BeerJS Vol. 10 - Banner.png"
 description: За BeerJS vol. 10 и уште подобар настан во сезоната на настани за 2023 🍻
 ---
 

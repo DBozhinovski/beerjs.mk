@@ -1,7 +1,7 @@
 ---
 title: Vol 2
 date: 2017-11-03
-category: 'events'
+category: "events"
 ---
 
 > Повторно технички проблеми, ама склопивме целини некако 🙂

@@ -1,8 +1,8 @@
 ---
 title: Vol 10 - Videos and Slides
 date: 2023-05-02
-category: 'events'
-image: '/img/BeerJS Vol. 10 - Banner.png'
+category: "events"
+image: "/img/BeerJS Vol. 10 - Banner.png"
 description: On BeerJS vol. 10 and an event greater second event in the 2023 event season 🍻
 ---
 

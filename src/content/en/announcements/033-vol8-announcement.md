@@ -1,8 +1,8 @@
 ---
 title: BeerJS 0.33, Vol 8 - November 7th
 date: 2024-11-06
-category: 'announcements'
-image: '/img/BeerJS 0.33 Vol 8.png'
+category: "announcements"
+image: "/img/BeerJS 0.33 Vol 8.png"
 description: 'Beer.js 0.33, vol 8! November 7th, at "Base42".'
 ---
 

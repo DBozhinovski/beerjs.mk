@@ -1,43 +1,73 @@
 ---
 import BeerJS from "./BeerJS.astro";
-import { Icon } from 'astro-icon/components';
-import LanguagePicker from './LanguagePicker.astro';
+import { Icon } from "astro-icon/components";
+import LanguagePicker from "./LanguagePicker.astro";
 
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import { getCollection } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const socials = await getCollection('socials');
+const socials = await getCollection("socials");
 
-const discord = socials[0].data.find(s => s.id === 'discord');
-const youtube = socials[0].data.find(s => s.id === 'youtube');
-
+const discord = socials[0].data.find((s) => s.id === "discord");
+const youtube = socials[0].data.find((s) => s.id === "youtube");
 ---
 
 <nav class="grid grid-cols-12 py-8">
-  <div class="col-span-2 hidden xl:flex">
-  </div>
+  <div class="col-span-2 hidden xl:flex"></div>
   <div
     class="flex w-full items-center justify-between lg:justify-center gap-16 text-white font-jetbrains font-normal text-[18px] grow col-span-12 px-8 lg:px-0 lg:col-span-8"
   >
-    <a href={`${getRelativeLocaleUrl(lang, "/")}`} id="logo" class="w-[50px] hidden lg:flex xl:hidden lg:w-[66px] lg:min-w-[66px] hover:brightness-110" aria-label="Home">
+    <a
+      href={`${getRelativeLocaleUrl(lang, "/")}`}
+      id="logo"
+      class="w-[50px] hidden lg:flex xl:hidden lg:w-[66px] lg:min-w-[66px] hover:brightness-110"
+      aria-label="Home"
+    >
       <BeerJS />
     </a>
-    <a href={`${getRelativeLocaleUrl(lang, "/about")}`} class="hidden lg:inline border-b-2 border-dashed border-b-transparent hover:border-b-2 hover:border-byellow">{t('nav.about')}</a>
-    <a href={`${getRelativeLocaleUrl(lang, "/blog")}`} class="hidden lg:inline border-b-2 border-dashed border-b-transparent hover:border-b-2 hover:border-byellow">{t('nav.blog')}</a>
-    <a href={`${getRelativeLocaleUrl(lang, "/")}`} id="logo" class="flex lg:hidden xl:flex w-[50px] lg:w-[66px] lg:min-w-[66px] hover:brightness-110" aria-label="Home">
+    <a
+      href={`${getRelativeLocaleUrl(lang, "/about")}`}
+      class="hidden lg:inline border-b-2 border-dashed border-b-transparent hover:border-b-2 hover:border-byellow"
+      >{t("nav.about")}</a
+    >
+    <a
+      href={`${getRelativeLocaleUrl(lang, "/blog")}`}
+      class="hidden lg:inline border-b-2 border-dashed border-b-transparent hover:border-b-2 hover:border-byellow"
+      >{t("nav.blog")}</a
+    >
+    <a
+      href={`${getRelativeLocaleUrl(lang, "/")}`}
+      id="logo"
+      class="flex lg:hidden xl:flex w-[50px] lg:w-[66px] lg:min-w-[66px] hover:brightness-110"
+      aria-label="Home"
+    >
       <BeerJS />
     </a>
-    <a href={`${getRelativeLocaleUrl(lang, "/contact")}`} class="hidden lg:inline border-b-2 border-dashed border-b-transparent hover:border-b-2 hover:border-byellow">{t('nav.contact')}</a>
-    <a href={`${getRelativeLocaleUrl(lang, "/take-part")}`} class="hidden lg:inline border-b-2 border-dashed border-b-transparent hover:border-b-2 hover:border-byellow">{t('nav.take-part')}</a>
-    <button class="w-[30px] text-byellow cursor-pointer inline-block lg:hidden hover:brightness-125" id="menu-button" aria-label="Open menu">
+    <a
+      href={`${getRelativeLocaleUrl(lang, "/contact")}`}
+      class="hidden lg:inline border-b-2 border-dashed border-b-transparent hover:border-b-2 hover:border-byellow"
+      >{t("nav.contact")}</a
+    >
+    <a
+      href={`${getRelativeLocaleUrl(lang, "/take-part")}`}
+      class="hidden lg:inline border-b-2 border-dashed border-b-transparent hover:border-b-2 hover:border-byellow"
+      >{t("nav.take-part")}</a
+    >
+    <button
+      class="w-[30px] text-byellow cursor-pointer inline-block lg:hidden hover:brightness-125"
+      id="menu-button"
+      aria-label="Open menu"
+    >
       <Icon name="mdi:menu" class="w-[32px] h-[32px]" />
     </button>
   </div>
-  <div class="gap-4 items-center justify-end lg:col-span-4 xl:col-span-2 hidden lg:flex">
+  <div
+    class="gap-4 items-center justify-end lg:col-span-4 xl:col-span-2 hidden lg:flex"
+  >
     <a href={discord?.url} class="text-white fill-current">
       <Icon name={discord?.icon} class="w-[32px] h-[32px]" />
     </a>
@@ -52,11 +82,17 @@ const youtube = socials[0].data.find(s => s.id === 'youtube');
 
 <div id="mask" class="hidden">
   <sl-drawer label="" id="drawer" class="drawer">
-    <div class="flex flex-col gap-6 text-white font-jetbrains font-normal text-[22px] px-10 py-12">
-      <a href={`${getRelativeLocaleUrl(lang, "/about")}`}>{t('nav.about')}</a>
-      <a href={`${getRelativeLocaleUrl(lang, "/blog")}`}>{t('nav.blog')}</a>
-      <a href={`${getRelativeLocaleUrl(lang, "/contact")}`}>{t('nav.contact')}</a>
-      <a href={`${getRelativeLocaleUrl(lang, "/take-part")}`}>{t('nav.take-part')}</a>
+    <div
+      class="flex flex-col gap-6 text-white font-jetbrains font-normal text-[22px] px-10 py-12"
+    >
+      <a href={`${getRelativeLocaleUrl(lang, "/about")}`}>{t("nav.about")}</a>
+      <a href={`${getRelativeLocaleUrl(lang, "/blog")}`}>{t("nav.blog")}</a>
+      <a href={`${getRelativeLocaleUrl(lang, "/contact")}`}
+        >{t("nav.contact")}</a
+      >
+      <a href={`${getRelativeLocaleUrl(lang, "/take-part")}`}
+        >{t("nav.take-part")}</a
+      >
       <div class="flex gap-2 pt-10">
         <a href={discord?.url} class="text-white fill-current">
           <Icon name={discord?.icon} class="w-[32px] h-[32px]" />
@@ -73,24 +109,23 @@ const youtube = socials[0].data.find(s => s.id === 'youtube');
 </div>
 
 <script>
-  import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@latest/cdn/components/drawer/drawer.js';
+  import "https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@latest/cdn/components/drawer/drawer.js";
 
   const initDrawer = () => {
-    const drawer = document.querySelector('#drawer') as HTMLElement;
-    const openButton = document.querySelector('#menu-button') as HTMLElement;
-    const closeButton = drawer.querySelector('button') as HTMLElement;
-  
-    document.querySelector('#mask')?.classList.remove('hidden');
-  
-    openButton?.addEventListener('click', () => (drawer as any).show());
-    closeButton?.addEventListener('click', () => (drawer as any).hide());
-  }
+    const drawer = document.querySelector("#drawer") as HTMLElement;
+    const openButton = document.querySelector("#menu-button") as HTMLElement;
+    const closeButton = drawer.querySelector("button") as HTMLElement;
+
+    document.querySelector("#mask")?.classList.remove("hidden");
+
+    openButton?.addEventListener("click", () => (drawer as any).show());
+    closeButton?.addEventListener("click", () => (drawer as any).hide());
+  };
 
   initDrawer();
 
   document.addEventListener("astro:after-swap", () => initDrawer());
 </script>
-
 
 <style>
   .drawer::part(base) {
@@ -101,7 +136,7 @@ const youtube = socials[0].data.find(s => s.id === 'youtube');
   }
 
   .drawer::part(overlay) {
-    background: rgba(0,0,0, .3);
+    background: rgba(0, 0, 0, 0.3);
   }
 
   .drawer::part(close-button) {
@@ -113,6 +148,7 @@ const youtube = socials[0].data.find(s => s.id === 'youtube');
   }
 
   #logo:hover {
-    filter: drop-shadow(2px 2px 0px #F1BD4C) drop-shadow(-2px -2px 0px #F1BD4C) drop-shadow(2px -2px 0px #F1BD4C) drop-shadow(-2px 2px 0px #F1BD4C);
+    filter: drop-shadow(2px 2px 0px #f1bd4c) drop-shadow(-2px -2px 0px #f1bd4c)
+      drop-shadow(2px -2px 0px #f1bd4c) drop-shadow(-2px 2px 0px #f1bd4c);
   }
 </style>

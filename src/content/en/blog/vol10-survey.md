@@ -4,10 +4,10 @@ author:
   name: Darko Bozhinovski
   link: https://darko.io
   email: hello@darko.io
-  about: 'Does JS for fun and profit. Organizer of Beer.js Skopje.'
+  about: "Does JS for fun and profit. Organizer of Beer.js Skopje."
 date: 2023-05-05
-category: 'blog'
-image: '/img/BeerJS Vol. 10 - Banner.png'
+category: "blog"
+image: "/img/BeerJS Vol. 10 - Banner.png"
 ---
 
 Vol. 10 "rocked" on several levels. It was the largest in terms of attendance (we're not counting officially, but it was

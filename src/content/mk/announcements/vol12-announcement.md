@@ -1,9 +1,9 @@
 ---
 title: Vol 12 - 21ви септември
 date: 2023-09-13
-category: 'announcements'
-image: '/img/BeerJS Vol. 12 - Banner.png'
-description: 'Beer.js, vol 12! 21ви септември, во „Јавна Соба“. Голема благодарност до Kin+Carta за поддршката!'
+category: "announcements"
+image: "/img/BeerJS Vol. 12 - Banner.png"
+description: "Beer.js, vol 12! 21ви септември, во „Јавна Соба“. Голема благодарност до Kin+Carta за поддршката!"
 ---
 
 _Beer.js, vol 12!_ 21ви април, во [„Јавна Соба“](https://www.facebook.com/publicroomskopje/). Собирање од 17:40. Почеток

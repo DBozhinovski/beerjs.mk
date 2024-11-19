@@ -1,8 +1,8 @@
 ---
 title: Vol 9 - видеа и слајдови
 date: 2023-04-03
-category: 'events'
-image: '/img/vol9.jpg'
+category: "events"
+image: "/img/vol9.jpg"
 description: За BeerJS vol. 9 и одличен почеток на сезоната на настани за 2023 🍻
 ---
 

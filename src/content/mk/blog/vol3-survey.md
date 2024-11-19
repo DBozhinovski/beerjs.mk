@@ -4,9 +4,9 @@ author:
   name: Дарко Божиновски
   link: https://blog.darko.io
   email: dbozhinovski@gmail.com
-  about: 'Does JS for fun and profit. Organizer of Beer.js Skopje.'
+  about: "Does JS for fun and profit. Organizer of Beer.js Skopje."
 date: 2018-05-28
-category: 'blog'
+category: "blog"
 ---
 
 Последниве две недели пуштивме анкета за фидбек за BeerJS vol 3. Добивме 20ина одговори, што е околу четвртина од

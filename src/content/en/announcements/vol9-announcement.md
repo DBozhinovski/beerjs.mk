@@ -1,8 +1,8 @@
 ---
 title: Vol 9 - March 30th
 date: 2023-03-07
-category: 'announcements'
-image: '/img/BeerJS Vol. 9 - Banner.png'
+category: "announcements"
+image: "/img/BeerJS Vol. 9 - Banner.png"
 description: 'Beer.js, vol 9! March 30th, at "Public Room". Many thanks to CodeChem for their support!'
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: BeerJS 0.33, Vol 5 - 29ти февруари
 date: 2024-02-13
-category: 'announcements'
-image: '/img/BeerJS 0.33 Vol 5.png'
-description: 'Beer.js 0.33, vol 5! 29ти февруари, во „Base42“. Благодариме за пивото Xessable 🍻.'
+category: "announcements"
+image: "/img/BeerJS 0.33 Vol 5.png"
+description: "Beer.js 0.33, vol 5! 29ти февруари, во „Base42“. Благодариме за пивото Xessable 🍻."
 ---
 
 Beer.js 0.33, vol 5! 29ти февруари, во [„Base42“](https://base42.mk). Почеток во ~18:00. Овојпат, за пивото и за

@@ -1,8 +1,8 @@
 ---
 title: Vol 9 - Videos and Slides
 date: 2023-04-03
-category: 'events'
-image: '/img/vol9.jpg'
+category: "events"
+image: "/img/vol9.jpg"
 description: On BeerJS vol. 9 and a great start of the 2023 event season  🍻
 ---
 

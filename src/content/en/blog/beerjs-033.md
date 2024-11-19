@@ -5,8 +5,8 @@ author:
   link: https://darko.io
   email: hello@darko.io
 date: 2023-06-29
-image: '/img/033-vol-1.png'
-category: 'announcements'
+image: "/img/033-vol-1.png"
+category: "announcements"
 description: More BeerJS throughout the year 🍻
 ---
 

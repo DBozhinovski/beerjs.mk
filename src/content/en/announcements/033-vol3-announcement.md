@@ -1,8 +1,8 @@
 ---
 title: BeerJS 0.33, Vol 3 - 26 August
 date: 2023-08-11
-category: 'announcements'
-image: '/img/BeerJS 0.33 - vol. 3 Announcement.png'
+category: "announcements"
+image: "/img/BeerJS 0.33 - vol. 3 Announcement.png"
 description: 'Beer.js 0.33, vol 3! 26 August, at "Kasarna Hub".'
 ---
 
