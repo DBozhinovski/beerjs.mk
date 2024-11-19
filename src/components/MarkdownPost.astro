@@ -12,9 +12,34 @@ interface Props {
   cover?: string;
   date?: Date;
   tags?: string[];
+  location?: string;
 }
 
-const { title, body, date, cover, tags } = Astro.props;
+const { title, body, date, cover, tags, location = "Base42" } = Astro.props;
+
+const hasAnnouncement = tags?.includes("announcements");
+
+// Format the date for calendar URLs
+function getCalendarUrls(title: string, date: Date, location = "Online") {
+  const dateStr = format(date, "yyyyMMdd");
+  const encodedTitle = encodeURIComponent(title);
+  const encodedLocation = encodeURIComponent(location);
+
+  return {
+    google: `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodedTitle}&dates=${dateStr}/${dateStr}&location=${encodedLocation}`,
+    ics: `data:text/calendar;charset=utf8,BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:${dateStr}
+DTEND:${dateStr}
+SUMMARY:${encodedTitle}
+LOCATION:${location}
+END:VEVENT
+END:VCALENDAR`,
+  };
+}
+
+const calendarUrls = date ? getCalendarUrls(title, date, location) : null;
 ---
 
 <main class="w-full flex items-center justify-center pl-1 pr-4 lg:p-8 mb-20">
@@ -56,9 +81,35 @@ const { title, body, date, cover, tags } = Astro.props;
       }
       {
         date && (
-          <date class="font-inter font-semibold mb-6 block">
-            🗓️ {format(date, "yyyy-MM-dd")}
-          </date>
+          <div class="flex items-center gap-4 mb-6">
+            <date class="font-inter font-semibold">
+              🗓️ {format(date, "yyyy-MM-dd")}
+            </date>
+            {hasAnnouncement && (
+              <div class="relative group">
+                <button class="text-sm font-inter bg-bgrey text-bwhite px-3 py-1 hover:bg-opacity-80">
+                  +
+                </button>
+                <div class="absolute hidden group-hover:block bg-bwhite border border-bblack shadow-md p-2 z-10 font-jetbrains">
+                  <a
+                    href={calendarUrls?.google}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="block px-4 py-2 font-bold hover:bg-byellow text-sm"
+                  >
+                    GCal
+                  </a>
+                  <a
+                    href={calendarUrls?.ics}
+                    download="event.ics"
+                    class="block px-4 py-2 font-bold hover:bg-byellow text-sm"
+                  >
+                    ICS
+                  </a>
+                </div>
+              </div>
+            )}
+          </div>
         )
       }
       <h1>{title}</h1>
