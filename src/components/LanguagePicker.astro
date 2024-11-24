@@ -56,11 +56,18 @@ const lang = getLangFromUrl(Astro.url);
     showDropdown();
   });
 
+  document.addEventListener("DOMContentLoaded", () => {
+    showDropdown();
+  });
+
   addEventListeners();
-  showDropdown();
 </script>
 
 <style>
+  :not(:defined) {
+    visibility: hidden;
+  }
+
   .dropdown-trigger::part(base) {
     @apply p-1 rounded-lg uppercase font-jetbrains;
     border: 0;
