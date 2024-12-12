@@ -12,7 +12,7 @@ Beer.js 0.33, vol 9! 12ти декември, во [„Base42“](https://base42
 
 ## Презентации
 
-1. „Drizzle - So Hot Right Now“ - Никола Демерџиев
+1. „Drizzle is so hot right now“ - Никола Демерџиев
 2. „Reusable by Design: Building Angular Libraries that Shine“ - Александар Атанасов
 3. „WASM: the future of DevOps“ - Дамјан Георгиевски
 

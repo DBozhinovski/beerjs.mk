@@ -12,7 +12,7 @@ Beer.js 0.33, vol 9! 12th December, at [Base42](https://base42.mk). Starts at ~1
 
 ## Presentations
 
-1. „Drizzle - So Hot Right Now“ - Nikola Demerdziev
+1. „Drizzle is so hot right now“ - Nikola Demerdjiev
 2. „Reusable by Design: Building Angular Libraries that Shine“ - Aleksandar Atanasov
 3. „WASM: the future of DevOps“ - Damjan Georgievski
 
