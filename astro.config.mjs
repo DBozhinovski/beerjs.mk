@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 
 // https://astro.build/config
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 import compress from "astro-compress";
@@ -17,20 +17,12 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-    tailwind(),
     sitemap(),
     mdx(),
-    compress({
-      svg: false,
-      html: false,
-      css: false,
-      js: false,
-    }),
+    compress({ svg: false, html: false, css: false, js: false }),
     icon(),
   ],
-  i18n: {
-    defaultLocale: "mk",
-    locales: ["mk", "en"],
-  },
+  vite: { plugins: [tailwindcss()] },
+  i18n: { defaultLocale: "mk", locales: ["mk", "en"] },
   site: "https://beerjs.mk",
 });

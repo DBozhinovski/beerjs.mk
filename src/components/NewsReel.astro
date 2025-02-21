@@ -72,34 +72,3 @@ const newsPosts = posts.filter(
     }
   </section>
 </div>
-
-<style>
-  #beercard {
-    background:
-      url("/beercard-bg.svg") no-repeat top center,
-      linear-gradient(to bottom, #f2bd4c00 60px, #f2bd4cff 31px);
-    background-size: 100% auto;
-  }
-
-  .content {
-    @apply w-full flex flex-col items-center justify-center py-[30px] md:py-[60px];
-  }
-
-  .content h3 {
-    @apply font-jetbrains uppercase text-[48px] font-black text-byellow;
-    text-shadow:
-      -1px -1px 0 #000,
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-      1px 1px 0 #000,
-      -5px -5px 0px #0f0d0e;
-  }
-
-  .content p {
-    @apply font-jetbrains font-bold text-[22px] text-center;
-  }
-
-  #reel {
-    grid-auto-rows: 1fr;
-  }
-</style>

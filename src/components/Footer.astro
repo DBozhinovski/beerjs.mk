@@ -12,7 +12,7 @@ const socials = await getCollection("socials");
 <footer
   class="w-full grid grid-cols-2 lg:grid-cols-3 justify-between items-center bg-byellow py-[48px] px-[24px] sm:px-[48px] lg:px-[96px] font-jetbrains gap-4"
 >
-  <div class="flex flex-col gap-3 flex-grow">
+  <div class="flex flex-col gap-3 grow">
     <a href={`${getRelativeLocaleUrl(lang, "/about")}`} class="hover:underline"
       >{t("footer.about")}</a
     >
@@ -25,12 +25,12 @@ const socials = await getCollection("socials");
       class="hover:underline">{t("footer.contact")}</a
     >
   </div>
-  <div class="flex-grow items-center justify-center hidden lg:flex">
+  <div class="grow items-center justify-center hidden lg:flex">
     <a class="w-[120px] block" href="/" id="logo-footer" aria-label="Home">
       <img src="/img/beerjs-label.png" alt="Beer.JS" />
     </a>
   </div>
-  <div class="flex gap-4 flex-grow justify-end flex-wrap" id="socials">
+  <div class="flex gap-4 grow justify-end flex-wrap" id="socials">
     {
       socials[0].data.map((s) => (
         <a href={s.url} aria-label={s.name}>
@@ -49,9 +49,5 @@ const socials = await getCollection("socials");
   #logo-footer:hover {
     filter: drop-shadow(2px 2px 0px #fff) drop-shadow(-2px -2px 0px #fff)
       drop-shadow(2px -2px 0px #fff) drop-shadow(-2px 2px 0px #fff);
-  }
-
-  #socials a:hover {
-    @apply fill-current text-white;
   }
 </style>

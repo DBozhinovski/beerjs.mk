@@ -67,25 +67,4 @@ const lang = getLangFromUrl(Astro.url);
   :not(:defined) {
     visibility: hidden;
   }
-
-  .dropdown-trigger::part(base) {
-    @apply p-1 rounded-lg uppercase font-jetbrains;
-    border: 0;
-  }
-
-  .dropdown {
-    @apply bg-bwhite text-bblack rounded;
-  }
-
-  .dropdown::part(base) {
-    @apply bg-bwhite text-bblack;
-  }
-
-  .dropdown::part(panel) {
-    @apply bg-bwhite text-bblack py-2;
-  }
-
-  .dropdown sl-menu-item::part(base) {
-    @apply hover:bg-bblack hover:text-bwhite py-1;
-  }
 </style>

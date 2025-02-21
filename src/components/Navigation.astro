@@ -127,28 +127,4 @@ const youtube = socials[0].data.find((s) => s.id === "youtube");
   document.addEventListener("astro:after-swap", () => initDrawer());
 </script>
 
-<style>
-  .drawer::part(base) {
-    z-index: 9;
-  }
-  .drawer::part(panel) {
-    @apply bg-bblack h-screen p-4;
-  }
-
-  .drawer::part(overlay) {
-    background: rgba(0, 0, 0, 0.3);
-  }
-
-  .drawer::part(close-button) {
-    @apply text-bwhite text-2xl text-byellow font-black hover:brightness-125;
-  }
-
-  a {
-    @apply hover:brightness-110 hover:text-byellow;
-  }
-
-  #logo:hover {
-    filter: drop-shadow(2px 2px 0px #f1bd4c) drop-shadow(-2px -2px 0px #f1bd4c)
-      drop-shadow(2px -2px 0px #f1bd4c) drop-shadow(-2px 2px 0px #f1bd4c);
-  }
-</style>
+<style></style>

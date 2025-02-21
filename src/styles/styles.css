@@ -1,3 +1,169 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-*: initial;
+  --font-inter: Inter, sans-serif;
+  --font-jetbrains: JetBrains Mono, monospace;
+
+  --color-bblack: #0f0d0e;
+  --color-bpink: #e590a3;
+  --color-bblue: #53b2e0;
+  --color-byellow: #f2bd4c;
+  --color-borange: #eb7c3e;
+  --color-bpurple: #765fa2;
+  --color-bgreen: #4da663;
+  --color-bbg: #1e1e1e;
+  --color-bred: #da3a44;
+  --color-bwhite: #fdf8ed;
+  --color-bgrey: #343433;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+#socials a:hover {
+  @apply fill-current text-white;
+}
+
+.dropdown-trigger::part(base) {
+  @apply p-1 rounded-lg uppercase font-jetbrains;
+  border: 0;
+}
+
+.dropdown {
+  @apply bg-bwhite text-bblack rounded;
+}
+
+.dropdown::part(base) {
+  @apply bg-bwhite text-bblack;
+}
+
+.dropdown::part(panel) {
+  @apply bg-bwhite text-bblack py-2;
+}
+
+.dropdown sl-menu-item::part(base) {
+  @apply hover:bg-bblack hover:text-bwhite py-1;
+}
+
+/* Links */
+
+.variant-1:hover {
+  @apply shadow-[8px_8px_0px_0px_rgba(0,0,0,0)] shadow-bwhite;
+}
+
+.variant-2:hover {
+  @apply shadow-[8px_8px_0px_0px_rgba(0,0,0,0)] shadow-byellow;
+}
+
+.variant-3:hover {
+  @apply shadow-[8px_8px_0px_0px_rgba(0,0,0,0)] shadow-byellow;
+}
+
+.variant-4:hover {
+  @apply shadow-[8px_8px_0px_0px_rgba(0,0,0,0)] shadow-byellow;
+}
+
+.variant-5:hover {
+  @apply shadow-[8px_8px_0px_0px_rgba(0,0,0,0)] shadow-bblack;
+}
+
+/* Markdown Post */
+
+article {
+  @apply bg-bwhite p-[32px] sm:p-[48px] md:p-[72px] lg:p-[96px] border border-solid border-bblack w-full max-w-[1500px] flex;
+  box-shadow: 12px 12px 0px 0px #f9d857;
+}
+
+aside {
+  @apply mt-[120px] pr-10 hidden lg:block;
+  width: 270px;
+  min-width: 270px;
+}
+
+article h1 {
+  @apply font-jetbrains capitalize text-bblack text-[32px] lg:text-[48px] font-extrabold mb-[48px];
+}
+
+/* Navigation */
+
+.drawer::part(base) {
+  z-index: 9;
+}
+.drawer::part(panel) {
+  @apply bg-bblack h-screen p-4;
+}
+
+.drawer::part(overlay) {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.drawer::part(close-button) {
+  @apply text-bwhite text-2xl text-byellow font-black hover:brightness-125;
+}
+
+nav a {
+  @apply hover:brightness-110 hover:text-byellow;
+}
+
+#logo:hover {
+  filter: drop-shadow(2px 2px 0px #f1bd4c) drop-shadow(-2px -2px 0px #f1bd4c)
+    drop-shadow(2px -2px 0px #f1bd4c) drop-shadow(-2px 2px 0px #f1bd4c);
+}
+
+/* News Card */
+.card-root:hover {
+  box-shadow: 9px 9px 0px 0px #272325;
+}
+
+.card-root:hover > span {
+  @apply border-byellow;
+}
+
+/* News Reel */
+
+#beercard {
+  background:
+    url("/beercard-bg.svg") no-repeat top center,
+    linear-gradient(to bottom, #f2bd4c00 60px, #f2bd4cff 31px);
+  background-size: 100% auto;
+
+  .content {
+    @apply w-full flex flex-col items-center justify-center py-[30px] md:py-[60px];
+  }
+
+  .content div:first-child h3 {
+    @apply font-jetbrains uppercase text-[48px] font-black text-byellow;
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000,
+      -5px -5px 0px #0f0d0e;
+  }
+
+  .content div:first-child p {
+    @apply font-jetbrains font-bold text-[22px] text-center;
+  }
+}
+
+#reel {
+  grid-auto-rows: 1fr;
+}
