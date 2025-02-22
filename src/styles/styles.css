@@ -102,6 +102,10 @@ article h1 {
   @apply font-jetbrains capitalize text-bblack text-[32px] lg:text-[48px] font-extrabold mb-[48px];
 }
 
+.prose img:first-child {
+  @apply w-full object-cover;
+}
+
 /* Navigation */
 
 .drawer::part(base) {
