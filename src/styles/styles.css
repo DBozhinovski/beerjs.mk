@@ -171,3 +171,7 @@ nav a {
 #reel {
   grid-auto-rows: 1fr;
 }
+
+.prose img {
+  max-width: 100%;
+}
