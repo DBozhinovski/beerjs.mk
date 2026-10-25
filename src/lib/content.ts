@@ -50,6 +50,11 @@ function toDate(value: PostData["date"]) {
   return value instanceof Date ? value : new Date(value);
 }
 
+/** The URL slug of an entry. EmDash prefixes the ids of non-default locales. */
+function entrySlug(id: string, lang: string) {
+  return id.startsWith(`${lang}/`) ? id.slice(lang.length + 1) : id;
+}
+
 function publishedOnly<T>(read: () => Promise<T>): Promise<T> {
   return runWithContext(
     { ...getRequestContext(), editMode: false, preview: undefined },
@@ -100,7 +105,7 @@ export async function getNews(lang: string, limit?: number) {
     if (result.error) throw result.error;
     return result.entries.map((entry) => ({
       collection: NEWS_COLLECTIONS[index],
-      slug: entry.id,
+      slug: entrySlug(entry.id, lang),
       data: entry.data,
       date: toDate(entry.data.date),
     }));
@@ -176,6 +181,8 @@ export async function getEntryPaths() {
   );
   return results.flatMap(({ collection, lang, result }) => {
     if (result.error) throw result.error;
-    return result.entries.map((entry) => entryPath(lang, collection, entry.id));
+    return result.entries.map((entry) =>
+      entryPath(lang, collection, entrySlug(entry.id, lang)),
+    );
   });
 }
