@@ -4,16 +4,17 @@ import { Icon } from "astro-icon/components";
 import LanguagePicker from "./LanguagePicker.astro";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import { getCollection } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { getSocialLinks } from "../lib/content";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const socials = await getCollection("socials");
+const socials = await getSocialLinks();
 
-const discord = socials[0].data.find((s) => s.id === "discord");
-const youtube = socials[0].data.find((s) => s.id === "youtube");
+const headerLinks = ["discord", "youtube"].flatMap((id) =>
+  socials.filter((s) => s.id === id),
+);
 ---
 
 <nav class="grid grid-cols-12 py-8">
@@ -61,6 +62,7 @@ const youtube = socials[0].data.find((s) => s.id === "youtube");
       class="w-[30px] text-byellow cursor-pointer inline-block lg:hidden hover:brightness-125"
       id="menu-button"
       aria-label="Open menu"
+      aria-controls="drawer"
     >
       <Icon name="mdi:menu" class="w-[32px] h-[32px]" />
     </button>
@@ -68,63 +70,84 @@ const youtube = socials[0].data.find((s) => s.id === "youtube");
   <div
     class="gap-4 items-center justify-end lg:col-span-4 xl:col-span-2 hidden lg:flex"
   >
-    <a href={discord?.url} class="text-white fill-current">
-      <Icon name={discord?.icon} class="w-[32px] h-[32px]" />
-    </a>
-    <a href={youtube?.url} class="text-white fill-current">
-      <Icon name={youtube?.icon} class="w-[32px] h-[32px]" />
-    </a>
+    {
+      headerLinks.map((s) => (
+        <a href={s.url} aria-label={s.name} class="text-white fill-current">
+          <Icon name={s.icon} class="w-[32px] h-[32px]" />
+        </a>
+      ))
+    }
     <div class="flex items-center pr-4">
       <LanguagePicker />
     </div>
   </div>
 </nav>
 
-<div id="mask" class="hidden">
-  <sl-drawer label="" id="drawer" class="drawer">
-    <div
-      class="flex flex-col gap-6 text-white font-jetbrains font-normal text-[22px] px-10 py-12"
+<dialog id="drawer" class="drawer" closedby="any" aria-label="Menu">
+  <form method="dialog" class="flex justify-end">
+    <button
+      class="text-byellow cursor-pointer hover:brightness-125"
+      aria-label="Close menu"
     >
-      <a href={`${getRelativeLocaleUrl(lang, "/about")}`}>{t("nav.about")}</a>
-      <a href={`${getRelativeLocaleUrl(lang, "/blog")}`}>{t("nav.blog")}</a>
-      <a href={`${getRelativeLocaleUrl(lang, "/contact")}`}
-        >{t("nav.contact")}</a
-      >
-      <a href={`${getRelativeLocaleUrl(lang, "/take-part")}`}
-        >{t("nav.take-part")}</a
-      >
-      <div class="flex gap-2 pt-10">
-        <a href={discord?.url} class="text-white fill-current">
-          <Icon name={discord?.icon} class="w-[32px] h-[32px]" />
-        </a>
-        <a href={youtube?.url} class="text-white fill-current">
-          <Icon name={youtube?.icon} class="w-[32px] h-[32px]" />
-        </a>
-      </div>
-      <div>
-        <LanguagePicker />
-      </div>
+      <Icon name="mdi:close" class="w-[32px] h-[32px]" />
+    </button>
+  </form>
+  <div
+    class="flex flex-col gap-6 text-white font-jetbrains font-normal text-[22px] px-10 py-12"
+  >
+    <a href={`${getRelativeLocaleUrl(lang, "/about")}`}>{t("nav.about")}</a>
+    <a href={`${getRelativeLocaleUrl(lang, "/blog")}`}>{t("nav.blog")}</a>
+    <a href={`${getRelativeLocaleUrl(lang, "/contact")}`}>{t("nav.contact")}</a>
+    <a href={`${getRelativeLocaleUrl(lang, "/take-part")}`}
+      >{t("nav.take-part")}</a
+    >
+    <div class="flex gap-2 pt-10">
+      {
+        headerLinks.map((s) => (
+          <a href={s.url} aria-label={s.name} class="text-white fill-current">
+            <Icon name={s.icon} class="w-[32px] h-[32px]" />
+          </a>
+        ))
+      }
     </div>
-  </sl-drawer>
-</div>
+    <div>
+      <LanguagePicker align="start" />
+    </div>
+  </div>
+</dialog>
 
 <script>
-  import "https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@latest/cdn/components/drawer/drawer.js";
+  const drawer = () => document.querySelector<HTMLDialogElement>("#drawer");
 
-  const initDrawer = () => {
-    const drawer = document.querySelector("#drawer") as HTMLElement;
-    const openButton = document.querySelector("#menu-button") as HTMLElement;
-    const closeButton = drawer.querySelector("button") as HTMLElement;
-
-    document.querySelector("#mask")?.classList.remove("hidden");
-
-    openButton?.addEventListener("click", () => (drawer as any).show());
-    closeButton?.addEventListener("click", () => (drawer as any).hide());
+  const isBackdropClick = (dialog: HTMLDialogElement, event: MouseEvent) => {
+    if (event.target !== dialog) return false;
+    const rect = dialog.getBoundingClientRect();
+    return (
+      event.clientX < rect.left ||
+      event.clientX > rect.right ||
+      event.clientY < rect.top ||
+      event.clientY > rect.bottom
+    );
   };
 
-  initDrawer();
+  document.addEventListener("click", (event) => {
+    const dialog = drawer();
+    if (!dialog) return;
+    const target = event.target as Element;
 
-  document.addEventListener("astro:after-swap", () => initDrawer());
+    if (target.closest("#menu-button")) {
+      dialog.showModal();
+      return;
+    }
+
+    // Close on link navigation, because the navigation persists across
+    // page swaps. Safari has no closedby, so handle backdrop clicks here.
+    const followsLink = dialog.contains(target) && target.closest("a");
+    const missingClosedBy = !("closedBy" in HTMLDialogElement.prototype);
+    if (followsLink || (missingClosedBy && isBackdropClick(dialog, event))) {
+      dialog.close();
+    }
+  });
 </script>
 
 <style></style>

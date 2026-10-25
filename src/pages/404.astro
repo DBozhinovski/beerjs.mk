@@ -1,0 +1,19 @@
+---
+import Base from "../layouts/Base.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Base title={t("notfound.title")}>
+  <main class="flex flex-col items-center gap-8 px-4 py-32 font-jetbrains">
+    <h1 class="text-[32px] font-bold text-bwhite">404 — {t("notfound.title")}</h1>
+    <a
+      href={getRelativeLocaleUrl(lang, "/")}
+      class="text-bwhite border-byellow border-b-2 hover:border-bwhite transition"
+      >{t("notfound.home")}</a
+    >
+  </main>
+</Base>

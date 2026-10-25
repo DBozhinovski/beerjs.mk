@@ -4,16 +4,17 @@
 
 ### Requirements
 
-- Node.js v18.17.1+
+- Node.js 22.16 or later
+- pnpm 11.24.0
 
 ### Running locally
 
-```bash
-npm install
-npm run dev
-```
+1. Install the dependencies with `pnpm install`.
+2. Import the content into a new local database with `pnpm cms:import`.
+3. Start the dev server with `pnpm dev`.
 
-At this point, you should be able to view the website at [http://localhost:4321](http://localhost:4321).
+Open the website at [http://localhost:4321](http://localhost:4321).
+To edit content, open the dev login link that `pnpm dev` shows. It signs you in to the admin as a development admin.
 
 ## Types of contributions
 

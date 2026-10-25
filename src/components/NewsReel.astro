@@ -1,11 +1,10 @@
 ---
 import NewsCard from "./NewsCard.astro";
-import { getCollection } from "astro:content";
 import { format } from "date-fns";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { entryPath, getNews } from "../lib/content";
 
 const lang = getLangFromUrl(Astro.url);
-const posts = await getCollection(lang);
 const t = useTranslations(lang);
 
 interface Props {
@@ -15,12 +14,7 @@ interface Props {
 
 const { limit, link } = Astro.props;
 
-const newsPosts = posts.filter(
-  (post) =>
-    post.data?.category?.includes("blog") ||
-    post.data?.category?.includes("announcements") ||
-    post.data?.category?.includes("events"),
-);
+const newsPosts = await getNews(lang, limit);
 ---
 
 <div
@@ -39,25 +33,16 @@ const newsPosts = posts.filter(
       class="pt-[120px] gap-[24px] items-center justify-center px-4 flex flex-col md:grid md:grid-cols-2 xl:grid-cols-3"
     >
       {
-        newsPosts
-          .sort(
-            (a, b) =>
-              new Date(b.data?.date).getTime() -
-              new Date(a.data?.date).getTime(),
-          )
-          .slice(0, limit)
-          .map((p) => {
-            return (
-              <NewsCard
-                title={p.data.title}
-                date={format(p.data?.date || new Date(), "yyyy-MM-dd")}
-                tags={[`${p.data.category}`]}
-                link={`/${lang === "mk" ? "" : lang + "/"}${p.id}`}
-                description={p.data?.description || ""}
-                cover={p.data?.image || ""}
-              />
-            );
-          })
+        newsPosts.map((p) => (
+          <NewsCard
+            title={p.data.title}
+            date={format(p.date || new Date(), "yyyy-MM-dd")}
+            tags={[`${p.data.category}`]}
+            link={entryPath(lang, p.collection, p.slug)}
+            description={p.data.description || ""}
+            cover={p.data.image}
+          />
+        ))
       }
     </div>
     {

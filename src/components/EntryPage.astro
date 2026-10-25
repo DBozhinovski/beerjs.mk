@@ -1,0 +1,22 @@
+---
+import MarkdownPost from "./MarkdownPost.astro";
+import Base from "../layouts/Base.astro";
+import type { PostData } from "../lib/content";
+
+interface Props {
+  post: Omit<PostData, "date"> & { date?: Date };
+}
+
+const { post } = Astro.props;
+---
+
+<Base title={post.title} description={post.description} image={post.image}>
+  <div class="flex flex-col mb-4">
+    <MarkdownPost
+      title={post.title}
+      content={post.content}
+      date={post.date}
+      tags={[`${post.category}`]}
+    />
+  </div>
+</Base>

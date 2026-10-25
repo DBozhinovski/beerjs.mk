@@ -1,12 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
-import { getCollection } from "astro:content";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { Image } from "astro:assets";
+import beerjsLabel from "../assets/beerjs-label.png";
+import { getSocialLinks } from "../lib/content";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const socials = await getCollection("socials");
+const socials = await getSocialLinks();
 ---
 
 <footer
@@ -27,12 +29,12 @@ const socials = await getCollection("socials");
   </div>
   <div class="grow items-center justify-center hidden lg:flex">
     <a class="w-[120px] block" href="/" id="logo-footer" aria-label="Home">
-      <img src="/img/beerjs-label.png" alt="Beer.JS" />
+      <Image src={beerjsLabel} alt="Beer.JS" width={120} densities={[1, 2]} />
     </a>
   </div>
   <div class="flex gap-4 grow justify-end flex-wrap" id="socials">
     {
-      socials[0].data.map((s) => (
+      socials.map((s) => (
         <a href={s.url} aria-label={s.name}>
           <Icon name={s.icon} class="w-[32px] h-[32px]" />
         </a>

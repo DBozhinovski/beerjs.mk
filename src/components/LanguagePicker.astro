@@ -1,70 +1,78 @@
 ---
+import { Icon } from "astro-icon/components";
 import { languages } from "../i18n/ui";
 import { getLangFromUrl } from "../i18n/utils";
+import { localizedPath } from "../i18n/paths";
 
+interface Props {
+  align?: "start" | "end";
+}
+
+const { align = "end" } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<sl-dropdown class="dropdown opacity-0">
-  <sl-button slot="trigger" caret class="dropdown-trigger">{lang}</sl-button>
-  {
-    Object.entries(languages).map(([lang, label]) => (
-      <sl-menu-item value={lang}>
-        <button data-lang={lang} class="block font-jetbrains w-full text-left">
-          {label}
-        </button>
-      </sl-menu-item>
-    ))
-  }
-</sl-dropdown>
+<details class="lang-picker relative inline-block font-jetbrains">
+  <summary
+    class="flex items-center gap-1 cursor-pointer list-none rounded-lg bg-bwhite text-bblack p-1 text-[14px] uppercase"
+  >
+    {lang}
+    <Icon name="mdi:chevron-down" class="w-[16px] h-[16px]" aria-hidden="true" />
+  </summary>
+  <ul
+    class:list={[
+      "absolute top-full z-10 mt-1 min-w-max rounded bg-bwhite text-bblack py-2 text-[16px]",
+      align === "end" ? "right-0" : "left-0",
+    ]}
+  >
+    {
+      Object.entries(languages).map(([code, label]) => (
+        <li>
+          <a
+            href={localizedPath(code, Astro.url.pathname)}
+            data-lang={code}
+            data-astro-reload
+            hreflang={code}
+            lang={code}
+            class="block px-4 py-1"
+          >
+            {label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</details>
 
 <script>
-  import "https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/components/dropdown/dropdown.js";
+  import { localizedPath } from "../i18n/paths";
 
-  const showDropdown = () => {
-    const dropdowns = document.querySelectorAll(".dropdown");
-    if (dropdowns) {
-      dropdowns.forEach((dropdown) => {
-        dropdown.classList.remove("opacity-0");
+  const closePickers = (except?: Node) => {
+    document
+      .querySelectorAll<HTMLDetailsElement>("details.lang-picker[open]")
+      .forEach((picker) => {
+        if (!except || !picker.contains(except)) picker.open = false;
       });
+  };
+
+  document.addEventListener("click", (event) => {
+    const target = event.target as Element;
+    const link = target.closest<HTMLAnchorElement>("a[data-lang]");
+
+    if (link) {
+      // The navigation can persist across page swaps, so compute the
+      // target path at click time instead of trusting the rendered href.
+      event.preventDefault();
+      const newLang = link.dataset.lang as string;
+      localStorage.setItem("locale", newLang);
+      window.location.href = localizedPath(newLang, window.location.pathname);
+      return;
     }
-  };
 
-  const addEventListeners = () => {
-    document.querySelectorAll("sl-menu-item button").forEach((button) => {
-      button.addEventListener("click", (e) => {
-        e.preventDefault();
-        const newLang = (button as HTMLElement).dataset.lang as string;
-        localStorage.setItem("locale", newLang);
-
-        // Handle navigation after storage is set
-        const currentPath = window.location.pathname;
-        const newPath =
-          newLang === "mk"
-            ? currentPath.replace(/^\/en/, "") // Remove 'en' prefix if switching to 'mk'
-            : currentPath.startsWith("/en")
-              ? currentPath
-              : `/en${currentPath}`; // Add 'en' prefix if needed
-
-        window.location.href = newPath || "/";
-      });
-    });
-  };
-
-  document.addEventListener("astro:after-swap", () => {
-    addEventListeners();
-    showDropdown();
+    closePickers(target);
   });
 
-  document.addEventListener("DOMContentLoaded", () => {
-    showDropdown();
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closePickers();
   });
-
-  addEventListeners();
 </script>
-
-<style>
-  :not(:defined) {
-    visibility: hidden;
-  }
-</style>

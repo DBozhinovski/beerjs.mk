@@ -1,4 +1,5 @@
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /_emdash/
 
-sitemap: https://minimal-blog.netlify.com/sitemap.xml
+Sitemap: https://beerjs.mk/sitemap.xml

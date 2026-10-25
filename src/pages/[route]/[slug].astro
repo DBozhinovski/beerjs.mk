@@ -1,0 +1,9 @@
+---
+import EntryPage from "../../components/EntryPage.astro";
+import { loadEntry, routeCollection } from "../../lib/content";
+
+const post = await loadEntry(Astro, routeCollection(Astro.params.route));
+if (!post) return Astro.rewrite("/404");
+---
+
+<EntryPage post={post} />

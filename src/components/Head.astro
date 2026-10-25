@@ -1,20 +1,30 @@
 ---
 import { SEO } from "astro-seo";
-import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 import { ClientRouter } from "astro:transitions";
+import { Font, getImage } from "astro:assets";
+import type { MediaValue } from "emdash";
+import beerjsLabel from "../assets/beerjs-label.png";
+import { getLangFromUrl } from "../i18n/utils";
+import { mediaUrl } from "../lib/content";
 
 interface Props {
   title?: string;
   description?: string;
   type?: string;
-  image?: string;
+  image?: MediaValue | null;
 }
 
 const { title, description, type, image } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+
+const fullTitle = title ? `${title} | BeerJS Skopje` : "BeerJS Skopje";
+const socialImagePath = image
+  ? mediaUrl(image)
+  : (await getImage({ src: beerjsLabel, width: 1200, format: "png" })).src;
+const socialImageUrl = new URL(socialImagePath, Astro.site).href;
 ---
 
 <head>
-  <title>{title} | BeerJS Skopje</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <SEO
@@ -24,50 +34,32 @@ const { title, description, type, image } = Astro.props;
     description={description}
     openGraph={{
       basic: {
-        title:
-          `${title} | BeerJS Skopje` ||
-          "The meetup for beer and JavaScript lovers. | BeerJS Skopje",
+        title: fullTitle,
         type: type || "website",
-        image: image || "fallback_image_here",
+        image: socialImageUrl,
       },
     }}
     twitter={{
+      card: "summary_large_image",
       creator: "@d_bozhinovski",
+      title: fullTitle,
+      image: socialImageUrl,
+      description,
     }}
     extend={{
       link: [{ rel: "icon", href: "/favicon.svg" }],
-      meta: [
-        {
-          name: "twitter:image",
-          content: image,
-        },
-        {
-          name: "twitter:title",
-          content:
-            `${title} | BeerJS Skopje` ||
-            "The meetup for beer and JavaScript lovers. | BeerJS Skopje",
-        },
-        { name: "twitter:description", content: description },
-      ],
     }}
   />
-  <GoogleFontsOptimizer
-    url="https://api.fonts.coollabs.io/css2?family=JetBrains+Mono:wght@400;500;700;800;900&display=swap"
+  <Font
+    cssVariable="--font-jetbrains-mono"
+    preload={[
+      { subset: "latin" },
+      ...(lang === "mk" ? [{ subset: "cyrillic" }] : []),
+    ]}
   />
-  <GoogleFontsOptimizer
-    url="https://api.fonts.coollabs.io/css2?family=Inter:wght@300;400;700;800;900&display=swap"
-  />
+  <Font cssVariable="--font-inter-sans" />
 
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@latest/cdn/themes/dark.css"
-  />
-  <link rel="sitemap" href="/sitemap-index.xml" />
-
-  <script
-    type="module"
-    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@latest/cdn/shoelace-autoloader.js"
-  ></script>
+  <link rel="sitemap" href="/sitemap.xml" />
 
   <script
     defer

@@ -1,0 +1,22 @@
+---
+import { PortableText } from "emdash/ui";
+import type { PortableTextBlock } from "emdash";
+import Heading from "./Heading.astro";
+import HtmlContent from "./HtmlContent.astro";
+import LinkMark from "./LinkMark.astro";
+import SyntaxCode from "./SyntaxCode.astro";
+
+interface Props {
+  value: PortableTextBlock[];
+}
+
+const { value } = Astro.props;
+const heading = Heading;
+const components = {
+  block: { h1: heading, h2: heading, h3: heading, h4: heading, h5: heading, h6: heading },
+  type: { code: SyntaxCode, htmlBlock: HtmlContent },
+  mark: { link: LinkMark },
+};
+---
+
+<PortableText value={value} components={components} />

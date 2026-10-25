@@ -1,4 +1,6 @@
 ---
+import { Image } from "emdash/ui";
+import type { MediaValue } from "emdash";
 import CardTag from "./CardTag.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
@@ -11,7 +13,7 @@ interface Props {
   tags: string[];
   description: string;
   link: string;
-  cover?: string;
+  cover?: MediaValue | null;
 }
 
 const { title, date, tags, description, link, cover } = Astro.props;
@@ -32,7 +34,13 @@ const { title, date, tags, description, link, cover } = Astro.props;
   </div>
   {
     cover && (
-      <img src={cover} alt={title} class="w-full h-[120px] pt-2 object-cover" />
+      <Image
+        image={cover}
+        alt={title}
+        width={315}
+        height={120}
+        class="w-full h-[120px] pt-2 object-cover"
+      />
     )
   }
   <h2 class="text-[24px] font-bold mt-2">{title}</h2>

@@ -1,0 +1,56 @@
+---
+import { HtmlBlock } from "emdash/ui";
+import {
+  SITE_HTML_ALLOWED_ATTRIBUTES,
+  SITE_HTML_ALLOWED_SCHEMES,
+  SITE_HTML_ALLOWED_TAGS,
+  SITE_HTML_IFRAME_HOSTS,
+} from "@emdash-cms/admin/html-block";
+import sanitizeHtml from "sanitize-html";
+
+interface Props {
+  node: {
+    _type: "htmlBlock";
+    _key: string;
+    html: string;
+    css?: string;
+    js?: string;
+    isolated?: boolean;
+  };
+}
+
+// EmDash's rules, plus the slide hosts and the download links of the posts.
+const options: sanitizeHtml.IOptions = {
+  allowedTags: [...SITE_HTML_ALLOWED_TAGS],
+  allowedAttributes: {
+    ...Object.fromEntries(
+      Object.entries(SITE_HTML_ALLOWED_ATTRIBUTES).map(([tag, names]) => [
+        tag,
+        [...names],
+      ]),
+    ),
+    a: [...SITE_HTML_ALLOWED_ATTRIBUTES.a, "download"],
+  },
+  // Keep `download` without a file name.
+  nonBooleanAttributes: sanitizeHtml.defaults.nonBooleanAttributes.filter(
+    (name) => name !== "download",
+  ),
+  allowedSchemes: [...SITE_HTML_ALLOWED_SCHEMES],
+  allowedIframeHostnames: [
+    ...SITE_HTML_IFRAME_HOSTS,
+    "slides.com",
+    "docs.google.com",
+    "drive.google.com",
+  ],
+};
+
+const { node } = Astro.props;
+---
+
+{
+  node.isolated ? (
+    <HtmlBlock node={node} />
+  ) : (
+    <div set:html={sanitizeHtml(node.html, options)} />
+  )
+}

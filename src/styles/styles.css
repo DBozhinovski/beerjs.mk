@@ -2,11 +2,13 @@
 
 @plugin '@tailwindcss/typography';
 
-@theme {
+@theme inline {
   --font-*: initial;
-  --font-inter: Inter, sans-serif;
-  --font-jetbrains: JetBrains Mono, monospace;
+  --font-inter: var(--font-inter-sans);
+  --font-jetbrains: var(--font-jetbrains-mono);
+}
 
+@theme {
   --color-bblack: #0f0d0e;
   --color-bpink: #e590a3;
   --color-bblue: #53b2e0;
@@ -42,25 +44,12 @@
   @apply fill-current text-white;
 }
 
-.dropdown-trigger::part(base) {
-  @apply p-1 rounded-lg uppercase font-jetbrains;
-  border: 0;
+.lang-picker summary::-webkit-details-marker {
+  display: none;
 }
 
-.dropdown {
-  @apply bg-bwhite text-bblack rounded;
-}
-
-.dropdown::part(base) {
-  @apply bg-bwhite text-bblack;
-}
-
-.dropdown::part(panel) {
-  @apply bg-bwhite text-bblack py-2;
-}
-
-.dropdown sl-menu-item::part(base) {
-  @apply hover:bg-bblack hover:text-bwhite py-1;
+.lang-picker a:hover {
+  @apply bg-bblack text-bwhite;
 }
 
 /* Links */
@@ -108,19 +97,55 @@ article h1 {
 
 /* Navigation */
 
-.drawer::part(base) {
-  z-index: 9;
-}
-.drawer::part(panel) {
-  @apply bg-bblack h-screen p-4;
+.drawer {
+  @apply bg-bblack h-dvh max-h-none w-[min(25rem,100vw)] max-w-none p-4 border-0;
+  inset-inline: auto 0;
+  margin: 0;
 }
 
-.drawer::part(overlay) {
+.drawer::backdrop {
   background: rgba(0, 0, 0, 0.3);
 }
 
-.drawer::part(close-button) {
-  @apply text-bwhite text-2xl text-byellow font-black hover:brightness-125;
+html:has(.drawer:modal) {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .drawer,
+  .drawer::backdrop {
+    transition:
+      translate 0.25s ease,
+      opacity 0.25s ease,
+      display 0.25s allow-discrete,
+      overlay 0.25s allow-discrete;
+  }
+
+  .drawer {
+    translate: 100% 0;
+  }
+
+  .drawer[open] {
+    translate: 0 0;
+  }
+
+  .drawer::backdrop {
+    opacity: 0;
+  }
+
+  .drawer[open]::backdrop {
+    opacity: 1;
+  }
+
+  @starting-style {
+    .drawer[open] {
+      translate: 100% 0;
+    }
+
+    .drawer[open]::backdrop {
+      opacity: 0;
+    }
+  }
 }
 
 nav a {

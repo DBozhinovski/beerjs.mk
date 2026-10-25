@@ -25,6 +25,8 @@ export const ui = {
     "footer.media": "Press kit",
     "footer.contact": "Contact",
     "markdown.on-this-page": "On this page",
+    "notfound.title": "Page not found",
+    "notfound.home": "Back to the home page",
   },
   mk: {
     "nav.blog": "Блог",
@@ -45,5 +47,7 @@ export const ui = {
     "footer.media": "Прес кит",
     "footer.contact": "Контакт",
     "markdown.on-this-page": "Содржина",
+    "notfound.title": "Страницата не постои",
+    "notfound.home": "Назад кон почетната страница",
   },
 };
