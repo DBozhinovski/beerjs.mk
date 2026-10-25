@@ -74,15 +74,17 @@ Never copy a local database to production. It contains the development admin acc
 
 ## Deployment
 
-Coolify deploys `master` with Nixpacks.
-Nixpacks can provide an older pnpm than the version in `package.json`, so the application settings select it explicitly.
+The `Dockerfile` pins Node.js 24.22.1 and pnpm 11.24.0.
+It keeps the application directory at `/app`, so the existing data volume remains valid.
+The `.dockerignore` excludes local databases, uploads, secrets, and generated files.
+The current Coolify Nixpacks configuration does not use this Dockerfile.
+Before you change the build pack, publish the reviewed Dockerfile through an authorized source update.
 
-| Coolify setting | Value |
+| Coolify setting | Value after the authorized source update |
 | --- | --- |
-| Build pack | Nixpacks |
-| Install command | `npx --yes pnpm@11.24.0 install --frozen-lockfile` |
-| Build command | `npx --yes pnpm@11.24.0 build` |
-| Start command | `npx --yes pnpm@11.24.0 serve` |
+| Build pack | Dockerfile |
+| Dockerfile location | `/Dockerfile` |
+| Build context | repository root |
 | Port | `80` |
 | Persistent storage | a volume mounted at `/app/data` |
 
