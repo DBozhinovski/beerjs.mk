@@ -1,3 +1,14 @@
 allowBuilds:
   esbuild: true
   sharp: true
+
+# Security fixes for transitive dependencies that their parents pin to
+# vulnerable versions. Remove an entry when the parent ships the fix.
+overrides:
+  deepmerge-ts@<8.0.0: ^8.0.2
+  mdast-util-to-hast@>=13.0.0 <13.2.1: ^13.2.1
+  picomatch@<2.3.2: ^2.3.2
+  postcss-selector-parser@<7.1.6: ^7.1.6
+  sharp@<0.35.5: ^0.35.5
+  svgo@>=4.0.0 <4.1.0: ^4.1.0
+  zod@<4.6.6: ^4.6.7
